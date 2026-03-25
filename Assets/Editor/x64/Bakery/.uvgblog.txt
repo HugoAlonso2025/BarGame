@@ -1,0 +1,364 @@
+2026-3-11
+Rendering UV GBuffer for AreaJuego_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for AreaJuego_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for AreaJuego_LMA2 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for AreaJuego_LMA3 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for AreaJuego_LMA4 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftrace fixpos12 "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "uvpos_AreaJuego_LMA1.lz4" 2 0 1 0
+Running ftrace fixpos12 "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "uvpos_AreaJuego_LM0.lz4" 2 0 0 0
+Running ftrace fixpos12 "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "uvpos_AreaJuego_LMA4.lz4" 2 0 4 0
+Running ftrace fixpos12 "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "uvpos_AreaJuego_LMA2.lz4" 2 0 2 0
+Running ftrace fixpos12 "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "uvpos_AreaJuego_LMA3.lz4" 2 0 3 0
+Running ftrace sun "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "light_1_1" 4 0 1 direct0.bin
+Running ftrace addmul "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA1" 4 0 1 comp_1.bin
+Running ftrace sun "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "light_1_0" 4 0 0 direct0.bin
+Running ftrace addmul "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LM0" 4 0 0 comp_0.bin
+Running ftrace sun "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "light_1_4" 4 0 4 direct0.bin
+Running ftrace addmul "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA4" 4 0 4 comp_4.bin
+Running ftrace sun "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "light_1_2" 4 0 2 direct0.bin
+Running ftrace addmul "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA2" 4 0 2 comp_2.bin
+Running ftrace sun "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "light_1_3" 4 0 3 direct0.bin
+Running ftrace addmul "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA3" 4 0 3 comp_3.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA1_diffuse" 4 16 1 "gi_AreaJuego_LMA10.bin" "AreaJuego_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LM0_diffuse" 4 16 0 "gi_AreaJuego_LM00.bin" "AreaJuego_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA4_diffuse" 4 16 4 "gi_AreaJuego_LMA40.bin" "AreaJuego_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA2_diffuse" 4 16 2 "gi_AreaJuego_LMA20.bin" "AreaJuego_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA3_diffuse" 4 16 3 "gi_AreaJuego_LMA30.bin" "AreaJuego_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA1_diffuse" 4 16 1 "gi_AreaJuego_LMA11.bin" "AreaJuego_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LM0_diffuse" 4 16 0 "gi_AreaJuego_LM01.bin" "AreaJuego_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA4_diffuse" 4 16 4 "gi_AreaJuego_LMA41.bin" "AreaJuego_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA2_diffuse" 4 16 2 "gi_AreaJuego_LMA21.bin" "AreaJuego_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA3_diffuse" 4 16 3 "gi_AreaJuego_LMA31.bin" "AreaJuego_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Thread 00000000000036E8 may have been prematurely finalized
+Thread 00000000000036E8 may have been prematurely finalized
+Thread 00000000000036E8 may have been prematurely finalized
+Thread 00000000000036E8 may have been prematurely finalized
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA1_diffuse" 4 16 1 "gi_AreaJuego_LMA12.bin" "AreaJuego_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LM0_diffuse" 4 16 0 "gi_AreaJuego_LM02.bin" "AreaJuego_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA4_diffuse" 4 16 4 "gi_AreaJuego_LMA42.bin" "AreaJuego_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA2_diffuse" 4 16 2 "gi_AreaJuego_LMA22.bin" "AreaJuego_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA3_diffuse" 4 16 3 "gi_AreaJuego_LMA32.bin" "AreaJuego_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA1_diffuse" 4 16 1 "gi_AreaJuego_LMA13.bin" "AreaJuego_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LM0_diffuse" 4 16 0 "gi_AreaJuego_LM03.bin" "AreaJuego_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA4_diffuse" 4 16 4 "gi_AreaJuego_LMA43.bin" "AreaJuego_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA2_diffuse" 4 16 2 "gi_AreaJuego_LMA23.bin" "AreaJuego_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA3_diffuse" 4 16 3 "gi_AreaJuego_LMA33.bin" "AreaJuego_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA1_final" 4 16 1 "gi_AreaJuego_LMA14.bin" "AreaJuego_LMA1_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LM0_final" 4 16 0 "gi_AreaJuego_LM04.bin" "AreaJuego_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA4_final" 4 16 4 "gi_AreaJuego_LMA44.bin" "AreaJuego_LMA4_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA2_final" 4 16 2 "gi_AreaJuego_LMA24.bin" "AreaJuego_LMA2_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA3_final" 4 16 3 "gi_AreaJuego_LMA34.bin" "AreaJuego_LMA3_lights_HDR.lz4" vbTraceTex.bin
+Running denoiserLegacy c "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LMA1_final_HDR.lz4" "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LMA1_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "1" "AreaJuego_LMA1_final_HDR.lz4"
+Loading geometry...
+Tris filtered by LMID: was 6736, left 200
+Collecting edges...
+600 edges
+Sorting...
+Finding seams...X
+0 seams
+Running denoiserLegacy c "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LM0_final_HDR.lz4" "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LM0_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "0" "AreaJuego_LM0_final_HDR.lz4"
+Loading geometry...
+Tris filtered by LMID: was 6736, left 200
+Collecting edges...
+600 edges
+Sorting...
+Finding seams...X
+0 seams
+Running denoiserLegacy c "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LMA4_final_HDR.lz4" "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LMA4_final_HDR.lz4" 256 0
+Running seamfixer "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "4" "AreaJuego_LMA4_final_HDR.lz4"
+Loading geometry...
+Tris filtered by LMID: was 6736, left 884
+Collecting edges...
+2652 edges
+Sorting...
+Finding seams...X
+30 seams
+Generating mesh...
+Initializing D3D...
+Selected device: NVIDIA Quadro M3000M
+Running denoiserLegacy c "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LMA2_final_HDR.lz4" "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LMA2_final_HDR.lz4" 2048 0
+Loaded vertex shader: seamfix.vso
+Loaded pixel shader: debugLines.pso
+Loading half-float lightmap...
+Rendering...
+Saving...
+Running seamfixer "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "2" "AreaJuego_LMA2_final_HDR.lz4"
+Loading geometry...
+Tris filtered by LMID: was 6736, left 200
+Collecting edges...
+600 edges
+Sorting...
+Finding seams...X
+0 seams
+Running denoiserLegacy c "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LMA3_final_HDR.lz4" "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LMA3_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "3" "AreaJuego_LMA3_final_HDR.lz4"
+Loading geometry...
+Tris filtered by LMID: was 6736, left 200
+Collecting edges...
+600 edges
+Sorting...
+Finding seams...X
+0 seams
+Running halffloat2hdr "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LMA1_final_HDR.lz4" "C:/Users/supportIO/Desktop/Proyectos/FishingGame/Assets/BakeryLightmaps/AreaJuego_LMA1_final.hdr" 1024
+Initializing D3D...
+Done
+Running halffloat2hdr "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LM0_final_HDR.lz4" "C:/Users/supportIO/Desktop/Proyectos/FishingGame/Assets/BakeryLightmaps/AreaJuego_LM0_final.hdr" 1024
+Initializing D3D...
+Done
+Running halffloat2hdr "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LMA4_final_HDR.lz4" "C:/Users/supportIO/Desktop/Proyectos/FishingGame/Assets/BakeryLightmaps/AreaJuego_LMA4_final.hdr" 1024
+Initializing D3D...
+Done
+Running halffloat2hdr "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LMA2_final_HDR.lz4" "C:/Users/supportIO/Desktop/Proyectos/FishingGame/Assets/BakeryLightmaps/AreaJuego_LMA2_final.hdr" 1024
+Initializing D3D...
+Done
+Running halffloat2hdr "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LMA3_final_HDR.lz4" "C:/Users/supportIO/Desktop/Proyectos/FishingGame/Assets/BakeryLightmaps/AreaJuego_LMA3_final.hdr" 1024
+Initializing D3D...
+Done
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Thread 0000000000001B90 may have been prematurely finalized
+Thread 0000000000001B90 may have been prematurely finalized
+Thread 0000000000001B90 may have been prematurely finalized
+Thread 0000000000001B90 may have been prematurely finalized
+[ 129/1367  0s] CopyFiles C:/Users/supportIO/Desktop/Proyectos/FishingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/xrmanifest.androidlib/AndroidManifest.xml
+[ 130/1367  0s] CopyFiles C:/Users/supportIO/Desktop/Proyectos/FishingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/resources.resource
+[ 131/1367  0s] CopyFiles C:/Users/supportIO/Desktop/Proyectos/FishingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/sharedassets0.resource
+[ 132/1367  0s] CopyFiles C:/Users/supportIO/Desktop/Proyectos/FishingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/data.unity3d
+[ 134/1367  0s] AddBootConfigGUID Library/Bee/artifacts/Android/boot.config
+[ 135/1367  0s] CopyFiles C:/Users/supportIO/Desktop/Proyectos/FishingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/boot.config
+[BUSY       6s] UnityLinker C:/Users/supportIO/Desktop/Proyectos/FishingGame/Library/Bee/artifacts/unitylinker_xy1a.traceevents
+[ 136/1367  8s] UnityLinker C:/Users/supportIO/Desktop/Proyectos/FishingGame/Library/Bee/artifacts/unitylinker_xy1a.traceevents
+C:\Program Files\Unity\Hub\Editor\6000.3.1f1\Editor\Data\il2cpp\build\deploy\UnityLinker.exe @Library\Bee\artifacts\rsp\14833916632766329247.rsp
+[1359/1367  0s] GuidGenerator C:/Users/supportIO/Desktop/Proyectos/FishingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/unity_app_guid
+[1360/1367  0s] ClassRegistrationGenerator C:/Users/supportIO/Desktop/Proyectos/FishingGame/Library/Bee/artifacts/Android/il2cppOutput/UnityClassRegistration.cpp
+*** Tundra build success (9.32 seconds), 9 items updated, 1367 evaluated
+Loaded vertex shader: quad.vso
+Loaded pixel shader: skyOutput.pso
+Loaded pixel shader: cookieOutput.pso
+initShaders done
+initScene done
+Done
+Rendering UV GBuffer for AreaJuego_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for AreaJuego_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for AreaJuego_LMA2 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for AreaJuego_LMA3 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for AreaJuego_LMA4 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for AreaJuego_LMA5 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftrace fixpos12 "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "uvpos_AreaJuego_LMA2.lz4" 2 0 2 0
+Running ftrace fixpos12 "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "uvpos_AreaJuego_LMA1.lz4" 2 0 1 0
+Running ftrace fixpos12 "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "uvpos_AreaJuego_LM0.lz4" 2 0 0 0
+Running ftrace fixpos12 "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "uvpos_AreaJuego_LMA5.lz4" 2 0 5 0
+Running ftrace fixpos12 "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "uvpos_AreaJuego_LMA3.lz4" 2 0 3 0
+Running ftrace fixpos12 "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "uvpos_AreaJuego_LMA4.lz4" 2 0 4 0
+Running ftrace sun "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "light_1_2" 4 0 2 direct0.bin
+Running ftrace addmul "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA2" 4 0 2 comp_2.bin
+Running ftrace sun "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "light_1_1" 4 0 1 direct0.bin
+Running ftrace addmul "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA1" 4 0 1 comp_1.bin
+Running ftrace sun "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "light_1_0" 4 0 0 direct0.bin
+Running ftrace addmul "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LM0" 4 0 0 comp_0.bin
+Running ftrace sun "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "light_1_5" 4 0 5 direct0.bin
+Running ftrace addmul "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA5" 4 0 5 comp_5.bin
+Running ftrace sun "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "light_1_3" 4 0 3 direct0.bin
+Running ftrace addmul "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA3" 4 0 3 comp_3.bin
+Running ftrace sun "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "light_1_4" 4 0 4 direct0.bin
+Running ftrace addmul "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA4" 4 0 4 comp_4.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA2_diffuse" 4 16 2 "gi_AreaJuego_LMA20.bin" "AreaJuego_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA1_diffuse" 4 16 1 "gi_AreaJuego_LMA10.bin" "AreaJuego_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LM0_diffuse" 4 16 0 "gi_AreaJuego_LM00.bin" "AreaJuego_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA5_diffuse" 4 16 5 "gi_AreaJuego_LMA50.bin" "AreaJuego_LMA5_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA3_diffuse" 4 16 3 "gi_AreaJuego_LMA30.bin" "AreaJuego_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA4_diffuse" 4 16 4 "gi_AreaJuego_LMA40.bin" "AreaJuego_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA2_diffuse" 4 16 2 "gi_AreaJuego_LMA21.bin" "AreaJuego_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA1_diffuse" 4 16 1 "gi_AreaJuego_LMA11.bin" "AreaJuego_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LM0_diffuse" 4 16 0 "gi_AreaJuego_LM01.bin" "AreaJuego_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA5_diffuse" 4 16 5 "gi_AreaJuego_LMA51.bin" "AreaJuego_LMA5_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA3_diffuse" 4 16 3 "gi_AreaJuego_LMA31.bin" "AreaJuego_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA4_diffuse" 4 16 4 "gi_AreaJuego_LMA41.bin" "AreaJuego_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA2_diffuse" 4 16 2 "gi_AreaJuego_LMA22.bin" "AreaJuego_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA1_diffuse" 4 16 1 "gi_AreaJuego_LMA12.bin" "AreaJuego_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LM0_diffuse" 4 16 0 "gi_AreaJuego_LM02.bin" "AreaJuego_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA5_diffuse" 4 16 5 "gi_AreaJuego_LMA52.bin" "AreaJuego_LMA5_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA3_diffuse" 4 16 3 "gi_AreaJuego_LMA32.bin" "AreaJuego_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA4_diffuse" 4 16 4 "gi_AreaJuego_LMA42.bin" "AreaJuego_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA2_diffuse" 4 16 2 "gi_AreaJuego_LMA23.bin" "AreaJuego_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA1_diffuse" 4 16 1 "gi_AreaJuego_LMA13.bin" "AreaJuego_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LM0_diffuse" 4 16 0 "gi_AreaJuego_LM03.bin" "AreaJuego_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA5_diffuse" 4 16 5 "gi_AreaJuego_LMA53.bin" "AreaJuego_LMA5_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA3_diffuse" 4 16 3 "gi_AreaJuego_LMA33.bin" "AreaJuego_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA4_diffuse" 4 16 4 "gi_AreaJuego_LMA43.bin" "AreaJuego_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA2_final" 4 16 2 "gi_AreaJuego_LMA24.bin" "AreaJuego_LMA2_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA1_final" 4 16 1 "gi_AreaJuego_LMA14.bin" "AreaJuego_LMA1_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LM0_final" 4 16 0 "gi_AreaJuego_LM04.bin" "AreaJuego_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA5_final" 4 16 5 "gi_AreaJuego_LMA54.bin" "AreaJuego_LMA5_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA3_final" 4 16 3 "gi_AreaJuego_LMA34.bin" "AreaJuego_LMA3_lights_HDR.lz4" vbTraceTex.bin
+Thread 0000000000004850 may have been prematurely finalized
+Thread 0000000000004850 may have been prematurely finalized
+Thread 0000000000004850 may have been prematurely finalized
+Thread 0000000000004850 may have been prematurely finalized
+Running ftrace texgi "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "AreaJuego_LMA4_final" 4 16 4 "gi_AreaJuego_LMA44.bin" "AreaJuego_LMA4_lights_HDR.lz4" vbTraceTex.bin
+Running denoiserLegacy c "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LMA2_final_HDR.lz4" "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LMA2_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "2" "AreaJuego_LMA2_final_HDR.lz4"
+Loading geometry...
+Tris filtered by LMID: was 7536, left 200
+Collecting edges...
+600 edges
+Sorting...
+Finding seams...X
+0 seams
+Running denoiserLegacy c "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LMA1_final_HDR.lz4" "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LMA1_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "1" "AreaJuego_LMA1_final_HDR.lz4"
+Loading geometry...
+Tris filtered by LMID: was 7536, left 200
+Collecting edges...
+600 edges
+Sorting...
+Finding seams...X
+0 seams
+Running denoiserLegacy c "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LM0_final_HDR.lz4" "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LM0_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "0" "AreaJuego_LM0_final_HDR.lz4"
+Loading geometry...
+Tris filtered by LMID: was 7536, left 200
+Collecting edges...
+600 edges
+Sorting...
+Finding seams...X
+0 seams
+Running denoiserLegacy c "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LMA5_final_HDR.lz4" "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LMA5_final_HDR.lz4" 256 0
+Running seamfixer "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "5" "AreaJuego_LMA5_final_HDR.lz4"
+Loading geometry...
+Tris filtered by LMID: was 7536, left 884
+Collecting edges...
+2652 edges
+Sorting...
+Finding seams...X
+30 seams
+Generating mesh...
+Initializing D3D...
+Selected device: NVIDIA Quadro M3000M
+Loaded vertex shader: seamfix.vso
+Loaded pixel shader: debugLines.pso
+Loading half-float lightmap...
+Rendering...
+Saving...
+Running denoiserLegacy c "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LMA3_final_HDR.lz4" "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LMA3_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "3" "AreaJuego_LMA3_final_HDR.lz4"
+Loading geometry...
+Tris filtered by LMID: was 7536, left 200
+Collecting edges...
+600 edges
+Sorting...
+Finding seams...X
+0 seams
+Running denoiserLegacy c "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LMA4_final_HDR.lz4" "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LMA4_final_HDR.lz4" 2048 0
+Running seamfixer "C:\Users\SUPPOR~1\AppData\Local\Temp\frender" "4" "AreaJuego_LMA4_final_HDR.lz4"
+Loading geometry...
+Tris filtered by LMID: was 7536, left 200
+Collecting edges...
+600 edges
+Sorting...
+Finding seams...X
+0 seams
+Running halffloat2hdr "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LMA2_final_HDR.lz4" "C:/Users/supportIO/Desktop/Proyectos/FishingGame/Assets/BakeryLightmaps/AreaJuego_LMA2_final.hdr" 1024
+Initializing D3D...
+Done
+Running halffloat2hdr "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LMA1_final_HDR.lz4" "C:/Users/supportIO/Desktop/Proyectos/FishingGame/Assets/BakeryLightmaps/AreaJuego_LMA1_final.hdr" 1024
+Initializing D3D...
+Done
+Running halffloat2hdr "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LM0_final_HDR.lz4" "C:/Users/supportIO/Desktop/Proyectos/FishingGame/Assets/BakeryLightmaps/AreaJuego_LM0_final.hdr" 1024
+Initializing D3D...
+Done
+Running halffloat2hdr "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LMA5_final_HDR.lz4" "C:/Users/supportIO/Desktop/Proyectos/FishingGame/Assets/BakeryLightmaps/AreaJuego_LMA5_final.hdr" 1024
+Initializing D3D...
+Done
+Running halffloat2hdr "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LMA3_final_HDR.lz4" "C:/Users/supportIO/Desktop/Proyectos/FishingGame/Assets/BakeryLightmaps/AreaJuego_LMA3_final.hdr" 1024
+Initializing D3D...
+Done
+Running halffloat2hdr "C:\Users\SUPPOR~1\AppData\Local\Temp\frender/AreaJuego_LMA4_final_HDR.lz4" "C:/Users/supportIO/Desktop/Proyectos/FishingGame/Assets/BakeryLightmaps/AreaJuego_LMA4_final.hdr" 1024
+Initializing D3D...
+Done
+[ 129/1367  0s] CopyFiles C:/Users/supportIO/Desktop/Proyectos/FishingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/xrmanifest.androidlib/AndroidManifest.xml
+[ 130/1367  0s] CopyFiles C:/Users/supportIO/Desktop/Proyectos/FishingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/resources.resource
+[ 131/1367  0s] CopyFiles C:/Users/supportIO/Desktop/Proyectos/FishingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/sharedassets0.resource
+[ 133/1367  0s] CopyFiles C:/Users/supportIO/Desktop/Proyectos/FishingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/data.unity3d
+[1364/1367  0s] AddBootConfigGUID Library/Bee/artifacts/Android/boot.config
+[1365/1367  0s] CopyFiles C:/Users/supportIO/Desktop/Proyectos/FishingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/boot.config
+[1366/1367  0s] GuidGenerator C:/Users/supportIO/Desktop/Proyectos/FishingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/unity_app_guid
+*** Tundra build success (0.54 seconds), 7 items updated, 1367 evaluated
+Thread 0000000000005E1C may have been prematurely finalized
+Thread 0000000000005E1C may have been prematurely finalized
+Thread 0000000000005E1C may have been prematurely finalized
+Thread 0000000000005E1C may have been prematurely finalized
+Symbol file LoadedFromMemory is not a mono symbol file
+[ 129/1367  0s] CopyFiles C:/Users/supportIO/Desktop/Proyectos/FishingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/xrmanifest.androidlib/AndroidManifest.xml
+[ 130/1367  0s] CopyFiles C:/Users/supportIO/Desktop/Proyectos/FishingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/resources.resource
+[ 131/1367  0s] CopyFiles C:/Users/supportIO/Desktop/Proyectos/FishingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/sharedassets0.resource
+[ 133/1367  0s] CopyFiles C:/Users/supportIO/Desktop/Proyectos/FishingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/data.unity3d
+[1364/1367  0s] AddBootConfigGUID Library/Bee/artifacts/Android/boot.config
+[1365/1367  0s] CopyFiles C:/Users/supportIO/Desktop/Proyectos/FishingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/boot.config
+[1366/1367  0s] GuidGenerator C:/Users/supportIO/Desktop/Proyectos/FishingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/unity_app_guid
+*** Tundra build success (0.58 seconds), 7 items updated, 1367 evaluated
+Thread 00000000000050E4 may have been prematurely finalized
+Thread 00000000000050E4 may have been prematurely finalized
+Thread 00000000000050E4 may have been prematurely finalized
+Thread 00000000000050E4 may have been prematurely finalized

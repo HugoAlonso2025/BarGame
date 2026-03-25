@@ -1,0 +1,24 @@
+{
+    "name": "VRIF",
+    "rootNamespace": "",
+    "references": [
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:e1839273934490846bd0260caf67ba95",
+        "GUID:244849d9b658ab3478f39d379702fb73",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:e40ba710768534012815d3193fa296cb"
+    ],
+    "includePlatforms": [
+        "Android",
+        "Editor",
+        "WindowsStandalone64"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

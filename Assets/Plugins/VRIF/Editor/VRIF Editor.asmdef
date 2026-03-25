@@ -1,0 +1,20 @@
+{
+    "name": "VRIFEditor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:445585001488cb9448fa1777e5d22dc7",
+        "GUID:244849d9b658ab3478f39d379702fb73",
+        "GUID:e1839273934490846bd0260caf67ba95"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
