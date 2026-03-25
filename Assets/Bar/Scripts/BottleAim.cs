@@ -8,25 +8,27 @@ public class BottleAim : MonoBehaviour
     [SerializeField] float distanceRay;
     [SerializeField] LayerMask glassLayer;
 
-
-    bool liquidOn = false;
     GameObject liquidGO;
+
+    GlassFillingUp glass;
 
     private void Update()
     {
         RaycastHit hit;
 
-        Debug.Log(transform.localEulerAngles.z);
-
-        if (!liquidOn && liquidGO == null && transform.localEulerAngles.z >= 90 <= 270)
+        if (transform.localEulerAngles.z > 90 && transform.localEulerAngles.z < 270)
         {
-            liquidGO = Instantiate(liquidPrefab, _waterPos.position, _waterPos.rotation, transform);
-        }
+            if (liquidGO == null)
+            {
+                liquidGO = Instantiate(liquidPrefab, _waterPos.position, _waterPos.rotation, transform);
+            }
 
-        if (Physics.Raycast(_tipPosition.position, transform.up, out hit, distanceRay, glassLayer))
-        {
-            
-                Debug.Log("Vaso");
+            if (Physics.Raycast(_tipPosition.position, transform.up, out hit, distanceRay, glassLayer) && liquidGO != null)
+            {
+                glass = hit.collider.gameObject.GetComponentInChildren<GlassFillingUp>();
+                glass.GetRay();
+                //Debug.Log("Vaso");
+            }
         }
         else
         {
@@ -34,6 +36,7 @@ public class BottleAim : MonoBehaviour
             {
                 Destroy(liquidGO);
             }
+           
         }
     }
 
