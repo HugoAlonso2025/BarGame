@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Plugins/VRIF/Scenes/Quest Demo.unity
     guid: 20abffae0ea5004438fe0e95b6627841
-  - enabled: 1
+  - enabled: 0
     path: Assets/Test/Scenes/AreaJuego.unity
     guid: fcad2afc30008284aa5724861ca27bef
   - enabled: 0
