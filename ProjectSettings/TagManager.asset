@@ -4,16 +4,7 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - wall
-  - cube
-  - 1
-  - 2
-  - 3
-  - 4
-  - up
-  - down
-  - Tutorial
-  - pos
+  - particle
   layers:
   - Default
   - TransparentFX

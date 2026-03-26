@@ -23,12 +23,19 @@ public class BottleAim : MonoBehaviour
                 liquidGO = Instantiate(liquidPrefab, _waterPos.position, _waterPos.rotation, transform);
             }
 
-            if (Physics.Raycast(_tipPosition.position, transform.up, out hit, distanceRay, glassLayer) && liquidGO != null)
-            {
-                glass = hit.collider.gameObject.GetComponentInChildren<GlassFillingUp>();
-                glass.GetRay();
-                //Debug.Log("Vaso");
-            }
+            //if (Physics.Raycast(_tipPosition.position, transform.up, out hit, distanceRay, glassLayer) && liquidGO != null)
+            //{
+            //    glass = hit.collider.gameObject.GetComponentInParent<GlassFillingUp>();
+            //    glass.GetRay();
+            //    //Debug.Log("Vaso");
+            //}
+            //else
+            //{
+            //    if (glass != null)
+            //    {
+            //        glass.StopFilling();
+            //    }
+            //}
         }
         else
         {

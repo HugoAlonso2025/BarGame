@@ -1,31 +1,62 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GlassFillingUp : MonoBehaviour
 {
-    [SerializeField] float waterPercentage = 0;
-    bool coolDown = false;
+    public float waterPercentage;
+    //bool coolDown = false;
 
-    void FillGlass()
-    {
-        coolDown = false;
-        waterPercentage += 20;
-        Debug.Log(waterPercentage);
-    }
+    //void FillGlass()
+    //{
+    //    if (waterPercentage < 100)
+    //    {
+    //        coolDown = false;
+    //        waterPercentage += 20;
+    //        Debug.Log(waterPercentage);
+    //    }
 
-    public void GetRay()
+        
+    //}
+
+    //public void StopFilling()
+    //{
+    //    StopAllCoroutines();
+    //}
+
+    //public void GetRay()
+    //{
+    //    if (!coolDown)
+    //    {
+    //        StartCoroutine(WaitToFill());
+    //    }
+    //}
+
+    //IEnumerator WaitToFill()
+    //{
+    //    coolDown = true;
+    //    yield return new WaitForSeconds(2);
+    //    FillGlass();
+    //}
+
+    private List<ParticleCollisionEvent> collisionEvents = new List<ParticleCollisionEvent>();
+
+    void OnParticleCollision(GameObject other)
     {
-        if (!coolDown)
+        ParticleSystem ps = other.GetComponent<ParticleSystem>();
+        int count = ps.GetCollisionEvents(gameObject, collisionEvents);
+
+        if(waterPercentage < 100)
         {
-            StartCoroutine(WaitToFill());
+            for (int i = 0; i < count; i++)
+            {
+                waterPercentage += 5;
+                Debug.Log(waterPercentage);
+            }
+        }
+        else
+        {
+            GetComponent<Renderer>().material.color = Color.red;
         }
     }
-
-    IEnumerator WaitToFill()
-    {
-        coolDown = true;
-        yield return new WaitForSeconds(2);
-        FillGlass();
-    }
-
 }
