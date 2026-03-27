@@ -5,58 +5,105 @@ using UnityEngine;
 public class GlassFillingUp : MonoBehaviour
 {
     public float waterPercentage;
-    //bool coolDown = false;
 
-    //void FillGlass()
-    //{
-    //    if (waterPercentage < 100)
-    //    {
-    //        coolDown = false;
-    //        waterPercentage += 20;
-    //        Debug.Log(waterPercentage);
-    //    }
+    [SerializeField] float value;
+    [SerializeField] float normalCount;
+    [SerializeField] float altCount;
+    Renderer rend;
+    [SerializeField] Material _normalMat;
+    [SerializeField] Material _altMat;
+    [SerializeField] Material _combMat;
+    [SerializeField] Material _errorMat;
 
-        
-    //}
-
-    //public void StopFilling()
-    //{
-    //    StopAllCoroutines();
-    //}
-
-    //public void GetRay()
-    //{
-    //    if (!coolDown)
-    //    {
-    //        StartCoroutine(WaitToFill());
-    //    }
-    //}
-
-    //IEnumerator WaitToFill()
-    //{
-    //    coolDown = true;
-    //    yield return new WaitForSeconds(2);
-    //    FillGlass();
-    //}
+    bool normal = false;
+    bool alt = false;
+    bool drinkFinished = false;
 
     private List<ParticleCollisionEvent> collisionEvents = new List<ParticleCollisionEvent>();
+
+    void Start()
+    {
+        value = -0.5f;
+        rend = GetComponent<Renderer>();
+    }
+
+    void Update()
+    {
+        rend.material.SetFloat("_FillAmount", value);
+    }
 
     void OnParticleCollision(GameObject other)
     {
         ParticleSystem ps = other.GetComponent<ParticleSystem>();
+
+        if(other.tag == "red")
+        {
+            alt = true;
+            normal = false;
+        }
+        else if (other.tag == "normal")
+        {
+            normal = true;
+            alt = false;
+        }
+
         int count = ps.GetCollisionEvents(gameObject, collisionEvents);
 
         if(waterPercentage < 100)
         {
             for (int i = 0; i < count; i++)
             {
-                waterPercentage += 5;
-                Debug.Log(waterPercentage);
+                waterPercentage += 1;
+                value += 0.01f;
+
+                if(normal)
+                {
+                    normalCount++;
+                    Debug.Log("Normal: " + normalCount);
+                }
+                else if(alt)
+                {
+                    altCount++;
+                    Debug.Log("ALt: " + altCount);
+                }
             }
         }
-        else
+        if (waterPercentage == 1)
         {
-            GetComponent<Renderer>().material.color = Color.red;
+            if (normal)
+            {
+                rend.material = _normalMat;
+            }
+            else if (alt)
+            {
+                rend.material = _altMat;
+            }
+        }
+
+        if (waterPercentage >= 100 && !drinkFinished)
+        {
+            drinkFinished = true;
+
+            if (normalCount >= 45 && normalCount < 55 && altCount >= 45 && altCount < 55)
+            {
+                Debug.Log("Comb");
+                rend.material = _combMat;
+            }
+            else if (normalCount >= 90)
+            {
+                Debug.Log("Normal");
+                rend.material = _normalMat;
+            }
+            else if (altCount >= 90)
+            {
+                Debug.Log("Alt");
+                rend.material = _altMat;
+            }
+            else
+            {
+                Debug.Log("Error");
+                rend.material = _errorMat;
+            }
         }
     }
 }

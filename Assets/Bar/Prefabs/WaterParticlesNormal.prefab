@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5605457699905601765}
   - component: {fileID: 4103396582440025962}
   m_Layer: 0
-  m_Name: WaterParticles
-  m_TagString: Untagged
+  m_Name: WaterParticlesNormal
+  m_TagString: normal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3792,7 +3792,7 @@ ParticleSystem:
     radiusScale: 0.01
     collidesWith:
       serializedVersion: 2
-      m_Bits: 1029
+      m_Bits: 2048
     maxCollisionShapes: 303
     quality: 0
     voxelSize: 0.5

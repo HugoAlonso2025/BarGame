@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - particle
+  - normal
+  - red
+  - floor
+  - glass
   layers:
   - Default
   - TransparentFX
@@ -18,7 +22,7 @@ TagManager:
   - Player
   - Grabbable
   - Glass
-  - 
+  - Ice
   - 
   - 
   - 
