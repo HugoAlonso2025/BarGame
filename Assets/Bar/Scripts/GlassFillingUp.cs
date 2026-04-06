@@ -15,6 +15,10 @@ public class GlassFillingUp : MonoBehaviour
     [SerializeField] Material _combMat;
     [SerializeField] Material _errorMat;
 
+    Rigidbody rb;
+
+    SetDrinkType drink;
+
     bool normal = false;
     bool alt = false;
     bool drinkFinished = false;
@@ -24,7 +28,9 @@ public class GlassFillingUp : MonoBehaviour
     void Start()
     {
         value = -0.5f;
+        rb = GetComponent<Rigidbody>();
         rend = GetComponent<Renderer>();
+        drink = GetComponent<SetDrinkType>();
     }
 
     void Update()
@@ -87,21 +93,25 @@ public class GlassFillingUp : MonoBehaviour
             if (normalCount >= 45 && normalCount < 55 && altCount >= 45 && altCount < 55)
             {
                 Debug.Log("Comb");
+                drink.comb1Drink = true;
                 rend.material = _combMat;
             }
             else if (normalCount >= 90)
             {
                 Debug.Log("Normal");
+                drink.blueDrink = true;
                 rend.material = _normalMat;
             }
             else if (altCount >= 90)
             {
                 Debug.Log("Alt");
+                drink.redDrink = true;
                 rend.material = _altMat;
             }
             else
             {
                 Debug.Log("Error");
+                drink.mistakeDrink = true;
                 rend.material = _errorMat;
             }
         }
