@@ -4,16 +4,11 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - wall
-  - cube
-  - 1
-  - 2
-  - 3
-  - 4
-  - up
-  - down
-  - Tutorial
-  - pos
+  - particle
+  - normal
+  - red
+  - floor
+  - glass
   layers:
   - Default
   - TransparentFX
@@ -26,10 +21,10 @@ TagManager:
   - Restricted
   - Player
   - Grabbable
-  - Fish
-  - player
-  - FishOnMove
-  - Hook
+  - Glass
+  - Ice
+  - Content
+  - 
   - 
   - 
   - 
