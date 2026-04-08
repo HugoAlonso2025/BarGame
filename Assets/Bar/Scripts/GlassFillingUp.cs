@@ -27,7 +27,7 @@ public class GlassFillingUp : MonoBehaviour
 
     void Start()
     {
-        value = -0.5f;
+        value = -0.6f;
         rb = GetComponent<Rigidbody>();
         rend = GetComponent<Renderer>();
         drink = GetComponent<SetDrinkType>();

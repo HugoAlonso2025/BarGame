@@ -16,6 +16,7 @@ public class BottleAim : MonoBehaviour
     {
         RaycastHit hit;
 
+
         if (transform.localEulerAngles.z > 90 && transform.localEulerAngles.z < 270)
         {
             if (liquidGO == null)

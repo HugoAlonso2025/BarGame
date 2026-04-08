@@ -321,6 +321,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2843694741918244741}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7c3229cf6f56da240a61e6c2fecaddab,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -8009252537154691094}
   m_SourcePrefab: {fileID: 100100000, guid: 7c3229cf6f56da240a61e6c2fecaddab, type: 3}
 --- !u!4 &6050363364890870303 stripped
 Transform:
@@ -382,7 +386,7 @@ MonoBehaviour:
   ThrowForceMultiplierAngular: 1.5
   BreakDistance: 0
   HideHandGraphics: 0
-  ParentToHands: 1
+  ParentToHands: 0
   ParentHandModel: 1
   SnapHandModel: 1
   CanBeDropped: 1
@@ -449,3 +453,30 @@ MonoBehaviour:
   glassLayer:
     serializedVersion: 2
     m_Bits: 2048
+--- !u!54 &-8009252537154691094
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6394238183972526245}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

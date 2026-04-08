@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class IceShovel : MonoBehaviour
 {
+    [SerializeField] Transform areaPos;
+
     [SerializeField] GameObject[] cubes;
 
     bool isEmpty;
@@ -28,7 +30,7 @@ public class IceShovel : MonoBehaviour
 
     void OnIceAreaEntered()
     {
-        if(Physics.CheckSphere(transform.position, radius, iceArea))
+        if(Physics.CheckSphere(areaPos.position, radius, iceArea))
         {
             for(int i = 0; i < cubes.Length; i++)
             {
@@ -46,6 +48,6 @@ public class IceShovel : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;   
-        Gizmos.DrawWireSphere(transform.position, radius);
+        Gizmos.DrawWireSphere(areaPos.position, radius);
     }
 }
