@@ -163,37 +163,6 @@ MonoBehaviour:
   ShowAngleGizmo: 1
   LeftHandPreviewPrefab: {fileID: 0}
   RightHandPreviewPrefab: {fileID: 0}
---- !u!1 &5337802101017510630
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1022648224081754988}
-  m_Layer: 0
-  m_Name: TipPos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1022648224081754988
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5337802101017510630}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 734618027614192040}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7611827165544478490
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +188,7 @@ Transform:
   m_GameObject: {fileID: 7611827165544478490}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: 10, z: 0}
+  m_LocalPosition: {x: 0, y: 0.116, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -308,10 +277,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d4e189db130abae47a06d66066969d65,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1022648224081754988}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d4e189db130abae47a06d66066969d65,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 5957462472184476015}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d4e189db130abae47a06d66066969d65,
@@ -358,7 +323,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 2534964839176971238, guid: d4e189db130abae47a06d66066969d65, type: 3}
+  m_Mesh: {fileID: 3840383602836954559, guid: d4e189db130abae47a06d66066969d65, type: 3}
 --- !u!114 &5537738648224069967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -426,9 +391,7 @@ MonoBehaviour:
   SecondaryLookOffset: {x: 0, y: 0, z: 0}
   SecondaryLookAtTransform: {fileID: 0}
   LocalOffsetTransform: {fileID: 0}
-  GrabPoints:
-  - {fileID: 3733421727690237528}
-  - {fileID: 1276540425371991913}
+  GrabPoints: []
   UseCustomInspector: 1
   lastFlickTime: 0
   FlickForce: 1
@@ -446,9 +409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BottleAim
   liquidPrefab: {fileID: 3800460714741783604, guid: 3a78127237c8a814a85fa473576557ca,
     type: 3}
-  _tipPosition: {fileID: 1022648224081754988}
   _waterPos: {fileID: 5957462472184476015}
-  distanceRay: 2
   glassLayer:
     serializedVersion: 2
     m_Bits: 2048

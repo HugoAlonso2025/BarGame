@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2937244083599568033
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1406954615072211307}
-  m_Layer: 0
-  m_Name: TipPos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1406954615072211307
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2937244083599568033}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6050363364890870303}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3379136820960436847
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 3419411984108627134}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: 10, z: 0}
+  m_LocalPosition: {x: 0, y: 0.127, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -121,7 +90,7 @@ Transform:
   m_GameObject: {fileID: 8323202587566339436}
   serializedVersion: 2
   m_LocalRotation: {x: -0.025026102, y: -0.1258339, z: -0.01767397, w: 0.9915781}
-  m_LocalPosition: {x: -0.411, y: 0, z: -0.097}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -186,7 +155,7 @@ Transform:
   m_GameObject: {fileID: 8648465208777967996}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0009326433, y: 0.23683798, z: -0.00022735388, w: 0.9715487}
-  m_LocalPosition: {x: 0.594, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -303,10 +272,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7c3229cf6f56da240a61e6c2fecaddab,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1406954615072211307}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7c3229cf6f56da240a61e6c2fecaddab,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 733251571496772316}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7c3229cf6f56da240a61e6c2fecaddab,
@@ -359,7 +324,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: -7387706064836869012, guid: 7c3229cf6f56da240a61e6c2fecaddab, type: 3}
+  m_Mesh: {fileID: 5982532046601528106, guid: 7c3229cf6f56da240a61e6c2fecaddab, type: 3}
 --- !u!114 &1658608370129117571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,9 +392,7 @@ MonoBehaviour:
   SecondaryLookOffset: {x: 0, y: 0, z: 0}
   SecondaryLookAtTransform: {fileID: 0}
   LocalOffsetTransform: {fileID: 0}
-  GrabPoints:
-  - {fileID: 196294404492246143}
-  - {fileID: 8714169501307376118}
+  GrabPoints: []
   UseCustomInspector: 1
   lastFlickTime: 0
   FlickForce: 1
@@ -447,9 +410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BottleAim
   liquidPrefab: {fileID: 3800460714741783604, guid: 5cbde73060dd55b4da985e1f252f69ba,
     type: 3}
-  _tipPosition: {fileID: 1406954615072211307}
   _waterPos: {fileID: 733251571496772316}
-  distanceRay: 2
   glassLayer:
     serializedVersion: 2
     m_Bits: 2048

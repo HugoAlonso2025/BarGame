@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 551964937867629465}
   - component: {fileID: 3460773023133277244}
   - component: {fileID: 1721454724085836022}
-  - component: {fileID: 8772689418794223222}
-  - component: {fileID: 2958046152615660304}
   m_Layer: 0
   m_Name: Ice (1)
   m_TagString: Untagged
@@ -29,9 +27,9 @@ Transform:
   m_GameObject: {fileID: 928631592272939299}
   serializedVersion: 2
   m_LocalRotation: {x: 0.28654173, y: 0.53370994, z: -0.19848491, w: 0.7704877}
-  m_LocalPosition: {x: 0.0105, y: 0.0239, z: 0.056}
+  m_LocalPosition: {x: 0.0036999993, y: 0.0186, z: 0.028900001}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2895506881715592741}
   m_LocalEulerAnglesHint: {x: 40.8, y: 69.42, z: 0}
@@ -92,55 +90,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8772689418794223222
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 928631592272939299}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -661186356546297860, guid: 0973131df7cc32d45be31fbdb0098993, type: 3}
---- !u!54 &2958046152615660304
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 928631592272939299}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &994012622709467148
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,8 +101,6 @@ GameObject:
   - component: {fileID: 468552044654523062}
   - component: {fileID: 3544185638257786131}
   - component: {fileID: 1642561823183309273}
-  - component: {fileID: 8689275734167299929}
-  - component: {fileID: 2892806263528647231}
   m_Layer: 0
   m_Name: Ice (3)
   m_TagString: Untagged
@@ -170,9 +117,9 @@ Transform:
   m_GameObject: {fileID: 994012622709467148}
   serializedVersion: 2
   m_LocalRotation: {x: 0.14199163, y: 0.55169636, z: 0.25310078, w: 0.7819269}
-  m_LocalPosition: {x: -0.0099, y: -0.0199, z: 0.052}
+  m_LocalPosition: {x: -0.0167, y: -0.025199998, z: 0.0249}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2895506881715592741}
   m_LocalEulerAnglesHint: {x: -3.28, y: 69.42, z: 33.6}
@@ -233,55 +180,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8689275734167299929
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 994012622709467148}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -661186356546297860, guid: 0973131df7cc32d45be31fbdb0098993, type: 3}
---- !u!54 &2892806263528647231
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 994012622709467148}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &2050216361535578484
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,8 +191,6 @@ GameObject:
   - component: {fileID: 1673091966918065102}
   - component: {fileID: 2348591827134379115}
   - component: {fileID: 536817427320275105}
-  - component: {fileID: 7579039081953832481}
-  - component: {fileID: 4151731879990125383}
   m_Layer: 0
   m_Name: Ice
   m_TagString: Untagged
@@ -311,9 +207,9 @@ Transform:
   m_GameObject: {fileID: 2050216361535578484}
   serializedVersion: 2
   m_LocalRotation: {x: 0.34857208, y: -0, z: -0, w: 0.937282}
-  m_LocalPosition: {x: -0.0172, y: 0.0018, z: -0}
+  m_LocalPosition: {x: -0.024, y: -0.0035, z: -0.0271}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2895506881715592741}
   m_LocalEulerAnglesHint: {x: 40.8, y: 0, z: 0}
@@ -374,55 +270,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7579039081953832481
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2050216361535578484}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -661186356546297860, guid: 0973131df7cc32d45be31fbdb0098993, type: 3}
---- !u!54 &4151731879990125383
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2050216361535578484}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &4296111032790364367
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,8 +281,6 @@ GameObject:
   - component: {fileID: 3518730316303526517}
   - component: {fileID: 538972908280899024}
   - component: {fileID: 2350358149698195738}
-  - component: {fileID: 5675425242990231450}
-  - component: {fileID: 2193504763917071100}
   m_Layer: 0
   m_Name: Ice (2)
   m_TagString: Untagged
@@ -452,9 +297,9 @@ Transform:
   m_GameObject: {fileID: 4296111032790364367}
   serializedVersion: 2
   m_LocalRotation: {x: 0.4285711, y: 0.42811126, z: 0.032681987, w: 0.79497135}
-  m_LocalPosition: {x: 0.0319, y: -0.0233, z: 0}
+  m_LocalPosition: {x: 0.0251, y: -0.028599996, z: -0.0271}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2895506881715592741}
   m_LocalEulerAnglesHint: {x: 40.8, y: 69.42, z: 33.6}
@@ -515,55 +360,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5675425242990231450
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4296111032790364367}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -661186356546297860, guid: 0973131df7cc32d45be31fbdb0098993, type: 3}
---- !u!54 &2193504763917071100
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4296111032790364367}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &8024066535052697582
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,6 +527,7 @@ MonoBehaviour:
     type: 3}
   _errorMat: {fileID: -876546973899608171, guid: 25cda979fd7bc744b8555b6a7369fe8d,
     type: 3}
+  isCup: 0
 --- !u!114 &6784390151051423848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -855,7 +652,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -946321984637619989, guid: 35a9acefbe690e7499fdc3ab0527aaa1, type: 3}
+  - {fileID: 2100000, guid: 4e7e554c23a4e1740b26407078e19d04, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

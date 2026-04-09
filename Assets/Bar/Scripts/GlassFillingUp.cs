@@ -22,12 +22,20 @@ public class GlassFillingUp : MonoBehaviour
     bool normal = false;
     bool alt = false;
     bool drinkFinished = false;
+    [SerializeField] bool isCup = false;
 
     private List<ParticleCollisionEvent> collisionEvents = new List<ParticleCollisionEvent>();
 
     void Start()
     {
-        value = -0.07f;
+        if (isCup)
+        {
+            value = -0.026f;
+        }
+        else
+        {
+            value = -0.07f;
+        }
         rb = GetComponent<Rigidbody>();
         rend = GetComponent<Renderer>();
         drink = GetComponent<SetDrinkType>();
@@ -59,9 +67,17 @@ public class GlassFillingUp : MonoBehaviour
         {
             for (int i = 0; i < count; i++)
             {
-                waterPercentage += 1;
-                value += 0.001f;
-
+                if(isCup)
+                {
+                    waterPercentage += 1;
+                    value += 0.00035f;
+                }
+                else
+                {
+                    waterPercentage += 1;
+                    value += 0.001f;
+                }
+                    
                 if(normal)
                 {
                     normalCount++;

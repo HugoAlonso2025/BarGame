@@ -70,7 +70,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6203054652971795444, guid: b6bb66c47dd61ef4bae4d883972ee829, type: 3}
+  - {fileID: 2100000, guid: 4e7e554c23a4e1740b26407078e19d04, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -393,11 +393,12 @@ MonoBehaviour:
   altCount: 0
   _normalMat: {fileID: -876546973899608171, guid: b70197428497e8a4289eb709aedef68c,
     type: 3}
-  _altMat: {fileID: -876546973899608171, guid: b70197428497e8a4289eb709aedef68c, type: 3}
-  _combMat: {fileID: -876546973899608171, guid: b70197428497e8a4289eb709aedef68c,
+  _altMat: {fileID: -876546973899608171, guid: b619c65969f259a4cb1edfb758586bf0, type: 3}
+  _combMat: {fileID: -876546973899608171, guid: a75be46479554a148b84278928565af7,
     type: 3}
-  _errorMat: {fileID: -876546973899608171, guid: b70197428497e8a4289eb709aedef68c,
+  _errorMat: {fileID: -876546973899608171, guid: 25cda979fd7bc744b8555b6a7369fe8d,
     type: 3}
+  isCup: 1
 --- !u!114 &8007457293522622593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,6 +506,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5355387679892610555, guid: c47d40b7168836b4d9e75a00491cd70a, type: 3}
+    - {fileID: 3982925069588101803, guid: c47d40b7168836b4d9e75a00491cd70a, type: 3}
+    - {fileID: 7491171705002080205, guid: c47d40b7168836b4d9e75a00491cd70a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -611,6 +614,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5355387679892610555, guid: c47d40b7168836b4d9e75a00491cd70a, type: 3}
+    - {fileID: 3982925069588101803, guid: c47d40b7168836b4d9e75a00491cd70a, type: 3}
+    - {fileID: 7491171705002080205, guid: c47d40b7168836b4d9e75a00491cd70a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

@@ -58,10 +58,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0973131df7cc32d45be31fbdb0098993,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b6234a12aa6e54b44b7709591421a935, type: 2}
     - target: {fileID: 919132149155446097, guid: 0973131df7cc32d45be31fbdb0098993,
         type: 3}
       propertyPath: m_Name
-      value: Ice 1
+      value: Ice
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -148,4 +153,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IceBehaviour
   _icePosition: {fileID: 0}
+  shovelRotation: {fileID: 0}
   onGlass: 0
