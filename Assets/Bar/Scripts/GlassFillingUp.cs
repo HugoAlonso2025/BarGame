@@ -27,7 +27,7 @@ public class GlassFillingUp : MonoBehaviour
 
     void Start()
     {
-        value = -0.6f;
+        value = -0.07f;
         rb = GetComponent<Rigidbody>();
         rend = GetComponent<Renderer>();
         drink = GetComponent<SetDrinkType>();
@@ -35,7 +35,7 @@ public class GlassFillingUp : MonoBehaviour
 
     void Update()
     {
-        rend.material.SetFloat("_FillAmount", value);
+        rend.material.SetFloat("_Fill", value);
     }
 
     void OnParticleCollision(GameObject other)
@@ -60,7 +60,7 @@ public class GlassFillingUp : MonoBehaviour
             for (int i = 0; i < count; i++)
             {
                 waterPercentage += 1;
-                value += 0.01f;
+                value += 0.001f;
 
                 if(normal)
                 {

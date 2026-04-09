@@ -33,7 +33,7 @@ public class IceBehaviour : MonoBehaviour
 
         if(collision.gameObject.tag == "glass" && !onGlass)
         {
-            glass = collision.gameObject.GetComponent<CubesOnGlass>();
+            glass = collision.gameObject.GetComponentInChildren<CubesOnGlass>();
             transform.position = _icePosition.position;
             rb.isKinematic = true;
             col.isTrigger = true;
