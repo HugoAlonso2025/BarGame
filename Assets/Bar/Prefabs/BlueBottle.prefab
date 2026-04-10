@@ -89,13 +89,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8323202587566339436}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.025026102, y: -0.1258339, z: -0.01767397, w: 0.9915781}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.027485171, y: 0.031006705, z: -0.013536632, w: 0.99904954}
+  m_LocalPosition: {x: -0.0303, y: -0.0856, z: -0.0476}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1515253494800377044}
-  m_LocalEulerAnglesHint: {x: -3.1, y: -14.42, z: -1.65}
+  m_LocalEulerAnglesHint: {x: -3.1, y: 3.6, z: -1.65}
 --- !u!114 &1846727782071355631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handPoseType: 1
-  SelectedHandPose: {fileID: 11400000, guid: 561358c67400082428166155f9333233, type: 2}
+  SelectedHandPose: {fileID: 11400000, guid: 6935aaedca8670a43b3223ef36b93e0c, type: 2}
   HandPose: 0
   LeftHandIsValid: 1
   RightHandIsValid: 0
@@ -154,13 +154,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8648465208777967996}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0009326433, y: 0.23683798, z: -0.00022735388, w: 0.9715487}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.027485171, y: 0.031006705, z: -0.013536632, w: 0.99904954}
+  m_LocalPosition: {x: 0.037, y: -0.08560002, z: -0.04760003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1515253494800377044}
-  m_LocalEulerAnglesHint: {x: 0.11, y: 27.4, z: 0}
+  m_LocalEulerAnglesHint: {x: -6.915, y: 3.409, z: 21.836}
 --- !u!114 &6869062137318539233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handPoseType: 1
-  SelectedHandPose: {fileID: 11400000, guid: 9ea7d79e00307a84dab90226464424ed, type: 2}
+  SelectedHandPose: {fileID: 11400000, guid: 6935aaedca8670a43b3223ef36b93e0c, type: 2}
   HandPose: 0
   LeftHandIsValid: 0
   RightHandIsValid: 1
@@ -205,17 +205,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7c3229cf6f56da240a61e6c2fecaddab,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.602715
+      value: -0.3414851
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c3229cf6f56da240a61e6c2fecaddab,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.14865822
+      value: 0.99086267
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c3229cf6f56da240a61e6c2fecaddab,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.6657984
+      value: 2.4999735
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c3229cf6f56da240a61e6c2fecaddab,
         type: 3}
@@ -340,8 +340,8 @@ MonoBehaviour:
   BeingHeld: 0
   GrabButton: 0
   Grabtype: 0
-  GrabPhysics: 4
-  GrabMechanic: 1
+  GrabPhysics: 1
+  GrabMechanic: 0
   GrabSpeed: 15
   RemoteGrabbable: 0
   RemoteGrabMechanic: 0
@@ -351,8 +351,8 @@ MonoBehaviour:
   ThrowForceMultiplierAngular: 1.5
   BreakDistance: 0
   HideHandGraphics: 0
-  ParentToHands: 0
-  ParentHandModel: 1
+  ParentToHands: 1
+  ParentHandModel: 0
   SnapHandModel: 1
   CanBeDropped: 1
   CanBeSnappedToSnapZone: 1
@@ -392,7 +392,9 @@ MonoBehaviour:
   SecondaryLookOffset: {x: 0, y: 0, z: 0}
   SecondaryLookAtTransform: {fileID: 0}
   LocalOffsetTransform: {fileID: 0}
-  GrabPoints: []
+  GrabPoints:
+  - {fileID: 196294404492246143}
+  - {fileID: 8714169501307376118}
   UseCustomInspector: 1
   lastFlickTime: 0
   FlickForce: 1

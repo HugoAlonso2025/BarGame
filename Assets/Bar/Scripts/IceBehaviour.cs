@@ -45,10 +45,10 @@ public class IceBehaviour : MonoBehaviour
     private void Update()
     {
 
-        if (shovelRotation.localEulerAngles.x > 40 && shovelRotation.localEulerAngles.x < 320)
+        if (shovelRotation.localEulerAngles.x > 40 && shovelRotation.localEulerAngles.x < 320 || shovelRotation.localEulerAngles.z > 60 && shovelRotation.localEulerAngles.z < 300)
         {
             StartCoroutine(CoolDown());
-            Debug.Log("N Kine");
+            StartCoroutine(Despawn());
             rb.isKinematic = false;
             col.isTrigger = false;
         }
@@ -56,7 +56,6 @@ public class IceBehaviour : MonoBehaviour
         {
             if(!wait)
             {
-                Debug.Log("Kine");
                 rb.isKinematic = true;
                 col.isTrigger = true;
             }
@@ -69,6 +68,15 @@ public class IceBehaviour : MonoBehaviour
         yield return new WaitForSeconds(2);
         wait = false;
 
+    }
+
+    IEnumerator Despawn()
+    {
+        yield return new WaitForSeconds(2);
+        transform.position = _icePosition.position;
+        rb.isKinematic = true;
+        col.isTrigger = true;
+        gameObject.SetActive(false);
     }
 
 
