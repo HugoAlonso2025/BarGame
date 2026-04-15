@@ -87,10 +87,9 @@ public class CustomerBehaviour : MonoBehaviour
 
     void MoveTowardsExit()
     {
-        Debug.Log("Exit");
-        //target = new Vector3(exitPos.transform.position.x, transform.position.y, exitPos.transform.position.z);
-        //transform.LookAt(exitPos.transform);
-        //transform.position += transform.forward * speed * Time.deltaTime;
+        target = new Vector3(exitPos.transform.position.x, transform.position.y, exitPos.transform.position.z);
+        transform.LookAt(exitPos.transform);
+        transform.position += transform.forward * speed * Time.deltaTime;
     }
 
 
