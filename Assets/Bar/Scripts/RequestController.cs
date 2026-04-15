@@ -85,12 +85,10 @@ public class RequestController : MonoBehaviour
         {
             if (glasses.Length == 1)
             {
-                //_glassObject = col.GetComponentInParent<Transform>();
-                //_glassObject.transform.position = glassPos.position;
                 _glassObject = col.gameObject;
                 drink = col.GetComponentInChildren<SetDrinkType>();
 
-                if (drink != null)
+                if (drink != null && hasOrdered)
                 {
                     col.transform.position = glassPos.position;
                     glassPlaced = true;
