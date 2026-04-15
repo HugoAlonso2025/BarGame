@@ -1,42 +1,34 @@
+using System.Collections;
 using UnityEngine;
 
 public class SpawnCustomer : MonoBehaviour
 {
-    [SerializeField] RequestController[] requests;
-    GameObject deliverAssigned;
-    Transform target;
-    [SerializeField] float speed;
-
-    void AsignDeliver()
-    {
-        if (requests != null)
-        {
-            for (int i = 0; i < requests.Length; i++)
-            {
-                if (requests[i] == null)
-                {
-                    deliverAssigned = requests[i].gameObject;
-                    continue;
-                }
-            }
-        }
-    }
+    [SerializeField] GameObject customerPrefab;
+    [SerializeField] Transform entryPos;
+    bool coolDown = false;
+    int counter = 0;
 
     private void Start()
     {
-        AsignDeliver();
+        InvokeRepeating("InstantiateCustomer", 0, 5);
     }
 
-    void MoveTowardsDeliver()
+    void InstantiateCustomer()
     {
-        target = deliverAssigned.transform;
-        transform.LookAt(target);
-        transform.position = transform.forward *speed *  Time.deltaTime;
+        if (!coolDown && counter <= 5)
+        {
+            StartCoroutine(TimeToSpawn());
+        }
+        
     }
 
-    void AskForDrink()
+    IEnumerator TimeToSpawn()
     {
-        Debug.Log("Y want a drink");
+        coolDown = true;
+        Instantiate(customerPrefab, entryPos.position, Quaternion.identity);
+        counter++;
+        yield return new WaitForSeconds(5);
+        coolDown = false;
     }
 
 

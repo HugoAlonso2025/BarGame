@@ -8,7 +8,8 @@ public class RequestController : MonoBehaviour
     [SerializeField]  int drinkMade;
 
     bool hasOrdered = false;
-    bool glassPlaced = false;
+    public bool glassPlaced = false;
+    public bool isTaken = false;
 
     [SerializeField] float radius;
 
@@ -22,10 +23,13 @@ public class RequestController : MonoBehaviour
     Collider[] glasses;
 
     Transform _glassObject;
+    GameObject _glass;
 
     SetDrinkType drink;
 
-    void AskForDrink()
+
+
+    public void AskForDrink()
     {
         option = Random.Range(0, 3);
         if(!hasOrdered)
@@ -35,25 +39,25 @@ public class RequestController : MonoBehaviour
                 case 0:
 
                     hasOrdered = true;
-                    Debug.Log("Quiero un número: " + option);
+                    Debug.Log("Quiero un error");
                     break;
 
                 case 1:
 
                     hasOrdered = true;
-                    Debug.Log("Quiero un número: " + option);
+                    Debug.Log("Quiero un rojo");
                     break;
 
                 case 2:
 
                     hasOrdered = true;
-                    Debug.Log("Quiero un número: " + option);
+                    Debug.Log("Quiero un azul");
                     break;
 
                 case 3:
 
                     hasOrdered = true;
-                    Debug.Log("Quiero un número: " + option);
+                    Debug.Log("Quiero un combi");
                     break;
             }  
         }
@@ -64,10 +68,13 @@ public class RequestController : MonoBehaviour
         if (option == drinkMade)
         {
             Debug.Log("Sucess");
+            _glassObject.gameObject.SetActive(false);
+
         }
         else
         {
             Debug.Log("Fail");
+            _glassObject.gameObject.SetActive(false);
         }
     }
 
@@ -87,22 +94,8 @@ public class RequestController : MonoBehaviour
                 drink = col.GetComponentInChildren<SetDrinkType>();
                 drinkMade = drink.option;
 
-                if (Input.GetKeyDown(KeyCode.Q))
-                {
-                    CheckOrder();
-                }
-                
+                CheckOrder();
             }
-        }
-
-        if (glasses.Length <= 0)
-        {
-            //hasOrdered = false;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space) && !hasOrdered)
-        {
-            AskForDrink();
         }
     }
 
