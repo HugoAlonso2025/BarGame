@@ -7,8 +7,9 @@ public class CustomerBehaviour : MonoBehaviour
     GameObject deliverAssigned;
     Vector3 target;
     [SerializeField] float speed;
-    [SerializeField] Vector3 radius;
+    [SerializeField] float radius;
     [SerializeField] float mRadius;
+    [SerializeField] Transform pos;
     GameObject exitPos;
     bool posReached = false;
     [SerializeField] LayerMask askPos;
@@ -56,7 +57,7 @@ public class CustomerBehaviour : MonoBehaviour
             MoveTowardsExit();
         }
 
-        if(Physics.CheckSphere(transform.position, mRadius, exitMask) && onExit)
+        if(Physics.CheckSphere(pos.position, mRadius, exitMask) && onExit)
         {
             gameObject.SetActive(false);
         }
@@ -64,7 +65,7 @@ public class CustomerBehaviour : MonoBehaviour
 
     void CheckPositionReached()
     {
-        if(Physics.CheckBox(transform.position, radius, Quaternion.identity,  askPos))
+        if(Physics.CheckSphere(pos.position, radius,  askPos))
         {
             posReached = true;
             request.isTaken = true;
@@ -95,8 +96,8 @@ public class CustomerBehaviour : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(transform.position, radius);
-        Gizmos.DrawWireSphere(transform.position, mRadius);
+        Gizmos.DrawWireSphere(pos.position, radius);
+        Gizmos.DrawWireSphere(pos.position, mRadius);
     }
 
     IEnumerator AnimationTime()

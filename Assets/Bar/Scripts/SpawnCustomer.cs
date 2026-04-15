@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpawnCustomer : MonoBehaviour
@@ -11,17 +12,21 @@ public class SpawnCustomer : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("InstantiateCustomer", 0, 5);
         rotationNPC = entryPos.rotation;
     }
 
     void InstantiateCustomer()
     {
-        if (!coolDown && counter <= 5)
+        if (!coolDown && counter < 2)
         {
             StartCoroutine(TimeToSpawn());
         }
         
+    }
+
+    private void Update()
+    {
+        InstantiateCustomer();
     }
 
     IEnumerator TimeToSpawn()
@@ -29,7 +34,7 @@ public class SpawnCustomer : MonoBehaviour
         coolDown = true;
         Instantiate(customerPrefab, entryPos.position, rotationNPC);
         counter++;
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(10);
         coolDown = false;
     }
 
