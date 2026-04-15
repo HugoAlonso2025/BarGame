@@ -22,8 +22,7 @@ public class RequestController : MonoBehaviour
 
     Collider[] glasses;
 
-    Transform _glassObject;
-    GameObject _glass;
+    GameObject _glassObject;
 
     SetDrinkType drink;
 
@@ -86,15 +85,20 @@ public class RequestController : MonoBehaviour
         {
             if (glasses.Length == 1)
             {
-                _glassObject = col.GetComponentInParent<Transform>();
-                _glassObject.transform.position = glassPos.position;
-                glassPlaced = true;
-                col.attachedRigidbody.isKinematic = true;
-
+                //_glassObject = col.GetComponentInParent<Transform>();
+                //_glassObject.transform.position = glassPos.position;
+                _glassObject = col.gameObject;
                 drink = col.GetComponentInChildren<SetDrinkType>();
-                drinkMade = drink.option;
 
-                CheckOrder();
+                if (drink != null)
+                {
+                    col.transform.position = glassPos.position;
+                    glassPlaced = true;
+                    col.attachedRigidbody.isKinematic = true;
+
+                    drinkMade = drink.option;
+                    CheckOrder();
+                }
             }
         }
     }
