@@ -22,6 +22,7 @@ public class RequestController : MonoBehaviour
     [SerializeField] float timeLapse;
 
     Collider[] glasses;
+    public Transform[] positions;
 
     GameObject _glassObject;
 

@@ -16,6 +16,9 @@ public class CustomerBehaviour : MonoBehaviour
     [SerializeField] LayerMask exitMask;
     RequestController request;
     bool onExit = false;
+    bool movingToTarget;
+
+
 
     Animator animator;
 
@@ -86,6 +89,16 @@ public class CustomerBehaviour : MonoBehaviour
 
     void MoveTowardsDeliver()
     {
+        //for(int i = 0;  i < request.positions.Length; i++)
+        //{
+        //    if (request.positions[i] != null && !movingToTarget)
+        //    {
+        //        movingToTarget = true;
+        //        target = new Vector3(request.positions[i].position.x, transform.position.y, request.positions[i].position.z);
+        //        continue;
+        //    }
+        //}
+
         target = new Vector3(deliverAssigned.transform.position.x, transform.position.y, deliverAssigned.transform.position.z);
         transform.LookAt(target);
         transform.position += transform.forward * speed *  Time.deltaTime;
@@ -98,6 +111,7 @@ public class CustomerBehaviour : MonoBehaviour
 
     void MoveTowardsExit()
     {
+        request.isTaken = false;
         target = new Vector3(exitPos.transform.position.x, transform.position.y, exitPos.transform.position.z);
         transform.LookAt(exitPos.transform);
         transform.position += transform.forward * speed * Time.deltaTime;

@@ -75,7 +75,7 @@ public class GlassFillingUp : MonoBehaviour
                 else
                 {
                     waterPercentage += 1;
-                    value += 0.001f;
+                    value += 0.01f;
                 }
                     
                 if(normal)
