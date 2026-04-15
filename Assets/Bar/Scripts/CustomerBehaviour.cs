@@ -31,6 +31,11 @@ public class CustomerBehaviour : MonoBehaviour
                 continue;
             }
         }
+
+        if (request.isTable)
+        {
+            animator.SetBool("isSitting", true);
+        }
     }
 
     private void Start()
@@ -106,12 +111,21 @@ public class CustomerBehaviour : MonoBehaviour
 
     IEnumerator AnimationTime()
     {
-        animator.SetBool("pickGlass", true);
-        animator.SetBool("isSitting", false);
-        yield return new WaitForSeconds(0.7f);
-        animator.SetBool("pickGlass", false);
-        yield return new WaitForSeconds(3f);
-        animator.SetBool("isWaiting", false);
+        if (!request.isTable)
+        {
+            animator.SetBool("pickGlass", true);
+            yield return new WaitForSeconds(0.7f);
+            animator.SetBool("pickGlass", false);
+            yield return new WaitForSeconds(3f);
+            animator.SetBool("isWaiting", false);
+        }
+        else
+        {
+            animator.SetBool("pickGlass", true);
+            yield return new WaitForSeconds(0.7f);
+            animator.SetBool("pickGlass", false);
+            animator.SetBool("isWaiting", false);
+        }
         onExit = true;
     }
 }

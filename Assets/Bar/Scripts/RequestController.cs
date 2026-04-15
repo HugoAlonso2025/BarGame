@@ -10,6 +10,7 @@ public class RequestController : MonoBehaviour
     bool hasOrdered = false;
     public bool glassPlaced = false;
     public bool isTaken = false;
+    public bool isTable;
 
     [SerializeField] float radius;
 
