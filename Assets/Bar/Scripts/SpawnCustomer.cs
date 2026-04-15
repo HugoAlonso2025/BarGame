@@ -7,10 +7,12 @@ public class SpawnCustomer : MonoBehaviour
     [SerializeField] Transform entryPos;
     bool coolDown = false;
     int counter = 0;
+    Quaternion rotationNPC;
 
     private void Start()
     {
         InvokeRepeating("InstantiateCustomer", 0, 5);
+        rotationNPC = entryPos.rotation;
     }
 
     void InstantiateCustomer()
@@ -25,7 +27,7 @@ public class SpawnCustomer : MonoBehaviour
     IEnumerator TimeToSpawn()
     {
         coolDown = true;
-        Instantiate(customerPrefab, entryPos.position, Quaternion.identity);
+        Instantiate(customerPrefab, entryPos.position, rotationNPC);
         counter++;
         yield return new WaitForSeconds(5);
         coolDown = false;
