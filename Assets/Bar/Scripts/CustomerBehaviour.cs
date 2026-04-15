@@ -17,6 +17,8 @@ public class CustomerBehaviour : MonoBehaviour
     RequestController request;
     bool onExit = false;
 
+    Animator animator;
+
     void AssignDeliver()
     {
         for (int i = 0; i < requests.Length; i++)
@@ -35,6 +37,7 @@ public class CustomerBehaviour : MonoBehaviour
     {
         requests = FindObjectsOfType<RequestController>();
         exitPos = GameObject.Find("SpawnPos");
+        animator = GetComponent<Animator>();
         AssignDeliver();
     }
 
@@ -70,6 +73,7 @@ public class CustomerBehaviour : MonoBehaviour
             posReached = true;
             request.isTaken = true;
             request.AskForDrink();
+            animator.SetBool("isWaiting", true);
         }
     }
 
@@ -102,7 +106,12 @@ public class CustomerBehaviour : MonoBehaviour
 
     IEnumerator AnimationTime()
     {
-        yield return new WaitForSeconds(2);
+        animator.SetBool("pickGlass", true);
+        animator.SetBool("isSitting", false);
+        yield return new WaitForSeconds(0.7f);
+        animator.SetBool("pickGlass", false);
+        yield return new WaitForSeconds(3f);
+        animator.SetBool("isWaiting", false);
         onExit = true;
     }
 }
