@@ -32,10 +32,7 @@ public class CustomerBehaviour : MonoBehaviour
             }
         }
 
-        if (request.isTable)
-        {
-            animator.SetBool("isSitting", true);
-        }
+        
     }
 
     private void Start()
@@ -79,6 +76,11 @@ public class CustomerBehaviour : MonoBehaviour
             request.isTaken = true;
             request.AskForDrink();
             animator.SetBool("isWaiting", true);
+
+            if (request.isTable)
+            {
+                StartCoroutine(Sit());
+            }
         }
     }
 
@@ -109,6 +111,13 @@ public class CustomerBehaviour : MonoBehaviour
         Gizmos.DrawWireSphere(pos.position, mRadius);
     }
 
+    IEnumerator Sit()
+    {
+        animator.SetBool("isSitting", true);
+        yield return new WaitForSeconds(1);
+        animator.SetBool("isWaiting", true);
+    }
+
     IEnumerator AnimationTime()
     {
         if (!request.isTable)
@@ -122,9 +131,10 @@ public class CustomerBehaviour : MonoBehaviour
         else
         {
             animator.SetBool("pickGlass", true);
-            yield return new WaitForSeconds(0.7f);
+            yield return new WaitForSeconds(3f);
             animator.SetBool("pickGlass", false);
             animator.SetBool("isWaiting", false);
+            animator.SetBool("isSitting", false);
         }
         onExit = true;
     }
