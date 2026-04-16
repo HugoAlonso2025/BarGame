@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using System.Collections;
 using UnityEngine;
 
@@ -18,8 +19,9 @@ public class CustomerBehaviour : MonoBehaviour
     bool onExit = false;
     bool movingToTarget;
     int currentIndex;
-    [SerializeField] Transform areaPos;
     bool justExit = true;
+    bool glassOnHand;
+    [SerializeField] Transform _glassPos;
 
     SpawnCustomer counter;
 
@@ -74,6 +76,7 @@ public class CustomerBehaviour : MonoBehaviour
             {
                 justExit = false;
                 currentIndex -= 2;
+                request.hasOrdered = false;
             }
             
             MoveTowardsExit();
@@ -83,6 +86,11 @@ public class CustomerBehaviour : MonoBehaviour
         {
             counter.counter--;
             gameObject.SetActive(false);
+        }
+
+        if (glassOnHand)
+        {
+            request._glassObject.transform.position = _glassPos.position;
         }
     }
 
@@ -182,15 +190,21 @@ public class CustomerBehaviour : MonoBehaviour
         {
             animator.SetBool("pickGlass", true);
             yield return new WaitForSeconds(0.7f);
+            glassOnHand = true;
             animator.SetBool("pickGlass", false);
             yield return new WaitForSeconds(3f);
+            glassOnHand = false;
+            request._glassObject.SetActive(false);
             animator.SetBool("isWaiting", false);
         }
         else
         {
             animator.SetBool("pickGlass", true);
+            glassOnHand = true;
             yield return new WaitForSeconds(3f);
             animator.SetBool("pickGlass", false);
+            glassOnHand = false;
+            request._glassObject.SetActive(false);
             animator.SetBool("isWaiting", false);
             animator.SetBool("isSitting", false);
         }

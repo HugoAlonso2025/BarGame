@@ -7,7 +7,7 @@ public class RequestController : MonoBehaviour
     [SerializeField]  int option;
     [SerializeField]  int drinkMade;
 
-    bool hasOrdered = false;
+    public bool hasOrdered = false;
     public bool glassPlaced = false;
     public bool isTaken = false;
     public bool isTable;
@@ -24,7 +24,7 @@ public class RequestController : MonoBehaviour
     Collider[] glasses;
     public Transform[] positions;
 
-    GameObject _glassObject;
+    public GameObject _glassObject;
 
     SetDrinkType drink;
 
@@ -69,13 +69,13 @@ public class RequestController : MonoBehaviour
         if (option == drinkMade)
         {
             Debug.Log("Sucess");
-            _glassObject.gameObject.SetActive(false);
+            //_glassObject.gameObject.SetActive(false);
 
         }
         else
         {
             Debug.Log("Fail");
-            _glassObject.gameObject.SetActive(false);
+            //_glassObject.gameObject.SetActive(false);
         }
     }
 
@@ -89,7 +89,6 @@ public class RequestController : MonoBehaviour
             {
                 _glassObject = col.gameObject;
                 drink = col.GetComponentInChildren<SetDrinkType>();
-                Debug.Log("det");
 
                 if (drink != null && hasOrdered)
                 {

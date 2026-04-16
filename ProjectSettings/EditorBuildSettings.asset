@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/dearVR/Scene/dearVRDemoScene.unity
     guid: 05eaf809ee0f94060a1a7baa6dc1865e
+  - enabled: 1
+    path: Assets/Bar/Scenes/Level.unity
+    guid: 21ce36fead78a814db9a8e50151179ec
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 7cb79a7f3860dd54d8e2fc8578416245,
       type: 2}

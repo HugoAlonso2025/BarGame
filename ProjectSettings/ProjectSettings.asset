@@ -167,7 +167,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   androidMinAspectRatio: 1
   applicationIdentifier:
-    Android: com.ImmersiveOasis.AudioTest
+    Android: com.ImmersiveOasis.BarTest
     Standalone: com.DefaultCompany.Core-Project
   buildNumber:
     Standalone: 0
@@ -267,7 +267,7 @@ PlayerSettings:
   useCustomGradlePropertiesTemplate: 0
   useCustomGradleSettingsTemplate: 0
   useCustomProguardFile: 0
-  AndroidTargetArchitectures: 1
+  AndroidTargetArchitectures: 2
   AndroidAllowedArchitectures: -1
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
@@ -758,13 +758,13 @@ PlayerSettings:
   webWasm2023: 0
   webEnableSubmoduleStrippingCompatibility: 0
   scriptingDefineSymbols:
-    Android: BAKERY_INCLUDED;NORMCORE
+    Android: BAKERY_INCLUDED;NORMCORE;USE_INPUT_SYSTEM_POSE_CONTROL;USE_STICK_CONTROL_THUMBSTICKS
     Nintendo Switch: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER
     PS4: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER
     Stadia: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER
-    Standalone: BAKERY_INCLUDED
+    Standalone: BAKERY_INCLUDED;USE_INPUT_SYSTEM_POSE_CONTROL;USE_STICK_CONTROL_THUMBSTICKS
     WebGL: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER
-    Windows Store Apps: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER
+    Windows Store Apps: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;USE_INPUT_SYSTEM_POSE_CONTROL;USE_STICK_CONTROL_THUMBSTICKS
     XboxOne: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER
     iPhone: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER
     tvOS: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER
@@ -884,7 +884,7 @@ PlayerSettings:
   qnxGraphicConfPath: 
   apiCompatibilityLevel: 6
   captureStartupLogs: {}
-  activeInputHandler: 2
+  activeInputHandler: 0
   windowsGamepadBackendHint: 0
   cloudProjectId: 4af39d4d-f6df-4309-a79d-a485103eb690
   framebufferDepthMemorylessMode: 0
