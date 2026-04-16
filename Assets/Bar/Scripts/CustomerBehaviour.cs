@@ -205,6 +205,7 @@ public class CustomerBehaviour : MonoBehaviour
             animator.SetBool("pickGlass", false);
             glassOnHand = false;
             request._glassObject.SetActive(false);
+            yield return new WaitForSeconds(1f);
             animator.SetBool("isWaiting", false);
             animator.SetBool("isSitting", false);
         }

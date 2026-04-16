@@ -25,6 +25,7 @@ public class RequestController : MonoBehaviour
     public Transform[] positions;
 
     public GameObject _glassObject;
+    Rigidbody rb;
 
     SetDrinkType drink;
 
@@ -90,7 +91,9 @@ public class RequestController : MonoBehaviour
                 _glassObject = col.gameObject;
                 drink = col.GetComponentInChildren<SetDrinkType>();
 
-                if (drink != null && hasOrdered)
+                rb = col.attachedRigidbody;
+
+                if (drink != null && hasOrdered && !rb.isKinematic)
                 {
                     col.transform.position = glassPos.position;
                     glassPlaced = true;
