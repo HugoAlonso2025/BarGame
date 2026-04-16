@@ -14,10 +14,8 @@ public class BottleAim : MonoBehaviour
 
         if (transform.localEulerAngles.z > 90 && transform.localEulerAngles.z < 270)
         {
-            Debug.Log("Abajo");
             if (liquidGO == null)
             {
-                Debug.Log("Inst");
                 liquidGO = Instantiate(liquidPrefab, _waterPos.position, _waterPos.rotation, transform);
             }
         }

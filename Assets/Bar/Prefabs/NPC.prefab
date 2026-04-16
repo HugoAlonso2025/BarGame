@@ -187,7 +187,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -209,8 +209,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   speed: 0.5
-  radius: 0.61
-  mRadius: 0.72
+  radius: 0.5
+  mRadius: 0.5
   pos: {fileID: 6735229822306222994}
   askPos:
     serializedVersion: 2
@@ -218,6 +218,7 @@ MonoBehaviour:
   exitMask:
     serializedVersion: 2
     m_Bits: 32768
+  areaPos: {fileID: 0}
 --- !u!95 &7008132475316591779
 Animator:
   serializedVersion: 7

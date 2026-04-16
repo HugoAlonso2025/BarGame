@@ -17,8 +17,11 @@ public class CustomerBehaviour : MonoBehaviour
     RequestController request;
     bool onExit = false;
     bool movingToTarget;
+    int currentIndex;
+    [SerializeField] Transform areaPos;
+    bool justExit = true;
 
-
+    SpawnCustomer counter;
 
     Animator animator;
 
@@ -43,6 +46,7 @@ public class CustomerBehaviour : MonoBehaviour
         requests = FindObjectsOfType<RequestController>();
         exitPos = GameObject.Find("SpawnPos");
         animator = GetComponent<Animator>();
+        counter = FindAnyObjectByType<SpawnCustomer>();
         AssignDeliver();
     }
 
@@ -50,8 +54,12 @@ public class CustomerBehaviour : MonoBehaviour
     {
         if (deliverAssigned != null && !posReached)
         {
-            CheckPositionReached();
             MoveTowardsDeliver();
+
+            if (currentIndex == request.positions.Length)
+            {
+                CheckPositionReached();
+            }
         }
 
         if(request.glassPlaced)
@@ -62,11 +70,18 @@ public class CustomerBehaviour : MonoBehaviour
 
         if(onExit)
         {
+            if (justExit)
+            {
+                justExit = false;
+                currentIndex -= 2;
+            }
+            
             MoveTowardsExit();
         }
 
         if(Physics.CheckSphere(pos.position, mRadius, exitMask) && onExit)
         {
+            counter.counter--;
             gameObject.SetActive(false);
         }
     }
@@ -89,19 +104,30 @@ public class CustomerBehaviour : MonoBehaviour
 
     void MoveTowardsDeliver()
     {
-        //for(int i = 0;  i < request.positions.Length; i++)
-        //{
-        //    if (request.positions[i] != null && !movingToTarget)
-        //    {
-        //        movingToTarget = true;
-        //        target = new Vector3(request.positions[i].position.x, transform.position.y, request.positions[i].position.z);
-        //        continue;
-        //    }
-        //}
+        if (currentIndex >= request.positions.Length) return;
 
-        target = new Vector3(deliverAssigned.transform.position.x, transform.position.y, deliverAssigned.transform.position.z);
-        transform.LookAt(target);
-        transform.position += transform.forward * speed *  Time.deltaTime;
+        if (!movingToTarget && request.positions[currentIndex] != null)
+        {
+            movingToTarget = true;
+            target = new Vector3(request.positions[currentIndex].position.x, transform.position.y, request.positions[currentIndex].position.z);
+        }
+
+        if (movingToTarget)
+        {
+            transform.LookAt(target);
+            transform.position += transform.forward * speed * Time.deltaTime;
+
+            float threshold = 0.1f;
+            if (Vector3.Distance(transform.position, target) < threshold)
+            {
+                movingToTarget = false;
+                currentIndex++; // pasar al siguiente punto
+            }
+        }
+
+        //target = new Vector3(deliverAssigned.transform.position.x, transform.position.y, deliverAssigned.transform.position.z);
+        //transform.LookAt(target);
+        //transform.position += transform.forward * speed *  Time.deltaTime;
     }
 
     void DoAnimation()
@@ -112,9 +138,27 @@ public class CustomerBehaviour : MonoBehaviour
     void MoveTowardsExit()
     {
         request.isTaken = false;
-        target = new Vector3(exitPos.transform.position.x, transform.position.y, exitPos.transform.position.z);
-        transform.LookAt(exitPos.transform);
-        transform.position += transform.forward * speed * Time.deltaTime;
+        if (currentIndex >= request.positions.Length) return;
+
+
+        if (!movingToTarget && request.positions[currentIndex] != null)
+        {
+            movingToTarget = true;
+            target = new Vector3(request.positions[currentIndex].position.x, transform.position.y, request.positions[currentIndex].position.z);
+        }
+
+        if (movingToTarget)
+        {
+            transform.LookAt(target);
+            transform.position += transform.forward * speed * Time.deltaTime;
+
+            float threshold = 0.1f;
+            if (Vector3.Distance(transform.position, target) < threshold)
+            {
+                movingToTarget = false;
+                currentIndex--; // pasar al siguiente punto
+            }
+        }
     }
 
 

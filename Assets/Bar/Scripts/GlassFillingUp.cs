@@ -14,6 +14,7 @@ public class GlassFillingUp : MonoBehaviour
     [SerializeField] Material _altMat;
     [SerializeField] Material _combMat;
     [SerializeField] Material _errorMat;
+    bool materialAsigned;
 
     Rigidbody rb;
 
@@ -69,29 +70,48 @@ public class GlassFillingUp : MonoBehaviour
             {
                 if(isCup)
                 {
-                    waterPercentage += 1;
-                    value += 0.00035f;
+                    waterPercentage += 0.4f;
+                    value += 0.00014f;
                 }
                 else
                 {
-                    waterPercentage += 1;
-                    value += 0.01f;
+                    waterPercentage += 0.25f;
+                    value += 0.00025f;
                 }
                     
                 if(normal)
                 {
-                    normalCount++;
-                    Debug.Log("Normal: " + normalCount);
+                    
+                    if (isCup)
+                    {
+                        normalCount += 0.4f;
+                        Debug.Log("ALt: " + normalCount);
+                    }
+                    else
+                    {
+                        normalCount += 0.25f;
+                        Debug.Log("Normal: " + normalCount);
+                    }
                 }
                 else if(alt)
                 {
-                    altCount++;
-                    Debug.Log("ALt: " + altCount);
+                    if (isCup)
+                    {
+                        altCount += 0.4f;
+                        Debug.Log("ALt: " + altCount);
+                    }
+                    else
+                    {
+                        altCount += 0.25f;
+                        Debug.Log("ALt: " + altCount);
+                    }
+                    
                 }
             }
         }
-        if (waterPercentage == 1)
+        if (waterPercentage > 0 && !materialAsigned)
         {
+            materialAsigned = true;
             if (normal)
             {
                 rend.material = _normalMat;

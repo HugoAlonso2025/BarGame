@@ -89,6 +89,7 @@ public class RequestController : MonoBehaviour
             {
                 _glassObject = col.gameObject;
                 drink = col.GetComponentInChildren<SetDrinkType>();
+                Debug.Log("det");
 
                 if (drink != null && hasOrdered)
                 {

@@ -130,13 +130,15 @@ MonoBehaviour:
   drinkMade: 0
   glassPlaced: 0
   isTaken: 0
+  isTable: 0
   radius: 0.3
   glassPos: {fileID: 5207982979950741937}
   glassMask:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 1024
   textRequest: 
   timeLapse: 0
+  positions: []
 --- !u!1 &8554457013898800036
 GameObject:
   m_ObjectHideFlags: 0
