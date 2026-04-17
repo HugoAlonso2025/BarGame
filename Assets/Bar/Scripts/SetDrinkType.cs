@@ -2,24 +2,39 @@ using UnityEngine;
 
 public class SetDrinkType : MonoBehaviour
 {
-    public bool comb1Drink;
+    public bool purpleDrink;
     public bool blueDrink;
     public bool redDrink;
+    public bool yellowDrink;
+    public bool greenDrink;
+    public bool orangeDrink;
     public bool mistakeDrink;
 
     public int option;
 
     void SetValueToOrder()
     {
-        if (comb1Drink)
+        if (purpleDrink)
+        {
+            option = 6;
+        }
+        else if (greenDrink)
+        {
+            option = 5;
+        }
+        else if (orangeDrink)
+        {
+            option = 4;
+        }
+        else if (yellowDrink)
         {
             option = 3;
         }
-        else if (blueDrink)
+        else if (redDrink)
         {
             option = 2;
         }
-        else if (redDrink)
+        else if (blueDrink)
         {
             option = 1;
         }

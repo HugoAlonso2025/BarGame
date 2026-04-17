@@ -4,7 +4,7 @@ using static UnityEngine.GraphicsBuffer;
 public class RequestController : MonoBehaviour
 {
 
-    [SerializeField]  int option;
+    public int option;
     [SerializeField]  int drinkMade;
 
     public bool hasOrdered = false;
@@ -35,7 +35,7 @@ public class RequestController : MonoBehaviour
 
     public void AskForDrink()
     {
-        option = Random.Range(0, 3);
+        option = Random.Range(0, 7);
         if(!hasOrdered)
         {
             switch(option)
@@ -49,19 +49,42 @@ public class RequestController : MonoBehaviour
                 case 1:
 
                     hasOrdered = true;
-                    Debug.Log("Quiero un rojo");
+                    Debug.Log("Quiero un azul");
                     break;
 
                 case 2:
 
                     hasOrdered = true;
-                    Debug.Log("Quiero un azul");
+                    Debug.Log("Quiero un rojo");
                     break;
 
                 case 3:
 
                     hasOrdered = true;
-                    Debug.Log("Quiero un combi");
+                    Debug.Log("Quiero un amarillo");
+                    break;
+
+                case 4:
+
+                    hasOrdered = true;
+                    Debug.Log("Quiero un naranja");
+                    break;
+
+                case 5:
+
+                    hasOrdered = true;
+                    Debug.Log("Quiero un verde");
+                    break;
+
+                case 6:
+
+                    hasOrdered = true;
+                    Debug.Log("Quiero un morado");
+                    break;
+
+                default:
+
+                    Debug.Log("AAA");
                     break;
             }  
         }
@@ -73,14 +96,12 @@ public class RequestController : MonoBehaviour
         {
             Debug.Log("Sucess");
             sucess = true;
-            //_glassObject.gameObject.SetActive(false);
 
         }
         else
         {
             Debug.Log("Fail");
             fail = true;
-            //_glassObject.gameObject.SetActive(false);
         }
     }
 

@@ -5,30 +5,47 @@ using UnityEngine;
 
 public class CustomerBehaviour : MonoBehaviour
 {
-    [SerializeField] RequestController[] requests;
-    GameObject deliverAssigned;
+    [SerializeField] Transform pos;
+    [SerializeField] Transform _glassPos;
+
     Vector3 target;
+
+    GameObject deliverAssigned;
+    [SerializeField] GameObject _canvas;
+
+    [SerializeField] LayerMask askPos;
+    [SerializeField] LayerMask exitMask;
+
     [SerializeField] float speed;
     [SerializeField] float radius;
     [SerializeField] float mRadius;
-    [SerializeField] Transform pos;
-    GameObject exitPos;
+
+    int currentIndex;
+
     bool posReached = false;
-    [SerializeField] LayerMask askPos;
-    [SerializeField] LayerMask exitMask;
-    RequestController request;
     bool onExit = false;
     bool movingToTarget;
-    int currentIndex;
     bool justExit = true;
     bool glassOnHand;
-    [SerializeField] Transform _glassPos;
 
+    RequestController request;
     SpawnCustomer counter;
-
     ExpressionManager expression;
+    UIBehaviour ui;
+    [SerializeField] RequestController[] requests;
 
     Animator animator;
+
+    private void Start()
+    {
+        requests = FindObjectsOfType<RequestController>();
+        animator = GetComponent<Animator>();
+        counter = FindAnyObjectByType<SpawnCustomer>();
+        expression = GetComponentInChildren<ExpressionManager>();
+        ui = GetComponentInChildren<UIBehaviour>();
+        AssignDeliver();
+        expression.SetBaseActive();
+    }
 
     void AssignDeliver()
     {
@@ -42,19 +59,6 @@ public class CustomerBehaviour : MonoBehaviour
                 continue;
             }
         }
-
-        
-    }
-
-    private void Start()
-    {
-        requests = FindObjectsOfType<RequestController>();
-        exitPos = GameObject.Find("SpawnPos");
-        animator = GetComponent<Animator>();
-        counter = FindAnyObjectByType<SpawnCustomer>();
-        expression = GetComponentInChildren<ExpressionManager>();
-        AssignDeliver();
-        expression.SetBaseActive();
     }
 
     private void Update()
@@ -79,6 +83,7 @@ public class CustomerBehaviour : MonoBehaviour
         {
             if (justExit)
             {
+                _canvas.SetActive(false);
                 justExit = false;
                 currentIndex -= 2;
                 request.hasOrdered = false;
@@ -101,6 +106,47 @@ public class CustomerBehaviour : MonoBehaviour
         }
     }
 
+    void ActivateUI()
+    {
+        switch(request.option)
+        {
+            case 0:
+
+                ui.SetActiveError();
+                break;
+
+            case 1:
+
+                ui.SetActiveBlue();
+                break;
+
+            case 2:
+
+                ui.SetActiveRed();
+                break;
+
+            case 3:
+
+                ui.SetActiveYellow();
+                break;
+
+            case 4:
+
+                ui.SetActiveOrange();
+                break;
+
+            case 5:
+
+                ui.SetActiveGreen();
+                break;
+
+            case 6:
+
+                ui.SetActivePurple();
+                break;
+        }
+    }
+
     void CheckPositionReached()
     {
         if(Physics.CheckSphere(pos.position, radius,  askPos))
@@ -108,6 +154,7 @@ public class CustomerBehaviour : MonoBehaviour
             posReached = true;
             request.isTaken = true;
             request.AskForDrink();
+            ActivateUI();
             animator.SetBool("isWaiting", true);
 
 
@@ -118,6 +165,7 @@ public class CustomerBehaviour : MonoBehaviour
             else
             {
                 StartCoroutine(Talk());
+                _canvas.SetActive(true);
             }
         }
     }
@@ -200,6 +248,7 @@ public class CustomerBehaviour : MonoBehaviour
         animator.SetBool("isSitting", true);
         yield return new WaitForSeconds(1);
         animator.SetBool("isWaiting", true);
+        _canvas.SetActive(true);
         StartCoroutine(Talk());
         
     }

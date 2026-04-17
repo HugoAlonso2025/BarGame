@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5605457699905601765}
   - component: {fileID: 4103396582440025962}
   m_Layer: 0
-  m_Name: WaterParticlesNormal
-  m_TagString: normal
+  m_Name: WaterParticlesYellow
+  m_TagString: yellow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -223,7 +223,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.057249546, g: 0, b: 1, a: 1}
+      maxColor: {r: 1, g: 0.8700229, b: 0, a: 0.65882355}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4783,7 +4783,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e219b79874c72194dabf27de99f80017, type: 2}
+  - {fileID: 2100000, guid: 7713f838ab99988468795d7389071f98, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

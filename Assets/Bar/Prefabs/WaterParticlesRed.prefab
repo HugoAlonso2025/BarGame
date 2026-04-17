@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5605457699905601765}
   - component: {fileID: 4103396582440025962}
   m_Layer: 0
-  m_Name: WaterParticlesAlt
+  m_Name: WaterParticlesRed
   m_TagString: red
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

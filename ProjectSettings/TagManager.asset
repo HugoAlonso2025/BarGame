@@ -5,10 +5,11 @@ TagManager:
   serializedVersion: 3
   tags:
   - particle
-  - normal
   - red
   - floor
   - glass
+  - blue
+  - yellow
   layers:
   - Default
   - TransparentFX

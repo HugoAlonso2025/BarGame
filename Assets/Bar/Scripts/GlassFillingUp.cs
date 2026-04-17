@@ -7,21 +7,27 @@ public class GlassFillingUp : MonoBehaviour
     public float waterPercentage;
 
     [SerializeField] float value;
-    [SerializeField] float normalCount;
-    [SerializeField] float altCount;
-    Renderer rend;
-    [SerializeField] Material _normalMat;
-    [SerializeField] Material _altMat;
-    [SerializeField] Material _combMat;
-    [SerializeField] Material _errorMat;
-    bool materialAsigned;
+    [SerializeField] float blueCount;
+    [SerializeField] float redCount;
+    [SerializeField] float yellowCount;
 
-    Rigidbody rb;
+    Renderer rend;
+
+    [SerializeField] Material _blueMat;
+    [SerializeField] Material _redMat;
+    [SerializeField] Material _yellowMat;
+    [SerializeField] Material _combPurpleMat;
+    [SerializeField] Material _combGreenMat;
+    [SerializeField] Material _combOrgangeMat;
+    [SerializeField] Material _errorMat;
+
+    bool materialAsigned;
 
     SetDrinkType drink;
 
-    bool normal = false;
-    bool alt = false;
+    bool blue = false;
+    bool red = false;
+    bool yellow = false;
     bool drinkFinished = false;
     [SerializeField] bool isCup = false;
 
@@ -37,7 +43,7 @@ public class GlassFillingUp : MonoBehaviour
         {
             value = -0.07f;
         }
-        rb = GetComponent<Rigidbody>();
+
         rend = GetComponent<Renderer>();
         drink = GetComponent<SetDrinkType>();
     }
@@ -53,16 +59,24 @@ public class GlassFillingUp : MonoBehaviour
 
         if(other.tag == "red")
         {
-            alt = true;
-            normal = false;
+            red = true;
+            blue = false;
+            yellow = false;
         }
-        else if (other.tag == "normal")
+        else if (other.tag == "blue")
         {
-            normal = true;
-            alt = false;
+            blue = true;
+            red = false;
+            yellow = false;
+        }
+        else if (other.tag == "yellow")
+        {
+            red = false;
+            blue = false;
+            yellow = true;
         }
 
-        int count = ps.GetCollisionEvents(gameObject, collisionEvents);
+            int count = ps.GetCollisionEvents(gameObject, collisionEvents);
 
         if(waterPercentage < 100)
         {
@@ -79,46 +93,62 @@ public class GlassFillingUp : MonoBehaviour
                     value += 0.00025f;
                 }
                     
-                if(normal)
+                if(blue)
                 {
                     
                     if (isCup)
                     {
-                        normalCount += 0.4f;
-                        Debug.Log("ALt: " + normalCount);
+                        blueCount += 0.4f;
+                        Debug.Log("Blue: " + blueCount);
                     }
                     else
                     {
-                        normalCount += 0.25f;
-                        Debug.Log("Normal: " + normalCount);
+                        blueCount += 0.25f;
+                        Debug.Log("Blue: " + blueCount);
                     }
                 }
-                else if(alt)
+                else if(red)
                 {
                     if (isCup)
                     {
-                        altCount += 0.4f;
-                        Debug.Log("ALt: " + altCount);
+                        redCount += 0.4f;
+                        Debug.Log("Red: " + redCount);
                     }
                     else
                     {
-                        altCount += 0.25f;
-                        Debug.Log("ALt: " + altCount);
+                        redCount += 0.25f;
+                        Debug.Log("Red: " + redCount);
+                    }  
+                }
+                else if (yellow)
+                {
+                    if (isCup)
+                    {
+                        yellowCount += 0.4f;
+                        Debug.Log("Yellow: " + yellowCount);
                     }
-                    
+                    else
+                    {
+                        redCount += 0.25f;
+                        Debug.Log("Yellow: " + yellowCount);
+                    }
                 }
             }
         }
         if (waterPercentage > 0 && !materialAsigned)
         {
             materialAsigned = true;
-            if (normal)
+            if (blue)
             {
-                rend.material = _normalMat;
+                rend.material = _blueMat;
             }
-            else if (alt)
+            else if (red)
             {
-                rend.material = _altMat;
+                rend.material = _redMat;
+            }
+            else if (yellow)
+            {
+                rend.material = _yellowMat;
             }
         }
 
@@ -126,23 +156,41 @@ public class GlassFillingUp : MonoBehaviour
         {
             drinkFinished = true;
 
-            if (normalCount >= 45 && normalCount < 55 && altCount >= 45 && altCount < 55)
+            if (blueCount >= 45 && blueCount < 55 && redCount >= 45 && redCount < 55)
             {
-                Debug.Log("Comb");
-                drink.comb1Drink = true;
-                rend.material = _combMat;
+                Debug.Log("Purple");
+                drink.purpleDrink = true;
+                rend.material = _combPurpleMat;
             }
-            else if (normalCount >= 90)
+            else if (blueCount >= 45 && blueCount < 55 && yellowCount >= 45 && yellowCount < 55)
             {
-                Debug.Log("Normal");
+                Debug.Log("Green");
+                drink.greenDrink = true;
+                rend.material = _combGreenMat;
+            }
+            else if (redCount >= 45 && redCount < 55 && yellowCount >= 45 && yellowCount < 55)
+            {
+                Debug.Log("Orange");
+                drink.orangeDrink = true;
+                rend.material = _combOrgangeMat;
+            }
+            else if (blueCount >= 90)
+            {
+                Debug.Log("Blue");
                 drink.blueDrink = true;
-                rend.material = _normalMat;
+                rend.material = _blueMat;
             }
-            else if (altCount >= 90)
+            else if (redCount >= 90)
             {
-                Debug.Log("Alt");
+                Debug.Log("Red");
                 drink.redDrink = true;
-                rend.material = _altMat;
+                rend.material = _redMat;
+            }
+            else if (yellowCount >= 90)
+            {
+                Debug.Log("Yellow");
+                drink.redDrink = true;
+                rend.material = _yellowMat;
             }
             else
             {

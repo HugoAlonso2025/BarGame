@@ -555,11 +555,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GlassFillingUp
   waterPercentage: 0
   value: 0
-  normalCount: 0
-  altCount: 0
-  _normalMat: {fileID: -876546973899608171, guid: b70197428497e8a4289eb709aedef68c,
+  blueCount: 0
+  redCount: 0
+  _blueMat: {fileID: -876546973899608171, guid: b70197428497e8a4289eb709aedef68c,
     type: 3}
-  _altMat: {fileID: -876546973899608171, guid: b619c65969f259a4cb1edfb758586bf0, type: 3}
+  _redMat: {fileID: -876546973899608171, guid: b619c65969f259a4cb1edfb758586bf0, type: 3}
   _combMat: {fileID: -876546973899608171, guid: a75be46479554a148b84278928565af7,
     type: 3}
   _errorMat: {fileID: -876546973899608171, guid: 25cda979fd7bc744b8555b6a7369fe8d,
