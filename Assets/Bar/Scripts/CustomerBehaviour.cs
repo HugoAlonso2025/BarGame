@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System.Collections;
+using UnityEditor;
 using UnityEngine;
 
 public class CustomerBehaviour : MonoBehaviour
@@ -25,6 +26,8 @@ public class CustomerBehaviour : MonoBehaviour
 
     SpawnCustomer counter;
 
+    ExpressionManager expression;
+
     Animator animator;
 
     void AssignDeliver()
@@ -49,7 +52,9 @@ public class CustomerBehaviour : MonoBehaviour
         exitPos = GameObject.Find("SpawnPos");
         animator = GetComponent<Animator>();
         counter = FindAnyObjectByType<SpawnCustomer>();
+        expression = GetComponentInChildren<ExpressionManager>();
         AssignDeliver();
+        expression.SetBaseActive();
     }
 
     private void Update()
@@ -84,6 +89,8 @@ public class CustomerBehaviour : MonoBehaviour
 
         if(Physics.CheckSphere(pos.position, mRadius, exitMask) && onExit)
         {
+            request.fail = false;
+            request.sucess = false;
             counter.counter--;
             gameObject.SetActive(false);
         }
@@ -103,9 +110,14 @@ public class CustomerBehaviour : MonoBehaviour
             request.AskForDrink();
             animator.SetBool("isWaiting", true);
 
+
             if (request.isTable)
             {
                 StartCoroutine(Sit());
+            }
+            else
+            {
+                StartCoroutine(Talk());
             }
         }
     }
@@ -169,7 +181,6 @@ public class CustomerBehaviour : MonoBehaviour
         }
     }
 
-
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
@@ -177,11 +188,20 @@ public class CustomerBehaviour : MonoBehaviour
         Gizmos.DrawWireSphere(pos.position, mRadius);
     }
 
+    IEnumerator Talk()
+    {
+        expression.SetTalkActive();
+        yield return new WaitForSeconds(3);
+        expression.SetBaseActive();
+    }
+
     IEnumerator Sit()
     {
         animator.SetBool("isSitting", true);
         yield return new WaitForSeconds(1);
         animator.SetBool("isWaiting", true);
+        StartCoroutine(Talk());
+        
     }
 
     IEnumerator AnimationTime()
@@ -192,6 +212,14 @@ public class CustomerBehaviour : MonoBehaviour
             yield return new WaitForSeconds(0.7f);
             glassOnHand = true;
             animator.SetBool("pickGlass", false);
+            if (request.fail)
+            {
+                expression.SetAngryActive();
+            }
+            else if (request.sucess)
+            {
+                expression.SetHappyActive();
+            }
             yield return new WaitForSeconds(3f);
             glassOnHand = false;
             request._glassObject.SetActive(false);
@@ -204,6 +232,14 @@ public class CustomerBehaviour : MonoBehaviour
             yield return new WaitForSeconds(3f);
             animator.SetBool("pickGlass", false);
             glassOnHand = false;
+            if (request.fail)
+            {
+                expression.SetAngryActive();
+            }
+            else if (request.sucess)
+            {
+                expression.SetHappyActive();
+            }
             request._glassObject.SetActive(false);
             yield return new WaitForSeconds(1f);
             animator.SetBool("isWaiting", false);

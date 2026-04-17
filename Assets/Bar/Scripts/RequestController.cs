@@ -11,6 +11,8 @@ public class RequestController : MonoBehaviour
     public bool glassPlaced = false;
     public bool isTaken = false;
     public bool isTable;
+    public bool sucess;
+    public bool fail;
 
     [SerializeField] float radius;
 
@@ -70,12 +72,14 @@ public class RequestController : MonoBehaviour
         if (option == drinkMade)
         {
             Debug.Log("Sucess");
+            sucess = true;
             //_glassObject.gameObject.SetActive(false);
 
         }
         else
         {
             Debug.Log("Fail");
+            fail = true;
             //_glassObject.gameObject.SetActive(false);
         }
     }
@@ -96,6 +100,7 @@ public class RequestController : MonoBehaviour
                 if (drink != null && hasOrdered && !rb.isKinematic)
                 {
                     col.transform.position = glassPos.position;
+                    col.transform.rotation = Quaternion.identity;
                     glassPlaced = true;
                     col.attachedRigidbody.isKinematic = true;
 
