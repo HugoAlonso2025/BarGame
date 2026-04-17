@@ -129,7 +129,7 @@ public class GlassFillingUp : MonoBehaviour
                     }
                     else
                     {
-                        redCount += 0.25f;
+                        yellowCount += 0.25f;
                         Debug.Log("Yellow: " + yellowCount);
                     }
                 }
