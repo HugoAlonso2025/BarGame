@@ -16,7 +16,7 @@ public class BottleAim : MonoBehaviour
 
     private void Update()
     {
-        if (transform.localEulerAngles.z > 90 && transform.localEulerAngles.z < 270 && rb.isKinematic)
+        if (transform.localEulerAngles.z > 90 && transform.localEulerAngles.z < 270 && rb.collisionDetectionMode == CollisionDetectionMode.ContinuousDynamic)
         {
             if (liquidGO == null)
             {

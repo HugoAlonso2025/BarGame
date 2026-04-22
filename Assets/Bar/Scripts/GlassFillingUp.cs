@@ -189,7 +189,7 @@ public class GlassFillingUp : MonoBehaviour
             else if (yellowCount >= 90)
             {
                 Debug.Log("Yellow");
-                drink.redDrink = true;
+                drink.yellowDrink = true;
                 rend.material = _yellowMat;
             }
             else

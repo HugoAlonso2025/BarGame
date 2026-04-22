@@ -7,12 +7,18 @@ public class UIBehaviour : MonoBehaviour
     BNGPlayerController player;
     Vector3 pos;
 
-    [SerializeField] GameObject _purpleText;
-    [SerializeField] GameObject _greenText;
-    [SerializeField] GameObject _orangeText;
-    [SerializeField] GameObject _blueText;
-    [SerializeField] GameObject _redText;
-    [SerializeField] GameObject _yellowText;
+    [SerializeField] GameObject _purple;
+    [SerializeField] GameObject _green;
+    [SerializeField] GameObject _orange;
+    [SerializeField] GameObject _blue;
+    [SerializeField] GameObject _red;
+    [SerializeField] GameObject _yellow;
+    [SerializeField] GameObject _purpleHielo;
+    [SerializeField] GameObject _greenHielo;
+    [SerializeField] GameObject _orangeHielo;
+    [SerializeField] GameObject _blueHielo;
+    [SerializeField] GameObject _redHielo;
+    [SerializeField] GameObject _yellowHielo;
 
     private void Start()
     {
@@ -29,32 +35,61 @@ public class UIBehaviour : MonoBehaviour
 
     public void SetActiveBlue()
     {
-        _blueText.SetActive(true);
+        _blue.SetActive(true);
     }
 
     public void SetActiveRed()
     {
-        _redText.SetActive(true);
+        _red.SetActive(true);
     }
 
     public void SetActiveYellow()
     {
-        _yellowText.SetActive(true);
+        _yellow.SetActive(true);
     }
 
     public void SetActiveOrange()
     {
-        _orangeText.SetActive(true);
+        _orange.SetActive(true);
     }
 
     public void SetActiveGreen()
     {
-        _greenText.SetActive(true);
+        _green.SetActive(true);
     }
 
     public void SetActivePurple()
     {
-        _purpleText.SetActive(true);
+        _purple.SetActive(true);
+    }
+    public void SetActiveBlueHielo()
+    {
+        _blueHielo.SetActive(true);
+    }
+
+    public void SetActiveRedHielo()
+    {
+        _redHielo.SetActive(true);
+    }
+
+    public void SetActiveYellowHielo()
+    {
+        _yellowHielo.SetActive(true);
+    }
+
+    public void SetActiveOrangeHielo()
+    {
+        _orangeHielo.SetActive(true);
+    }
+
+    public void SetActiveGreenHielo()
+    {
+        _greenHielo.SetActive(true);
+    }
+
+    public void SetActivePurpleHielo()
+    {
+        _purpleHielo.SetActive(true);
     }
 
 

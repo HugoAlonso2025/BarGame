@@ -30,12 +30,13 @@ public class RequestController : MonoBehaviour
     Rigidbody rb;
 
     SetDrinkType drink;
+    CubesOnGlass cubes;
 
 
 
     public void AskForDrink()
     {
-        option = Random.Range(0, 6);
+        option = Random.Range(0, 12);
         if(!hasOrdered)
         {
             switch(option)
@@ -50,31 +51,67 @@ public class RequestController : MonoBehaviour
                 case 1:
 
                     hasOrdered = true;
-                    Debug.Log("Quiero un rojo");
+                    Debug.Log("Quiero un azul con hielo");
                     break;
 
                 case 2:
 
                     hasOrdered = true;
-                    Debug.Log("Quiero un amarillo");
+                    Debug.Log("Quiero un rojo");
                     break;
 
                 case 3:
 
                     hasOrdered = true;
-                    Debug.Log("Quiero un naranja");
+                    Debug.Log("Quiero un rojo con hielo");
                     break;
 
                 case 4:
 
                     hasOrdered = true;
-                    Debug.Log("Quiero un verde");
+                    Debug.Log("Quiero un amarillo");
                     break;
 
                 case 5:
 
                     hasOrdered = true;
+                    Debug.Log("Quiero un amarillo con hielo");
+                    break;
+
+                case 6:
+
+                    hasOrdered = true;
+                    Debug.Log("Quiero un naranja");
+                    break;
+
+                case 7:
+
+                    hasOrdered = true;
+                    Debug.Log("Quiero un naranja con hielo");
+                    break;
+
+                case 8:
+
+                    hasOrdered = true;
+                    Debug.Log("Quiero un verde");
+                    break;
+
+                case 9:
+
+                    hasOrdered = true;
+                    Debug.Log("Quiero un verde con hielo");
+                    break;
+
+                case 10:
+
+                    hasOrdered = true;
                     Debug.Log("Quiero un morado");
+                    break;
+
+                case 11:
+
+                    hasOrdered = true;
+                    Debug.Log("Quiero un morado con hielo");
                     break;
 
                 default:
@@ -110,6 +147,8 @@ public class RequestController : MonoBehaviour
             {
                 _glassObject = col.gameObject;
                 drink = col.GetComponentInChildren<SetDrinkType>();
+                cubes = col.GetComponentInChildren<CubesOnGlass>();
+
 
                 rb = col.attachedRigidbody;
 
@@ -120,6 +159,7 @@ public class RequestController : MonoBehaviour
                     glassPlaced = true;
                     col.attachedRigidbody.isKinematic = true;
 
+                    cubes.CubesCheck();
                     drinkMade = drink.option;
                     CheckOrder();
                 }

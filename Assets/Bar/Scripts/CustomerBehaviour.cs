@@ -117,27 +117,57 @@ public class CustomerBehaviour : MonoBehaviour
 
             case 1:
 
-                ui.SetActiveRed();
+                ui.SetActiveBlueHielo();
                 break;
 
             case 2:
 
-                ui.SetActiveYellow();
+                ui.SetActiveRed();
                 break;
 
             case 3:
 
-                ui.SetActiveOrange();
+                ui.SetActiveRedHielo();
                 break;
 
             case 4:
 
-                ui.SetActiveGreen();
+                ui.SetActiveYellow();
                 break;
 
             case 5:
 
+                ui.SetActiveYellowHielo();
+                break;
+
+            case 6:
+
+                ui.SetActiveOrange();
+                break;
+
+            case 7:
+
+                ui.SetActiveOrangeHielo();
+                break;
+
+            case 8:
+
+                ui.SetActiveGreen();
+                break;
+
+            case 9:
+
+                ui.SetActiveGreenHielo();
+                break;
+
+            case 10:
+
                 ui.SetActivePurple();
+                break;
+
+            case 11:
+
+                ui.SetActivePurpleHielo();
                 break;
         }
     }
@@ -149,7 +179,6 @@ public class CustomerBehaviour : MonoBehaviour
             posReached = true;
             request.isTaken = true;
             request.AskForDrink();
-            ActivateUI();
             animator.SetBool("isWaiting", true);
 
 
@@ -160,7 +189,7 @@ public class CustomerBehaviour : MonoBehaviour
             else
             {
                 StartCoroutine(Talk());
-                _canvas.SetActive(true);
+                ActivateUI();
             }
         }
     }
@@ -239,7 +268,7 @@ public class CustomerBehaviour : MonoBehaviour
         animator.SetBool("isSitting", true);
         yield return new WaitForSeconds(1);
         animator.SetBool("isWaiting", true);
-        _canvas.SetActive(true);
+        ActivateUI();
         StartCoroutine(Talk());
         
     }

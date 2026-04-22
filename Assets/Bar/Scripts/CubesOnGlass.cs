@@ -3,6 +3,7 @@ using UnityEngine;
 public class CubesOnGlass : MonoBehaviour
 {
     [SerializeField] GameObject[] cubes;
+    public bool cubesOn;
 
     public void ActivateCube()
     {
@@ -11,8 +12,22 @@ public class CubesOnGlass : MonoBehaviour
             if (!cubes[i].activeSelf)
             {
                 cubes[i].SetActive(true);
-                Debug.Log("Cube");
                 return;
+            }
+        }
+    }
+
+    public void CubesCheck()
+    {
+        for(int i = 0; i < cubes.Length; i++)
+        {
+            if (cubes[i].activeSelf && i == cubes.Length - 1)
+            {
+                cubesOn = true;
+            }
+            else
+            {
+                cubesOn = false;
             }
         }
     }
