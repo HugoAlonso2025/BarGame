@@ -112,35 +112,30 @@ public class CustomerBehaviour : MonoBehaviour
         {
             case 0:
 
-                ui.SetActiveError();
+                ui.SetActiveBlue();
                 break;
 
             case 1:
 
-                ui.SetActiveBlue();
+                ui.SetActiveRed();
                 break;
 
             case 2:
 
-                ui.SetActiveRed();
+                ui.SetActiveYellow();
                 break;
 
             case 3:
 
-                ui.SetActiveYellow();
+                ui.SetActiveOrange();
                 break;
 
             case 4:
 
-                ui.SetActiveOrange();
-                break;
-
-            case 5:
-
                 ui.SetActiveGreen();
                 break;
 
-            case 6:
+            case 5:
 
                 ui.SetActivePurple();
                 break;
@@ -189,13 +184,9 @@ public class CustomerBehaviour : MonoBehaviour
             if (Vector3.Distance(transform.position, target) < threshold)
             {
                 movingToTarget = false;
-                currentIndex++; // pasar al siguiente punto
+                currentIndex++;
             }
         }
-
-        //target = new Vector3(deliverAssigned.transform.position.x, transform.position.y, deliverAssigned.transform.position.z);
-        //transform.LookAt(target);
-        //transform.position += transform.forward * speed *  Time.deltaTime;
     }
 
     void DoAnimation()
@@ -224,7 +215,7 @@ public class CustomerBehaviour : MonoBehaviour
             if (Vector3.Distance(transform.position, target) < threshold)
             {
                 movingToTarget = false;
-                currentIndex--; // pasar al siguiente punto
+                currentIndex--;
             }
         }
     }

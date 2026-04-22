@@ -35,48 +35,43 @@ public class RequestController : MonoBehaviour
 
     public void AskForDrink()
     {
-        option = Random.Range(0, 7);
+        option = Random.Range(0, 6);
         if(!hasOrdered)
         {
             switch(option)
             {
+
                 case 0:
-
-                    hasOrdered = true;
-                    Debug.Log("Quiero un error");
-                    break;
-
-                case 1:
 
                     hasOrdered = true;
                     Debug.Log("Quiero un azul");
                     break;
 
-                case 2:
+                case 1:
 
                     hasOrdered = true;
                     Debug.Log("Quiero un rojo");
                     break;
 
-                case 3:
+                case 2:
 
                     hasOrdered = true;
                     Debug.Log("Quiero un amarillo");
                     break;
 
-                case 4:
+                case 3:
 
                     hasOrdered = true;
                     Debug.Log("Quiero un naranja");
                     break;
 
-                case 5:
+                case 4:
 
                     hasOrdered = true;
                     Debug.Log("Quiero un verde");
                     break;
 
-                case 6:
+                case 5:
 
                     hasOrdered = true;
                     Debug.Log("Quiero un morado");

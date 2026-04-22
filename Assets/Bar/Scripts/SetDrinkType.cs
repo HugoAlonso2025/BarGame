@@ -16,31 +16,31 @@ public class SetDrinkType : MonoBehaviour
     {
         if (purpleDrink)
         {
-            option = 6;
+            option = 5;
         }
         else if (greenDrink)
         {
-            option = 5;
+            option = 4;
         }
         else if (orangeDrink)
         {
-            option = 4;
+            option = 3;
         }
         else if (yellowDrink)
         {
-            option = 3;
+            option = 2;
         }
         else if (redDrink)
         {
-            option = 2;
+            option = 1;
         }
         else if (blueDrink)
         {
-            option = 1;
+            option = 0;
         }
         else if (mistakeDrink)
         {
-            option = 0;
+            option = 6;
         }
     }
 

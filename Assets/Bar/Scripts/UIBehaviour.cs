@@ -13,7 +13,6 @@ public class UIBehaviour : MonoBehaviour
     [SerializeField] GameObject _blueText;
     [SerializeField] GameObject _redText;
     [SerializeField] GameObject _yellowText;
-    [SerializeField] GameObject _errorText;
 
     private void Start()
     {
@@ -41,11 +40,6 @@ public class UIBehaviour : MonoBehaviour
     public void SetActiveYellow()
     {
         _yellowText.SetActive(true);
-    }
-
-    public void SetActiveError()
-    {
-        _errorText.SetActive(true);
     }
 
     public void SetActiveOrange()
