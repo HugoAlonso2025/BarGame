@@ -13,66 +13,117 @@ public class SetDrinkType : MonoBehaviour
     public int option;
 
     CubesOnGlass cubes;
+    LimeOnGlass lime;
 
     private void Start()
     {
         cubes = GetComponent<CubesOnGlass>();
+        lime = GetComponent<LimeOnGlass>();
     }
 
     void SetValueToOrder()
     {
-        
-        if (purpleDrink && cubes.cubesOn)
+
+        if (purpleDrink && cubes.cubesOn && lime.limeOn)
+        {
+            option = 23;
+        }
+        if (purpleDrink && !cubes.cubesOn && lime.limeOn)
+        {
+            option = 22;
+        }
+        if (purpleDrink && cubes.cubesOn && !lime.limeOn)
+        {
+            option = 21;
+        }
+        if (purpleDrink && !cubes.cubesOn && !lime.limeOn)
+        {
+            option = 20;
+        }
+        else if (greenDrink && cubes.cubesOn && lime.limeOn)
+        {
+            option = 19;
+        }
+        else if (greenDrink && !cubes.cubesOn && lime.limeOn)
+        {
+            option = 18;
+        }
+        else if (greenDrink && cubes.cubesOn && !lime.limeOn)
+        {
+            option = 17;
+        }
+        else if (greenDrink && !cubes.cubesOn && !lime.limeOn)
+        {
+            option = 16;
+        }
+        else if (orangeDrink && cubes.cubesOn && lime.limeOn)
+        {
+            option = 15;
+        }
+        else if (orangeDrink && !cubes.cubesOn && lime.limeOn)
+        {
+            option = 14;
+        }
+        else if (orangeDrink && cubes.cubesOn && !lime.limeOn)
+        {
+            option = 13;
+        }
+        else if (orangeDrink && !cubes.cubesOn && !lime.limeOn)
+        {
+            option = 12;
+        }
+        else if (yellowDrink && cubes.cubesOn && lime.limeOn)
         {
             option = 11;
         }
-        if (purpleDrink && !cubes.cubesOn)
+        else if (yellowDrink && !cubes.cubesOn && lime.limeOn)
         {
             option = 10;
         }
-        else if (greenDrink && cubes.cubesOn)
+        else if (yellowDrink && cubes.cubesOn && !lime.limeOn)
         {
             option = 9;
         }
-        else if (greenDrink && !cubes.cubesOn)
+        else if (yellowDrink && !cubes.cubesOn && !lime.limeOn)
         {
             option = 8;
         }
-        else if (orangeDrink && cubes.cubesOn)
+        
+        else if (redDrink && cubes.cubesOn && lime.limeOn)
         {
             option = 7;
         }
-        else if (orangeDrink && !cubes.cubesOn)
+        else if (redDrink && !cubes.cubesOn && lime.limeOn)
         {
             option = 6;
         }
-        else if (yellowDrink && cubes.cubesOn)
+        else if (redDrink && cubes.cubesOn && !lime.limeOn)
         {
             option = 5;
         }
-        else if (yellowDrink && !cubes.cubesOn)
+        else if (redDrink && !cubes.cubesOn && !lime.limeOn)
         {
             option = 4;
         }
-        else if (redDrink && cubes.cubesOn)
+        else if (blueDrink && cubes.cubesOn && lime.limeOn)
         {
             option = 3;
         }
-        else if (redDrink)
+        else if (blueDrink && !cubes.cubesOn && lime.limeOn )
         {
             option = 2;
         }
-        else if (blueDrink && cubes.cubesOn)
+        else if (blueDrink && cubes.cubesOn && !lime.limeOn)
         {
             option = 1;
         }
-        else if (blueDrink && !cubes.cubesOn)
+        else if (blueDrink && !cubes.cubesOn && !lime.limeOn)
         {
             option = 0;
         }
         else if (mistakeDrink)
         {
-            option = 6;
+            option = 24;
         }
     }
 

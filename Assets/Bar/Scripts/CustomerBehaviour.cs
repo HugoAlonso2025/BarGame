@@ -33,6 +33,7 @@ public class CustomerBehaviour : MonoBehaviour
     ExpressionManager expression;
     UIBehaviour ui;
     [SerializeField] RequestController[] requests;
+    RespawnGlass spawnGlass;
 
     Animator animator;
 
@@ -122,53 +123,114 @@ public class CustomerBehaviour : MonoBehaviour
 
             case 2:
 
-                ui.SetActiveRed();
+                ui.SetActiveBlueLima();
                 break;
 
             case 3:
 
-                ui.SetActiveRedHielo();
+                ui.SetActiveBlueHieloLima();
                 break;
 
             case 4:
 
-                ui.SetActiveYellow();
+                ui.SetActiveRed();
                 break;
 
             case 5:
 
-                ui.SetActiveYellowHielo();
+                ui.SetActiveRedHielo();
                 break;
 
             case 6:
 
-                ui.SetActiveOrange();
+                ui.SetActiveRedLima();
                 break;
 
             case 7:
 
-                ui.SetActiveOrangeHielo();
+                ui.SetActiveRedHieloLima();
                 break;
 
             case 8:
 
-                ui.SetActiveGreen();
+                ui.SetActiveYellow();
                 break;
 
             case 9:
 
-                ui.SetActiveGreenHielo();
+                ui.SetActiveYellowHielo();
                 break;
 
             case 10:
 
-                ui.SetActivePurple();
+                ui.SetActiveYellowLima();
                 break;
 
             case 11:
 
+                ui.SetActiveYellowHieloLima();
+                break;
+
+            case 12:
+
+                ui.SetActiveOrange();
+                break;
+
+            case 13:
+
+                ui.SetActiveOrangeHielo();
+                break;
+
+            case 14:
+
+                ui.SetActiveOrangeLima();
+                break;
+
+            case 15:
+
+                ui.SetActiveOrangeHieloLima();
+                break;
+
+            case 16:
+
+                ui.SetActiveGreen();
+                break;
+
+            case 17:
+
+                ui.SetActiveGreenHielo();
+                break;
+
+            case 18:
+
+                ui.SetActiveGreenLima();
+                break;
+
+            case 19:
+
+                ui.SetActiveGreenHieloLima();
+                break;
+
+            case 20:
+
+                ui.SetActivePurple();
+                break;
+
+            case 21:
+
                 ui.SetActivePurpleHielo();
                 break;
+
+            case 22:
+
+                ui.SetActivePurpleLima();
+                break;
+
+            case 23:
+
+                ui.SetActivePurpleHieloLima();
+                break;
+
         }
     }
 
@@ -291,7 +353,9 @@ public class CustomerBehaviour : MonoBehaviour
             }
             yield return new WaitForSeconds(3f);
             glassOnHand = false;
-            request._glassObject.SetActive(false);
+            spawnGlass = request._glassObject.GetComponent<RespawnGlass>();
+            spawnGlass.InstantiateGlass();
+            Destroy(request._glassObject);
             animator.SetBool("isWaiting", false);
         }
         else
@@ -309,7 +373,9 @@ public class CustomerBehaviour : MonoBehaviour
             {
                 expression.SetHappyActive();
             }
-            request._glassObject.SetActive(false);
+            spawnGlass = request._glassObject.GetComponent<RespawnGlass>();
+            spawnGlass.InstantiateGlass();
+            Destroy(request._glassObject);
             yield return new WaitForSeconds(1f);
             animator.SetBool("isWaiting", false);
             animator.SetBool("isSitting", false);

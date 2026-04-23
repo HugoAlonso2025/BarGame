@@ -540,6 +540,7 @@ GameObject:
   - component: {fileID: 6784390151051423848}
   - component: {fileID: 8918132381368389204}
   - component: {fileID: 7090662579898086232}
+  - component: {fileID: 5968222085863609493}
   m_Layer: 13
   m_Name: Content
   m_TagString: Untagged
@@ -564,6 +565,7 @@ Transform:
   - {fileID: 551964937867629465}
   - {fileID: 3518730316303526517}
   - {fileID: 468552044654523062}
+  - {fileID: 7990761196045332734}
   m_Father: {fileID: 4926372532381047898}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5730439342603812617
@@ -667,6 +669,7 @@ MonoBehaviour:
   - {fileID: 928631592272939299}
   - {fileID: 4296111032790364367}
   - {fileID: 994012622709467148}
+  cubesOn: 0
 --- !u!114 &5369223813493118965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -755,6 +758,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7733353937917304983, guid: 35a9acefbe690e7499fdc3ab0527aaa1, type: 3}
+--- !u!114 &5968222085863609493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8024066535052697582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c006ef848d88fb47a3b1d34d8ecb4cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LimeOnGlass
+  _limeObject: {fileID: 7327130455481887300}
+  limeOn: 0
 --- !u!1 &8454687340978161846
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,6 +786,8 @@ GameObject:
   - component: {fileID: 2717038251580304798}
   - component: {fileID: 5851594250965539132}
   - component: {fileID: 6479644620276428685}
+  - component: {fileID: 8503693150532202542}
+  - component: {fileID: 7715520314310239620}
   m_Layer: 10
   m_Name: Glass
   m_TagString: glass
@@ -972,3 +991,114 @@ MonoBehaviour:
   UseCustomInspector: 1
   lastFlickTime: 0
   FlickForce: 1
+--- !u!114 &8503693150532202542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8454687340978161846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4bf5df4e128264da33afb31934f597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RecoverObject
+  _objPos: {x: 0, y: 0, z: 0}
+--- !u!114 &7715520314310239620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8454687340978161846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d9b016dc2ce99440a324caa5c848a10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RespawnGlass
+  glassPrefab: {fileID: 8454687340978161846}
+--- !u!1001 &7597110252269246229
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2895506881715592741}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: eed8ccd0007aaee46a1bc6c66fd1edeb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.067
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eed8ccd0007aaee46a1bc6c66fd1edeb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0611
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eed8ccd0007aaee46a1bc6c66fd1edeb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0179
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eed8ccd0007aaee46a1bc6c66fd1edeb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eed8ccd0007aaee46a1bc6c66fd1edeb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eed8ccd0007aaee46a1bc6c66fd1edeb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eed8ccd0007aaee46a1bc6c66fd1edeb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eed8ccd0007aaee46a1bc6c66fd1edeb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eed8ccd0007aaee46a1bc6c66fd1edeb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eed8ccd0007aaee46a1bc6c66fd1edeb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eed8ccd0007aaee46a1bc6c66fd1edeb,
+        type: 3}
+      propertyPath: m_Name
+      value: LIMON ENTERO
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eed8ccd0007aaee46a1bc6c66fd1edeb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eed8ccd0007aaee46a1bc6c66fd1edeb, type: 3}
+--- !u!1 &7327130455481887300 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: eed8ccd0007aaee46a1bc6c66fd1edeb,
+    type: 3}
+  m_PrefabInstance: {fileID: 7597110252269246229}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7990761196045332734 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: eed8ccd0007aaee46a1bc6c66fd1edeb,
+    type: 3}
+  m_PrefabInstance: {fileID: 7597110252269246229}
+  m_PrefabAsset: {fileID: 0}

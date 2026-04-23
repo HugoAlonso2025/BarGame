@@ -23,13 +23,13 @@ public class IceBehaviour : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "floor" && !onGlass)
-        {
-            transform.position = _icePosition.position;
-            rb.isKinematic = true;
-            col.isTrigger = true;
-            gameObject.SetActive(false);
-        }
+        //if (collision.gameObject.tag == "floor" && !onGlass)
+        //{
+        //    transform.position = _icePosition.position;
+        //    rb.isKinematic = true;
+        //    col.isTrigger = true;
+        //    gameObject.SetActive(false);
+        //}
 
         if(collision.gameObject.tag == "glass" && !onGlass)
         {
@@ -72,7 +72,7 @@ public class IceBehaviour : MonoBehaviour
 
     IEnumerator Despawn()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.5f);
         transform.position = _icePosition.position;
         rb.isKinematic = true;
         col.isTrigger = true;
