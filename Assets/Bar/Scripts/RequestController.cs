@@ -31,12 +31,13 @@ public class RequestController : MonoBehaviour
 
     SetDrinkType drink;
     CubesOnGlass cubes;
+    LimeOnGlass lime;
 
 
 
     public void AskForDrink()
     {
-        option = Random.Range(0, 12);
+        option = Random.Range(0, 24);
         if(!hasOrdered)
         {
             switch(option)
@@ -220,10 +221,12 @@ public class RequestController : MonoBehaviour
                 _glassObject = col.gameObject;
                 drink = col.GetComponentInChildren<SetDrinkType>();
                 cubes = col.GetComponentInChildren<CubesOnGlass>();
+                lime = col.GetComponentInChildren<LimeOnGlass>();
 
                 if(cubes != null)
                 {
                     cubes.CubesCheck();
+                    lime.LimeCheck();
                 }
 
                 rb = col.attachedRigidbody;
