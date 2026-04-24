@@ -109,128 +109,69 @@ public class CustomerBehaviour : MonoBehaviour
 
     void ActivateUI()
     {
-        switch(request.option)
+        switch (request.option)
         {
-            case 0:
+            // VASO (V)
+            case 0: ui.SetActiveBlueV(); break;
+            case 1: ui.SetActiveBlueHieloV(); break;
+            case 2: ui.SetActiveBlueLimaV(); break;
+            case 3: ui.SetActiveBlueHieloLimaV(); break;
 
-                ui.SetActiveBlue();
-                break;
+            case 4: ui.SetActiveRedV(); break;
+            case 5: ui.SetActiveRedHieloV(); break;
+            case 6: ui.SetActiveRedLimaV(); break;
+            case 7: ui.SetActiveRedHieloLimaV(); break;
 
-            case 1:
+            case 8: ui.SetActiveYellowV(); break;
+            case 9: ui.SetActiveYellowHieloV(); break;
+            case 10: ui.SetActiveYellowLimaV(); break;
+            case 11: ui.SetActiveYellowHieloLimaV(); break;
 
-                ui.SetActiveBlueHielo();
-                break;
+            case 12: ui.SetActiveOrangeV(); break;
+            case 13: ui.SetActiveOrangeHieloV(); break;
+            case 14: ui.SetActiveOrangeLimaV(); break;
+            case 15: ui.SetActiveOrangeHieloLimaV(); break;
 
-            case 2:
+            case 16: ui.SetActiveGreenV(); break;
+            case 17: ui.SetActiveGreenHieloV(); break;
+            case 18: ui.SetActiveGreenLimaV(); break;
+            case 19: ui.SetActiveGreenHieloLimaV(); break;
 
-                ui.SetActiveBlueLima();
-                break;
+            case 20: ui.SetActivePurpleV(); break;
+            case 21: ui.SetActivePurpleHieloV(); break;
+            case 22: ui.SetActivePurpleLimaV(); break;
+            case 23: ui.SetActivePurpleHieloLimaV(); break;
 
-            case 3:
+            // COPA (C)
+            case 24: ui.SetActiveBlueC(); break;
+            case 25: ui.SetActiveBlueHieloC(); break;
+            case 26: ui.SetActiveBlueLimaC(); break;
+            case 27: ui.SetActiveBlueHieloLimaC(); break;
 
-                ui.SetActiveBlueHieloLima();
-                break;
+            case 28: ui.SetActiveRedC(); break;
+            case 29: ui.SetActiveRedHieloC(); break;
+            case 30: ui.SetActiveRedLimaC(); break;
+            case 31: ui.SetActiveRedHieloLimaC(); break;
 
-            case 4:
+            case 32: ui.SetActiveYellowC(); break;
+            case 33: ui.SetActiveYellowHieloC(); break;
+            case 34: ui.SetActiveYellowLimaC(); break;
+            case 35: ui.SetActiveYellowHieloLimaC(); break;
 
-                ui.SetActiveRed();
-                break;
+            case 36: ui.SetActiveOrangeC(); break;
+            case 37: ui.SetActiveOrangeHieloC(); break;
+            case 38: ui.SetActiveOrangeLimaC(); break;
+            case 39: ui.SetActiveOrangeHieloLimaC(); break;
 
-            case 5:
+            case 40: ui.SetActiveGreenC(); break;
+            case 41: ui.SetActiveGreenHieloC(); break;
+            case 42: ui.SetActiveGreenLimaC(); break;
+            case 43: ui.SetActiveGreenHieloLimaC(); break;
 
-                ui.SetActiveRedHielo();
-                break;
-
-            case 6:
-
-                ui.SetActiveRedLima();
-                break;
-
-            case 7:
-
-                ui.SetActiveRedHieloLima();
-                break;
-
-            case 8:
-
-                ui.SetActiveYellow();
-                break;
-
-            case 9:
-
-                ui.SetActiveYellowHielo();
-                break;
-
-            case 10:
-
-                ui.SetActiveYellowLima();
-                break;
-
-            case 11:
-
-                ui.SetActiveYellowHieloLima();
-                break;
-
-            case 12:
-
-                ui.SetActiveOrange();
-                break;
-
-            case 13:
-
-                ui.SetActiveOrangeHielo();
-                break;
-
-            case 14:
-
-                ui.SetActiveOrangeLima();
-                break;
-
-            case 15:
-
-                ui.SetActiveOrangeHieloLima();
-                break;
-
-            case 16:
-
-                ui.SetActiveGreen();
-                break;
-
-            case 17:
-
-                ui.SetActiveGreenHielo();
-                break;
-
-            case 18:
-
-                ui.SetActiveGreenLima();
-                break;
-
-            case 19:
-
-                ui.SetActiveGreenHieloLima();
-                break;
-
-            case 20:
-
-                ui.SetActivePurple();
-                break;
-
-            case 21:
-
-                ui.SetActivePurpleHielo();
-                break;
-
-            case 22:
-
-                ui.SetActivePurpleLima();
-                break;
-
-            case 23:
-
-                ui.SetActivePurpleHieloLima();
-                break;
-
+            case 44: ui.SetActivePurpleC(); break;
+            case 45: ui.SetActivePurpleHieloC(); break;
+            case 46: ui.SetActivePurpleLimaC(); break;
+            case 47: ui.SetActivePurpleHieloLimaC(); break;
         }
     }
 

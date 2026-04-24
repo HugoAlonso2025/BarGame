@@ -7,30 +7,55 @@ public class UIBehaviour : MonoBehaviour
     BNGPlayerController player;
     Vector3 pos;
 
-    [SerializeField] GameObject _blue;
-    [SerializeField] GameObject _blueHielo;
-    [SerializeField] GameObject _blueLima;
-    [SerializeField] GameObject _blueHieloLima;
-    [SerializeField] GameObject _red;
-    [SerializeField] GameObject _redHielo;
-    [SerializeField] GameObject _redLima;
-    [SerializeField] GameObject _redHieloLima;
-    [SerializeField] GameObject _yellow;
-    [SerializeField] GameObject _yellowHielo;
-    [SerializeField] GameObject _yellowLima;
-    [SerializeField] GameObject _yellowHieloLima;
-    [SerializeField] GameObject _orange;
-    [SerializeField] GameObject _orangeHielo;
-    [SerializeField] GameObject _orangeLima;
-    [SerializeField] GameObject _orangeHieloLima;
-    [SerializeField] GameObject _green;
-    [SerializeField] GameObject _greenHielo;
-    [SerializeField] GameObject _greenLima;
-    [SerializeField] GameObject _greenHieloLima;
-    [SerializeField] GameObject _purple;
-    [SerializeField] GameObject _purpleHielo;
-    [SerializeField] GameObject _purpleLima;
-    [SerializeField] GameObject _purpleHieloLima;
+    [SerializeField] GameObject _blueV;
+    [SerializeField] GameObject _blueHieloV;
+    [SerializeField] GameObject _blueLimaV;
+    [SerializeField] GameObject _blueHieloLimaV;
+    [SerializeField] GameObject _redV;
+    [SerializeField] GameObject _redHieloV;
+    [SerializeField] GameObject _redLimaV;
+    [SerializeField] GameObject _redHieloLimaV;
+    [SerializeField] GameObject _yellowV;
+    [SerializeField] GameObject _yellowHieloV;
+    [SerializeField] GameObject _yellowLimaV;
+    [SerializeField] GameObject _yellowHieloLimaV;
+    [SerializeField] GameObject _orangeV;
+    [SerializeField] GameObject _orangeHieloV;
+    [SerializeField] GameObject _orangeLimaV;
+    [SerializeField] GameObject _orangeHieloLimaV;
+    [SerializeField] GameObject _greenV;
+    [SerializeField] GameObject _greenHieloV;
+    [SerializeField] GameObject _greenLimaV;
+    [SerializeField] GameObject _greenHieloLimaV;
+    [SerializeField] GameObject _purpleV;
+    [SerializeField] GameObject _purpleHieloV;
+    [SerializeField] GameObject _purpleLimaV;
+    [SerializeField] GameObject _purpleHieloLimaV;
+
+    [SerializeField] GameObject _blueC;
+    [SerializeField] GameObject _blueHieloC;
+    [SerializeField] GameObject _blueLimaC;
+    [SerializeField] GameObject _blueHieloLimaC;
+    [SerializeField] GameObject _redC;
+    [SerializeField] GameObject _redHieloC;
+    [SerializeField] GameObject _redLimaC;
+    [SerializeField] GameObject _redHieloLimaC;
+    [SerializeField] GameObject _yellowC;
+    [SerializeField] GameObject _yellowHieloC;
+    [SerializeField] GameObject _yellowLimaC;
+    [SerializeField] GameObject _yellowHieloLimaC;
+    [SerializeField] GameObject _orangeC;
+    [SerializeField] GameObject _orangeHieloC;
+    [SerializeField] GameObject _orangeLimaC;
+    [SerializeField] GameObject _orangeHieloLimaC;
+    [SerializeField] GameObject _greenC;
+    [SerializeField] GameObject _greenHieloC;
+    [SerializeField] GameObject _greenLimaC;
+    [SerializeField] GameObject _greenHieloLimaC;
+    [SerializeField] GameObject _purpleC;
+    [SerializeField] GameObject _purpleHieloC;
+    [SerializeField] GameObject _purpleLimaC;
+    [SerializeField] GameObject _purpleHieloLimaC;
 
     private void Start()
     {
@@ -45,117 +70,236 @@ public class UIBehaviour : MonoBehaviour
         transform.LookAt(pos);
     }
 
-    public void SetActiveBlue()
+    public void SetActiveBlueV()
     {
-        _blue.SetActive(true);
+        _blueV.SetActive(true);
     }
 
-    public void SetActiveRed()
+    public void SetActiveRedV()
     {
-        _red.SetActive(true);
+        _redV.SetActive(true);
     }
 
-    public void SetActiveYellow()
+    public void SetActiveYellowV()
     {
-        _yellow.SetActive(true);
+        _yellowV.SetActive(true);
     }
 
-    public void SetActiveOrange()
+    public void SetActiveOrangeV()
     {
-        _orange.SetActive(true);
+        _orangeV.SetActive(true);
     }
 
-    public void SetActiveGreen()
+    public void SetActiveGreenV()
     {
-        _green.SetActive(true);
+        _greenV.SetActive(true);
     }
 
-    public void SetActivePurple()
+    public void SetActivePurpleV()
     {
-        _purple.SetActive(true);
+        _purpleV.SetActive(true);
     }
-    public void SetActiveBlueHielo()
+    public void SetActiveBlueHieloV()
     {
-        _blueHielo.SetActive(true);
-    }
-
-    public void SetActiveRedHielo()
-    {
-        _redHielo.SetActive(true);
+        _blueHieloV.SetActive(true);
     }
 
-    public void SetActiveYellowHielo()
+    public void SetActiveRedHieloV()
     {
-        _yellowHielo.SetActive(true);
+        _redHieloV.SetActive(true);
     }
 
-    public void SetActiveOrangeHielo()
+    public void SetActiveYellowHieloV()
     {
-        _orangeHielo.SetActive(true);
+        _yellowHieloV.SetActive(true);
     }
 
-    public void SetActiveGreenHielo()
+    public void SetActiveOrangeHieloV()
     {
-        _greenHielo.SetActive(true);
+        _orangeHieloV.SetActive(true);
     }
 
-    public void SetActivePurpleHielo()
+    public void SetActiveGreenHieloV()
     {
-        _purpleHielo.SetActive(true);
+        _greenHieloV.SetActive(true);
     }
 
-    public void SetActiveBlueLima()
+    public void SetActivePurpleHieloV()
     {
-        _blueLima.SetActive(true);
+        _purpleHieloV.SetActive(true);
     }
 
-    public void SetActiveRedLima()
+    public void SetActiveBlueLimaV()
     {
-        _redLima.SetActive(true);
+        _blueLimaV.SetActive(true);
     }
 
-    public void SetActiveYellowLima()
+    public void SetActiveRedLimaV()
     {
-        _yellowLima.SetActive(true);
+        _redLimaV.SetActive(true);
     }
 
-    public void SetActiveOrangeLima()
+    public void SetActiveYellowLimaV()
     {
-        _orangeLima.SetActive(true);
+        _yellowLimaV.SetActive(true);
     }
 
-    public void SetActiveGreenLima()
+    public void SetActiveOrangeLimaV()
     {
-        _greenLima.SetActive(true);
+        _orangeLimaV.SetActive(true);
     }
 
-    public void SetActivePurpleLima()
+    public void SetActiveGreenLimaV()
     {
-        _purpleLima.SetActive(true);
+        _greenLimaV.SetActive(true);
     }
-    public void SetActiveBlueHieloLima()
+
+    public void SetActivePurpleLimaV()
     {
-        _blueHieloLima.SetActive(true);
+        _purpleLimaV.SetActive(true);
     }
-    public void SetActiveRedHieloLima()
+    public void SetActiveBlueHieloLimaV()
     {
-        _redHieloLima.SetActive(true);
+        _blueHieloLimaV.SetActive(true);
     }
-    public void SetActiveYellowHieloLima()
+    public void SetActiveRedHieloLimaV()
     {
-        _yellowHieloLima.SetActive(true);
+        _redHieloLimaV.SetActive(true);
     }
-    public void SetActiveOrangeHieloLima()
+    public void SetActiveYellowHieloLimaV()
     {
-        _orangeHieloLima.SetActive(true);
+        _yellowHieloLimaV.SetActive(true);
     }
-    public void SetActiveGreenHieloLima()
+    public void SetActiveOrangeHieloLimaV()
     {
-        _greenHieloLima.SetActive(true);
+        _orangeHieloLimaV.SetActive(true);
     }
-    public void SetActivePurpleHieloLima()
+    public void SetActiveGreenHieloLimaV()
     {
-        _purpleHieloLima.SetActive(true);
+        _greenHieloLimaV.SetActive(true);
+    }
+    public void SetActivePurpleHieloLimaV()
+    {
+        _purpleHieloLimaV.SetActive(true);
+    }
+    public void SetActiveBlueC()
+    {
+        _blueC.SetActive(true);
+    }
+
+    public void SetActiveRedC()
+    {
+        _redC.SetActive(true);
+    }
+
+    public void SetActiveYellowC()
+    {
+        _yellowC.SetActive(true);
+    }
+
+    public void SetActiveOrangeC()
+    {
+        _orangeC.SetActive(true);
+    }
+
+    public void SetActiveGreenC()
+    {
+        _greenC.SetActive(true);
+    }
+
+    public void SetActivePurpleC()
+    {
+        _purpleC.SetActive(true);
+    }
+
+    public void SetActiveBlueHieloC()
+    {
+        _blueHieloC.SetActive(true);
+    }
+
+    public void SetActiveRedHieloC()
+    {
+        _redHieloC.SetActive(true);
+    }
+
+    public void SetActiveYellowHieloC()
+    {
+        _yellowHieloC.SetActive(true);
+    }
+
+    public void SetActiveOrangeHieloC()
+    {
+        _orangeHieloC.SetActive(true);
+    }
+
+    public void SetActiveGreenHieloC()
+    {
+        _greenHieloC.SetActive(true);
+    }
+
+    public void SetActivePurpleHieloC()
+    {
+        _purpleHieloC.SetActive(true);
+    }
+
+    public void SetActiveBlueLimaC()
+    {
+        _blueLimaC.SetActive(true);
+    }
+
+    public void SetActiveRedLimaC()
+    {
+        _redLimaC.SetActive(true);
+    }
+
+    public void SetActiveYellowLimaC()
+    {
+        _yellowLimaC.SetActive(true);
+    }
+
+    public void SetActiveOrangeLimaC()
+    {
+        _orangeLimaC.SetActive(true);
+    }
+
+    public void SetActiveGreenLimaC()
+    {
+        _greenLimaC.SetActive(true);
+    }
+
+    public void SetActivePurpleLimaC()
+    {
+        _purpleLimaC.SetActive(true);
+    }
+
+    public void SetActiveBlueHieloLimaC()
+    {
+        _blueHieloLimaC.SetActive(true);
+    }
+
+    public void SetActiveRedHieloLimaC()
+    {
+        _redHieloLimaC.SetActive(true);
+    }
+
+    public void SetActiveYellowHieloLimaC()
+    {
+        _yellowHieloLimaC.SetActive(true);
+    }
+
+    public void SetActiveOrangeHieloLimaC()
+    {
+        _orangeHieloLimaC.SetActive(true);
+    }
+
+    public void SetActiveGreenHieloLimaC()
+    {
+        _greenHieloLimaC.SetActive(true);
+    }
+
+    public void SetActivePurpleHieloLimaC()
+    {
+        _purpleHieloLimaC.SetActive(true);
     }
 
 

@@ -28,8 +28,8 @@ public class GlassFillingUp : MonoBehaviour
     bool blue = false;
     bool red = false;
     bool yellow = false;
-    bool drinkFinished = false;
-    [SerializeField] bool isCup = false;
+    bool drinkFinished;
+    public bool isCup;
 
     private List<ParticleCollisionEvent> collisionEvents = new List<ParticleCollisionEvent>();
 

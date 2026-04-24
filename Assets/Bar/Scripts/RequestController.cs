@@ -37,155 +37,73 @@ public class RequestController : MonoBehaviour
 
     public void AskForDrink()
     {
-        option = Random.Range(0, 24);
+        option = Random.Range(0, 48);
         if(!hasOrdered)
         {
             switch(option)
             {
 
-                case 0:
+                // VASO
+                case 0: hasOrdered = true; Debug.Log("Quiero un azul en vaso"); break;
+                case 1: hasOrdered = true; Debug.Log("Quiero un azul con hielo en vaso"); break;
+                case 2: hasOrdered = true; Debug.Log("Quiero un azul con lima en vaso"); break;
+                case 3: hasOrdered = true; Debug.Log("Quiero un azul con hielo y lima en vaso"); break;
 
-                    hasOrdered = true;
-                    Debug.Log("Quiero un azul");
-                    break;
+                case 4: hasOrdered = true; Debug.Log("Quiero un rojo en vaso"); break;
+                case 5: hasOrdered = true; Debug.Log("Quiero un rojo con hielo en vaso"); break;
+                case 6: hasOrdered = true; Debug.Log("Quiero un rojo con lima en vaso"); break;
+                case 7: hasOrdered = true; Debug.Log("Quiero un rojo con hielo y lima en vaso"); break;
 
-                case 1:
+                case 8: hasOrdered = true; Debug.Log("Quiero un amarillo en vaso"); break;
+                case 9: hasOrdered = true; Debug.Log("Quiero un amarillo con hielo en vaso"); break;
+                case 10: hasOrdered = true; Debug.Log("Quiero un amarillo con lima en vaso"); break;
+                case 11: hasOrdered = true; Debug.Log("Quiero un amarillo con hielo y lima en vaso"); break;
 
-                    hasOrdered = true;
-                    Debug.Log("Quiero un azul con hielo");
-                    break;
+                case 12: hasOrdered = true; Debug.Log("Quiero un naranja en vaso"); break;
+                case 13: hasOrdered = true; Debug.Log("Quiero un naranja con hielo en vaso"); break;
+                case 14: hasOrdered = true; Debug.Log("Quiero un naranja con lima en vaso"); break;
+                case 15: hasOrdered = true; Debug.Log("Quiero un naranja con hielo y lima en vaso"); break;
 
-                case 2:
+                case 16: hasOrdered = true; Debug.Log("Quiero un verde en vaso"); break;
+                case 17: hasOrdered = true; Debug.Log("Quiero un verde con hielo en vaso"); break;
+                case 18: hasOrdered = true; Debug.Log("Quiero un verde con lima en vaso"); break;
+                case 19: hasOrdered = true; Debug.Log("Quiero un verde con hielo y lima en vaso"); break;
 
-                    hasOrdered = true;
-                    Debug.Log("Quiero un azul con lima");
-                    break;
+                case 20: hasOrdered = true; Debug.Log("Quiero un morado en vaso"); break;
+                case 21: hasOrdered = true; Debug.Log("Quiero un morado con hielo en vaso"); break;
+                case 22: hasOrdered = true; Debug.Log("Quiero un morado con lima en vaso"); break;
+                case 23: hasOrdered = true; Debug.Log("Quiero un morado con hielo y lima en vaso"); break;
 
-                case 3:
+                // COPA
+                case 24: hasOrdered = true; Debug.Log("Quiero un azul en copa"); break;
+                case 25: hasOrdered = true; Debug.Log("Quiero un azul con hielo en copa"); break;
+                case 26: hasOrdered = true; Debug.Log("Quiero un azul con lima en copa"); break;
+                case 27: hasOrdered = true; Debug.Log("Quiero un azul con hielo y lima en copa"); break;
 
-                    hasOrdered = true;
-                    Debug.Log("Quiero un azul con hielo y lima");
-                    break;
+                case 28: hasOrdered = true; Debug.Log("Quiero un rojo en copa"); break;
+                case 29: hasOrdered = true; Debug.Log("Quiero un rojo con hielo en copa"); break;
+                case 30: hasOrdered = true; Debug.Log("Quiero un rojo con lima en copa"); break;
+                case 31: hasOrdered = true; Debug.Log("Quiero un rojo con hielo y lima en copa"); break;
 
-                case 4:
+                case 32: hasOrdered = true; Debug.Log("Quiero un amarillo en copa"); break;
+                case 33: hasOrdered = true; Debug.Log("Quiero un amarillo con hielo en copa"); break;
+                case 34: hasOrdered = true; Debug.Log("Quiero un amarillo con lima en copa"); break;
+                case 35: hasOrdered = true; Debug.Log("Quiero un amarillo con hielo y lima en copa"); break;
 
-                    hasOrdered = true;
-                    Debug.Log("Quiero un rojo");
-                    break;
+                case 36: hasOrdered = true; Debug.Log("Quiero un naranja en copa"); break;
+                case 37: hasOrdered = true; Debug.Log("Quiero un naranja con hielo en copa"); break;
+                case 38: hasOrdered = true; Debug.Log("Quiero un naranja con lima en copa"); break;
+                case 39: hasOrdered = true; Debug.Log("Quiero un naranja con hielo y lima en copa"); break;
 
-                case 5:
+                case 40: hasOrdered = true; Debug.Log("Quiero un verde en copa"); break;
+                case 41: hasOrdered = true; Debug.Log("Quiero un verde con hielo en copa"); break;
+                case 42: hasOrdered = true; Debug.Log("Quiero un verde con lima en copa"); break;
+                case 43: hasOrdered = true; Debug.Log("Quiero un verde con hielo y lima en copa"); break;
 
-                    hasOrdered = true;
-                    Debug.Log("Quiero un rojo con hielo");
-                    break;
-
-                case 6:
-
-                    hasOrdered = true;
-                    Debug.Log("Quiero un rojo con lima");
-                    break;
-
-                case 7:
-
-                    hasOrdered = true;
-                    Debug.Log("Quiero un rojo con hielo y lima");
-                    break;
-
-                case 8:
-
-                    hasOrdered = true;
-                    Debug.Log("Quiero un amarillo");
-                    break;
-
-                case 9:
-
-                    hasOrdered = true;
-                    Debug.Log("Quiero un amarillo con hielo");
-                    break;
-
-                case 10:
-
-                    hasOrdered = true;
-                    Debug.Log("Quiero un amarillo con lima");
-                    break;
-
-                case 11:
-
-                    hasOrdered = true;
-                    Debug.Log("Quiero un amarillo con hielo y lima");
-                    break;
-
-                case 12:
-
-                    hasOrdered = true;
-                    Debug.Log("Quiero un naranja");
-                    break;
-
-                case 13:
-
-                    hasOrdered = true;
-                    Debug.Log("Quiero un naranja con hielo");
-                    break;
-
-                case 14:
-
-                    hasOrdered = true;
-                    Debug.Log("Quiero un naranja con lima");
-                    break;
-
-                case 15:
-
-                    hasOrdered = true;
-                    Debug.Log("Quiero un naranja con hielo y lima");
-                    break;
-
-                case 16:
-
-                    hasOrdered = true;
-                    Debug.Log("Quiero un verde");
-                    break;
-
-                case 17:
-
-                    hasOrdered = true;
-                    Debug.Log("Quiero un verde con hielo");
-                    break;
-
-                case 18:
-
-                    hasOrdered = true;
-                    Debug.Log("Quiero un verde con lima");
-                    break;
-
-                case 19:
-
-                    hasOrdered = true;
-                    Debug.Log("Quiero un verde con hielo y lima");
-                    break;
-
-                case 20:
-
-                    hasOrdered = true;
-                    Debug.Log("Quiero un morado");
-                    break;
-
-                case 21:
-
-                    hasOrdered = true;
-                    Debug.Log("Quiero un morado con hielo");
-                    break;
-
-                case 22:
-
-                    hasOrdered = true;
-                    Debug.Log("Quiero un morado con lima");
-                    break;
-                
-                case 23:
-
-                    hasOrdered = true;
-                    Debug.Log("Quiero un morado con hielo y lima");
-                    break;
+                case 44: hasOrdered = true; Debug.Log("Quiero un morado en copa"); break;
+                case 45: hasOrdered = true; Debug.Log("Quiero un morado con hielo en copa"); break;
+                case 46: hasOrdered = true; Debug.Log("Quiero un morado con lima en copa"); break;
+                case 47: hasOrdered = true; Debug.Log("Quiero un morado con hielo y lima en copa"); break;
 
                 default:
 
