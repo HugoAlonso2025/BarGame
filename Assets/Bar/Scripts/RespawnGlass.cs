@@ -3,16 +3,26 @@ using UnityEngine;
 public class RespawnGlass : MonoBehaviour
 {
     RecoverObject obj;
-    [SerializeField] GameObject glassPrefab;
-    [SerializeField] Transform parent;
+    GlassFillingUp glass;
+    GlassSpawner glassSpawner;
 
     private void Start()
     {
         obj = GetComponent<RecoverObject>();
+        glass = GetComponentInChildren<GlassFillingUp>();
+        glassSpawner = FindAnyObjectByType<GlassSpawner>();
     }
 
     public void InstantiateGlass()
     {
-        Instantiate(glassPrefab, obj._objPos, obj._objRot, parent);
+        if (glass.isCup)
+        {
+            glassSpawner.InstantiateCup(obj._objPos, obj._objRot);
+        }
+        else
+        {
+            glassSpawner.InstantiateGlass(obj._objPos, obj._objRot);
+        }
+            
     }
 }

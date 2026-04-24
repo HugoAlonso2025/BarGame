@@ -95,7 +95,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eed8ccd0007aaee46a1bc6c66fd1edeb,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 279698259426233214}
+      addedObject: {fileID: 3856599597520153440}
   m_SourcePrefab: {fileID: 100100000, guid: eed8ccd0007aaee46a1bc6c66fd1edeb, type: 3}
 --- !u!1 &7861564715849581816 stripped
 GameObject:
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RecoverObject
   _objPos: {x: 0, y: 0, z: 0}
   _objRot: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &279698259426233214
+--- !u!114 &3856599597520153440
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -261,4 +261,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afae4064a1124cb40998d7673e837c91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RespawnLime
-  limePrefab: {fileID: 0}

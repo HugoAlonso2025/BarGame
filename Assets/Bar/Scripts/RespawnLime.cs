@@ -3,16 +3,16 @@ using UnityEngine;
 public class RespawnLime : MonoBehaviour
 {
     RecoverObject obj;
-    [SerializeField] GameObject limePrefab;
-    [SerializeField] Transform parent;
+    GlassSpawner glassSpawner;
 
     private void Start()
     {
         obj = GetComponent<RecoverObject>();
+        glassSpawner = FindAnyObjectByType<GlassSpawner>();
     }
 
     public void InstantiateLime()
     {
-        Instantiate(limePrefab, obj._objPos, obj._objRot, parent);
+        glassSpawner.InstantiateLime(obj._objPos, obj._objRot);
     }
 }

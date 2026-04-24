@@ -34,6 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5207982979950741937}
+  - {fileID: 4197461702226809602}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5683453604833981740
@@ -51,7 +52,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6638847590714780851}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -128,9 +129,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RequestController
   option: 0
   drinkMade: 0
+  hasOrdered: 0
   glassPlaced: 0
   isTaken: 0
   isTable: 0
+  sucess: 0
+  fail: 0
   radius: 0.3
   glassPos: {fileID: 5207982979950741937}
   glassMask:
@@ -139,6 +143,7 @@ MonoBehaviour:
   textRequest: 
   timeLapse: 0
   positions: []
+  _glassObject: {fileID: 0}
 --- !u!1 &8554457013898800036
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,3 +175,97 @@ Transform:
   m_Children: []
   m_Father: {fileID: 605970530340224424}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &4452609022556927209
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 605970530340224424}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 47b2abdd7e84b4441a5f7fe3c850ab78,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5.68
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 47b2abdd7e84b4441a5f7fe3c850ab78,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 36.364605
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 47b2abdd7e84b4441a5f7fe3c850ab78,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5.68
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 47b2abdd7e84b4441a5f7fe3c850ab78,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 47b2abdd7e84b4441a5f7fe3c850ab78,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 47b2abdd7e84b4441a5f7fe3c850ab78,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 47b2abdd7e84b4441a5f7fe3c850ab78,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 47b2abdd7e84b4441a5f7fe3c850ab78,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 47b2abdd7e84b4441a5f7fe3c850ab78,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 47b2abdd7e84b4441a5f7fe3c850ab78,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 47b2abdd7e84b4441a5f7fe3c850ab78,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 47b2abdd7e84b4441a5f7fe3c850ab78,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 47b2abdd7e84b4441a5f7fe3c850ab78,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 47b2abdd7e84b4441a5f7fe3c850ab78,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 47b2abdd7e84b4441a5f7fe3c850ab78,
+        type: 3}
+      propertyPath: m_Name
+      value: posavasospez
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 47b2abdd7e84b4441a5f7fe3c850ab78, type: 3}
+--- !u!4 &4197461702226809602 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 47b2abdd7e84b4441a5f7fe3c850ab78,
+    type: 3}
+  m_PrefabInstance: {fileID: 4452609022556927209}
+  m_PrefabAsset: {fileID: 0}
