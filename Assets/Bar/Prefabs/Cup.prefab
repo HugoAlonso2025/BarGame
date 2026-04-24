@@ -407,7 +407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d9b016dc2ce99440a324caa5c848a10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RespawnGlass
-  glassPrefab: {fileID: 4492911697176272790}
+  glassPrefab: {fileID: 0}
 --- !u!1 &5279691624587469019
 GameObject:
   m_ObjectHideFlags: 0

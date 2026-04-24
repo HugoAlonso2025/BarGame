@@ -4,11 +4,13 @@ using UnityEngine;
 public class RecoverObject : MonoBehaviour
 {
     public Vector3 _objPos;
+    public Quaternion _objRot;
     Rigidbody rb;
 
     private void Start()
     {
         _objPos = transform.position;
+        _objRot = transform.rotation;
         rb = GetComponent<Rigidbody>();
     }
 
@@ -18,7 +20,7 @@ public class RecoverObject : MonoBehaviour
         if (collision.gameObject.tag == "floor")
         {
             StartCoroutine(SetKine());
-            transform.rotation = Quaternion.identity;
+            transform.rotation = _objRot;
             transform.position = _objPos;
         }
     }

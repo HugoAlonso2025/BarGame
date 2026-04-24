@@ -4,6 +4,7 @@ public class RespawnGlass : MonoBehaviour
 {
     RecoverObject obj;
     [SerializeField] GameObject glassPrefab;
+    [SerializeField] Transform parent;
 
     private void Start()
     {
@@ -12,6 +13,6 @@ public class RespawnGlass : MonoBehaviour
 
     public void InstantiateGlass()
     {
-        Instantiate(glassPrefab, obj._objPos, Quaternion.identity);
+        Instantiate(glassPrefab, obj._objPos, obj._objRot, parent);
     }
 }
