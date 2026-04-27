@@ -25,11 +25,14 @@ public class ExpressionManager : MonoBehaviour
     [SerializeField] Material[] mats;
 
     [SerializeField] bool isBase;
-    [SerializeField] bool isBaseMouth;
+    [SerializeField] bool isBaseCheck;
     [SerializeField] bool isAngry;
+    [SerializeField] bool isAngryCheck;
     [SerializeField] bool isHappy;
     [SerializeField] bool isUpset;
+    [SerializeField] bool isUpsetCheck;
     [SerializeField] bool isTalk;
+    [SerializeField] bool isTalkCheck;
 
     Renderer rend;
 
@@ -45,6 +48,10 @@ public class ExpressionManager : MonoBehaviour
 
         if (isBase)
         {
+            isBaseCheck = true;
+            isTalkCheck = false;
+            isUpsetCheck = false;
+            isAngryCheck = false;
             isBase = false;
             mats[0] = clothMat;
             mats[1] = shirtMat;
@@ -54,19 +61,12 @@ public class ExpressionManager : MonoBehaviour
             mats[5] = hatMat;
             rend.materials = mats;
         }
-        else if (isBaseMouth)
-        {
-            isBaseMouth = false;
-            mats[0] = clothMat;
-            mats[1] = shirtMat;
-            mats[2] = bodyMat;
-            mats[3] = scarfMat;
-            mats[4] = baseEyesMat;
-            mats[5] = hatMat;
-            rend.materials = mats;
-        }
         else if (isAngry)
         {
+            isBaseCheck = false;
+            isTalkCheck = false;
+            isUpsetCheck = false;
+            isAngryCheck = true;
             isAngry = false;
             mats[0] = clothMat;
             mats[1] = shirtMat;
@@ -78,6 +78,10 @@ public class ExpressionManager : MonoBehaviour
         }
         else if (isHappy)
         {
+            isBaseCheck = false;
+            isTalkCheck = false;
+            isUpsetCheck = false;
+            isAngryCheck = false;
             isHappy = false;
             mats[0] = clothMat;
             mats[1] = shirtMat;
@@ -89,6 +93,10 @@ public class ExpressionManager : MonoBehaviour
         }
         else if (isTalk)
         {
+            isBaseCheck = false;
+            isTalkCheck = true;
+            isUpsetCheck = false;
+            isAngryCheck = false;
             isTalk = false;
             mats[0] = clothMat;
             mats[1] = shirtMat;
@@ -100,6 +108,10 @@ public class ExpressionManager : MonoBehaviour
         }
         else if (isUpset)
         {
+            isBaseCheck = false;
+            isTalkCheck = false;
+            isUpsetCheck = true;
+            isAngryCheck = false;
             isUpset = false;
             mats[0] = clothMat;
             mats[1] = shirtMat;
@@ -113,19 +125,106 @@ public class ExpressionManager : MonoBehaviour
 
     void BlinkingMethod()
     {
-        isBase = true;
-        if (isBase)
+        if (isBaseCheck)
         {
-            isBase = false;
-            StartCoroutine(Blink());
+            StartCoroutine(BlinkNormal());
+        }
+        else if (isUpsetCheck)
+        {
+            StartCoroutine(BlinkUpset());
+        }
+        else if (isTalkCheck)
+        {
+            StartCoroutine(BlinkTalk());
+        }
+        else if(isAngryCheck)
+        {
+            StartCoroutine(BlinkAngry());
         }
     }
 
-    IEnumerator Blink()
+    IEnumerator BlinkNormal()
     {
-        isBaseMouth = true;
+        mats[0] = clothMat;
+        mats[1] = shirtMat;
+        mats[2] = bodyMat;
+        mats[3] = scarfMat;
+        mats[4] = baseEyesMat;
+        mats[5] = hatMat;
+        rend.materials = mats;
+
         yield return new WaitForSeconds(0.2f);
-        isBase = true;
+
+        mats[0] = clothMat;
+        mats[1] = shirtMat;
+        mats[2] = bodyMat;
+        mats[3] = scarfMat;
+        mats[4] = baseMat;
+        mats[5] = hatMat;
+        rend.materials = mats;
+    }
+
+    IEnumerator BlinkAngry()
+    {
+        mats[0] = clothMat;
+        mats[1] = shirtMat;
+        mats[2] = bodyMat;
+        mats[3] = scarfMat;
+        mats[4] = angryEyesMat;
+        mats[5] = hatMat;
+        rend.materials = mats;
+
+        yield return new WaitForSeconds(0.2f);
+
+        mats[0] = clothMat;
+        mats[1] = shirtMat;
+        mats[2] = bodyMat;
+        mats[3] = scarfMat;
+        mats[4] = angryMat;
+        mats[5] = hatMat;
+        rend.materials = mats;
+    }
+
+    IEnumerator BlinkUpset()
+    {
+        mats[0] = clothMat;
+        mats[1] = shirtMat;
+        mats[2] = bodyMat;
+        mats[3] = scarfMat;
+        mats[4] = upsetEyesMat;
+        mats[5] = hatMat;
+        rend.materials = mats;
+
+        yield return new WaitForSeconds(0.2f);
+
+        mats[0] = clothMat;
+        mats[1] = shirtMat;
+        mats[2] = bodyMat;
+        mats[3] = scarfMat;
+        mats[4] = upsetMat;
+        mats[5] = hatMat;
+        rend.materials = mats;
+    }
+
+    IEnumerator BlinkTalk()
+    {
+        mats[0] = clothMat;
+        mats[1] = shirtMat;
+        mats[2] = bodyMat;
+        mats[3] = scarfMat;
+        mats[4] = talkEyesMat;
+        mats[5] = hatMat;
+        rend.materials = mats;
+
+        yield return new WaitForSeconds(0.2f);
+
+        mats[0] = clothMat;
+        mats[1] = shirtMat;
+        mats[2] = bodyMat;
+        mats[3] = scarfMat;
+        mats[4] = talkMat;
+        mats[5] = hatMat;
+        rend.materials = mats;
     }
 
     public bool SetBaseActive()
