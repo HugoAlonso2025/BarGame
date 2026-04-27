@@ -4034,11 +4034,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e3a29d375865764cb0637eac0503801, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExpressionManager
-  baseMat: {fileID: 2100000, guid: 8b72e601cc2f5144faa5f951680e554b, type: 2}
-  angryMat: {fileID: 2100000, guid: 307e9f1d3983e534c8f783e3556d019a, type: 2}
-  happyMat: {fileID: 2100000, guid: 3e758627a19abcd44aea4ba3e35014da, type: 2}
-  upsetMat: {fileID: 2100000, guid: 6ebe00218b118504f99cd3928ff50df9, type: 2}
-  talkMat: {fileID: 2100000, guid: 4b1267fedfc2d2340b4c67a3dcec307f, type: 2}
+  baseMat: {fileID: 2100000, guid: 7435b88c4f8444443841d5c6358f0645, type: 2}
+  baseEyesMat: {fileID: 2100000, guid: 7b409083f9ae19f49b850fdc063d39df, type: 2}
+  angryMat: {fileID: 2100000, guid: ceddd4d4cba1d594ca67ed4dc6e807ac, type: 2}
+  angryMouthMat: {fileID: 2100000, guid: fa4d93499a61bf049b99eb7d768baddc, type: 2}
+  angryEyesMat: {fileID: 2100000, guid: 0c53c05b45ec28d4e93fb12bce356c29, type: 2}
+  angryEyesMouthMat: {fileID: 2100000, guid: 44a0d0fdfbf2c4c4ab8b9308f11e94e7, type: 2}
+  happyMat: {fileID: 2100000, guid: 035e6b3fbf8443d4cb66f0b204b1d51b, type: 2}
+  upsetMat: {fileID: 2100000, guid: e2e0c6a6bf65fcd41afcb00e7a0d3578, type: 2}
+  upsetEyesMat: {fileID: 2100000, guid: 26069b4c959398f4b96ac3dfa0ad7486, type: 2}
+  talkMat: {fileID: 2100000, guid: 9ba372029e15e59479d8d55bfea2b7ce, type: 2}
+  talkEyesMat: {fileID: 2100000, guid: 046c4c62eb1e26c45a499e8bbcca385d, type: 2}
   scarfMat: {fileID: 726272576889566651, guid: 4a57ed8ee61e1fa408efc7b1d7bdc7d7, type: 3}
   bodyMat: {fileID: -6922793697723135513, guid: 4a57ed8ee61e1fa408efc7b1d7bdc7d7,
     type: 3}
@@ -4055,6 +4061,7 @@ MonoBehaviour:
   - {fileID: 726272576889566651, guid: 4a57ed8ee61e1fa408efc7b1d7bdc7d7, type: 3}
   - {fileID: -6629797300637803691, guid: 4a57ed8ee61e1fa408efc7b1d7bdc7d7, type: 3}
   isBase: 1
+  isBaseMouth: 0
   isAngry: 0
   isHappy: 0
   isUpset: 0
