@@ -14,9 +14,11 @@ public class LimeBehaviour : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "glass" && !onGlass)
+        glass = collision.gameObject.GetComponentInChildren<LimeOnGlass>();
+
+        if (glass != null && collision.gameObject.tag == "glass" && !onGlass && !glass.limeOn)
         {
-            glass = collision.gameObject.GetComponentInChildren<LimeOnGlass>();
+            glass.limeOn = true;
             glass.ActivateLime();
             lime.InstantiateLime();
             Destroy(gameObject);
