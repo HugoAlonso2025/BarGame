@@ -3,6 +3,7 @@ using UnityEngine;
 public class BottleAim : MonoBehaviour
 {
     [SerializeField] GameObject liquidPrefab;
+    ParticleSystem particles;
     [SerializeField] Transform _waterPos;
     [SerializeField] LayerMask glassLayer;
     Rigidbody rb;
@@ -21,15 +22,20 @@ public class BottleAim : MonoBehaviour
             if (liquidGO == null)
             {
                 liquidGO = Instantiate(liquidPrefab, _waterPos.position, _waterPos.rotation, transform);
+                particles = liquidGO.GetComponent<ParticleSystem>();
+            }
+            else
+            {
+                particles.Play();
             }
         }
         else
         {
             if(liquidGO != null)
             {
-                Destroy(liquidGO);
+                particles.Stop();
             }
-           
+           //Pausar/Reanudar
         }
     }
 }

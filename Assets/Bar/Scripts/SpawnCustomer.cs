@@ -5,14 +5,15 @@ using UnityEngine;
 public class SpawnCustomer : MonoBehaviour
 {
     [SerializeField] GameObject customerPrefab;
-    [SerializeField] Transform entryPos;
+    [SerializeField] Transform entryPos1;
+    [SerializeField] Transform entryPos2;
     bool coolDown = false;
     public int counter = 0;
     Quaternion rotationNPC;
 
     private void Start()
     {
-        rotationNPC = entryPos.rotation;
+        rotationNPC = entryPos1.rotation;
     }
 
     void InstantiateCustomer()
@@ -33,7 +34,7 @@ public class SpawnCustomer : MonoBehaviour
     {
         coolDown = true;
         yield return new WaitForSeconds(2);
-        Instantiate(customerPrefab, entryPos.position, rotationNPC);
+        Instantiate(customerPrefab, entryPos1.position, rotationNPC);
         counter++;
         yield return new WaitForSeconds(20);
         coolDown = false;

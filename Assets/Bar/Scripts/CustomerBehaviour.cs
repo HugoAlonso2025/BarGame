@@ -15,12 +15,13 @@ public class CustomerBehaviour : MonoBehaviour
 
     [SerializeField] LayerMask askPos;
     [SerializeField] LayerMask exitMask;
+    [SerializeField] LayerMask doorMask;
 
     [SerializeField] float speed;
     [SerializeField] float radius;
     [SerializeField] float mRadius;
 
-    int currentIndex;
+    public int currentIndex;
 
     bool posReached = false;
     bool onExit = false;
@@ -34,6 +35,7 @@ public class CustomerBehaviour : MonoBehaviour
     UIBehaviour ui;
     [SerializeField] RequestController[] requests;
     RespawnGlass spawnGlass;
+    DoorAnimation door;
 
     Animator animator;
 
@@ -46,6 +48,7 @@ public class CustomerBehaviour : MonoBehaviour
         ui = GetComponentInChildren<UIBehaviour>();
         AssignDeliver();
         expression.SetBaseActive();
+        door = FindAnyObjectByType<DoorAnimation>();
     }
 
     void AssignDeliver()
@@ -59,6 +62,18 @@ public class CustomerBehaviour : MonoBehaviour
                 request = deliverAssigned.GetComponent<RequestController>();
                 continue;
             }
+        }
+    }
+
+    void OpenDoor()
+    {
+        if (!onExit && Physics.CheckSphere(pos.position, mRadius, doorMask))
+        {
+            door.OpenDoorEnter();
+        }
+        else if (onExit && Physics.CheckSphere(pos.position, mRadius, doorMask))
+        {
+            door.OpenDoorExit();
         }
     }
 
@@ -86,7 +101,7 @@ public class CustomerBehaviour : MonoBehaviour
             {
                 _canvas.SetActive(false);
                 justExit = false;
-                currentIndex -= 2;
+                currentIndex--;
                 request.hasOrdered = false;
             }
             
@@ -98,13 +113,15 @@ public class CustomerBehaviour : MonoBehaviour
             request.fail = false;
             request.sucess = false;
             counter.counter--;
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
 
         if (glassOnHand)
         {
             request._glassObject.transform.position = _glassPos.position;
         }
+
+        OpenDoor();
     }
 
     void ActivateUI()

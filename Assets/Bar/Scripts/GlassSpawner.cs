@@ -11,7 +11,7 @@ public class GlassSpawner : MonoBehaviour
 
     public void InstantiateGlass(Vector3 pos, Quaternion rot)
     {
-        Instantiate(glassPrefab, pos, rot, glassPrefab.transform);
+        Instantiate(glassPrefab, pos, rot, glassesGroup.transform);
     }
 
     public void InstantiateCup(Vector3 pos, Quaternion rot)
