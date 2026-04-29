@@ -7,9 +7,9 @@ public class GlassFillingUp : MonoBehaviour
     public float waterPercentage;
 
     [SerializeField] float value;
-    [SerializeField] float blueCount;
-    [SerializeField] float redCount;
-    [SerializeField] float yellowCount;
+    public float blueCount;
+    public float redCount;
+    public float yellowCount;
 
     Renderer rend;
 
@@ -20,6 +20,16 @@ public class GlassFillingUp : MonoBehaviour
     [SerializeField] Material _combGreenMat;
     [SerializeField] Material _combOrgangeMat;
     [SerializeField] Material _errorMat;
+
+    [SerializeField] GameObject blueBar;
+    [SerializeField] GameObject redBar;
+    [SerializeField] GameObject yellowBar;
+    [SerializeField] GameObject UIBar;
+
+    [SerializeField] Transform pos1;
+    [SerializeField] Transform pos2;
+
+    int count;
 
     //[SerializeField] Material _liquidMat;
 
@@ -58,6 +68,72 @@ public class GlassFillingUp : MonoBehaviour
     void Update()
     {
         rend.material.SetFloat("_Fill", value);
+
+        if (blueCount != 0 && !blueBar.activeSelf && count <= 2)
+        {
+            Debug.Log("Azul");
+
+            if (count == 1)
+            {
+                Debug.Log(1);
+                blueBar.SetActive(true);
+                blueBar.transform.position = pos2.position;
+                count++;
+
+            }
+
+            if (count == 0)
+            {
+                Debug.Log(0);
+                blueBar.SetActive(true);
+                blueBar.transform.position = pos1.position;
+                count++;
+            }
+            
+        }
+        if (redCount != 0 && !redBar.activeSelf && count <= 2)
+        {
+            Debug.Log("Rojo");
+
+            if (count == 1)
+            {
+                Debug.Log(1);
+                redBar.SetActive(true);
+                redBar.transform.position = pos2.position;
+                count++;
+            }
+
+            if (count == 0)
+            {
+                Debug.Log(0);
+                redBar.SetActive(true);
+                redBar.transform.position = pos1.position;
+                count++;
+            }
+            
+        }
+        if (yellowCount != 0 && !yellowBar.activeSelf && count <= 2)
+        {
+            Debug.Log("Amarillo");
+
+            if (count == 1)
+            {
+                Debug.Log(1);
+                yellowBar.SetActive(true);
+                yellowBar.transform.position = pos2.position;
+                count++;
+            }
+
+            if (count == 0)
+            {
+                Debug.Log(0);
+                yellowBar.SetActive(true);
+                yellowBar.transform.position = pos1.position;
+                count++;
+            }
+
+            
+        }
     }
 
     void OnParticleCollision(GameObject other)
@@ -183,42 +259,49 @@ public class GlassFillingUp : MonoBehaviour
                 Debug.Log("Purple");
                 drink.purpleDrink = true;
                 rend.material = _combPurpleMat;
+                UIBar.SetActive(false);
             }
             else if (blueCount >= 45 && blueCount < 55 && yellowCount >= 45 && yellowCount < 55)
             {
                 Debug.Log("Green");
                 drink.greenDrink = true;
                 rend.material = _combGreenMat;
+                UIBar.SetActive(false);
             }
             else if (redCount >= 45 && redCount < 55 && yellowCount >= 45 && yellowCount < 55)
             {
                 Debug.Log("Orange");
                 drink.orangeDrink = true;
                 rend.material = _combOrgangeMat;
+                UIBar.SetActive(false);
             }
             else if (blueCount >= 90)
             {
                 Debug.Log("Blue");
                 drink.blueDrink = true;
                 rend.material = _blueMat;
+                UIBar.SetActive(false);
             }
             else if (redCount >= 90)
             {
                 Debug.Log("Red");
                 drink.redDrink = true;
                 rend.material = _redMat;
+                UIBar.SetActive(false);
             }
             else if (yellowCount >= 90)
             {
                 Debug.Log("Yellow");
                 drink.yellowDrink = true;
                 rend.material = _yellowMat;
+                UIBar.SetActive(false);
             }
             else
             {
                 Debug.Log("Error");
                 drink.mistakeDrink = true;
                 rend.material = _errorMat;
+                UIBar.SetActive(false);
             }
         }
     }
