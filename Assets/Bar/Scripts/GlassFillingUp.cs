@@ -21,6 +21,9 @@ public class GlassFillingUp : MonoBehaviour
     [SerializeField] Material _combOrgangeMat;
     [SerializeField] Material _errorMat;
 
+    //[SerializeField] Material _liquidMat;
+
+
     bool materialAsigned;
 
     SetDrinkType drink;
@@ -30,6 +33,10 @@ public class GlassFillingUp : MonoBehaviour
     bool yellow = false;
     bool drinkFinished;
     public bool isCup;
+
+    //Color color1;
+    //Color color2;
+    //Color color3;
 
     private List<ParticleCollisionEvent> collisionEvents = new List<ParticleCollisionEvent>();
 
@@ -150,6 +157,21 @@ public class GlassFillingUp : MonoBehaviour
             {
                 rend.material = _yellowMat;
             }
+
+            //rend.material = _liquidMat;
+
+            //if (blue)
+            //{
+            //    rend.material.SetColor("_Color1", color1);
+            //}
+            //else if (red)
+            //{
+            //    rend.material.SetColor("_Color2", color2);
+            //}
+            //else if (yellow)
+            //{
+            //    rend.material.SetColor("_Color3", color3);
+            //}
         }
 
         if (waterPercentage >= 100 && !drinkFinished)
