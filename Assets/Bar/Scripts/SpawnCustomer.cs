@@ -6,7 +6,6 @@ public class SpawnCustomer : MonoBehaviour
 {
     [SerializeField] GameObject customerPrefab;
     [SerializeField] Transform entryPos1;
-    [SerializeField] Transform entryPos2;
     bool coolDown = false;
     public int counter = 0;
     Quaternion rotationNPC;
