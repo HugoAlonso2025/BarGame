@@ -301,12 +301,12 @@ GameObject:
   - component: {fileID: 5191820658001319821}
   - component: {fileID: 4145104074277762171}
   m_Layer: 0
-  m_Name: Image
+  m_Name: Pacience
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7474405447468862230
 RectTransform:
   m_ObjectHideFlags: 0
@@ -376,7 +376,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 053036b8de3666d4e923ec9e39c03aa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PatienceSystem
-  maxTime: 100
+  maxTime: 30
+  currentTime: 0
   timeOut: 0
 --- !u!1 &1023296532000953507
 GameObject:
@@ -4209,6 +4210,7 @@ MonoBehaviour:
   pos: {fileID: 6735229822306222994}
   _glassPos: {fileID: 6384186293399027209}
   _canvas: {fileID: 1830699309364534678}
+  _patienceUI: {fileID: 757420273795329471}
   askPos:
     serializedVersion: 2
     m_Bits: 16384

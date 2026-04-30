@@ -5,7 +5,7 @@ public class PatienceSystem : MonoBehaviour
 {
 
     [SerializeField] float maxTime = 100;
-    float currentTime;
+    public float currentTime;
 
     Image timeBar;
 
@@ -19,7 +19,7 @@ public class PatienceSystem : MonoBehaviour
 
     private void Update()
     {
-        timeBar.fillAmount = currentTime * 0.01f;
+        timeBar.fillAmount = currentTime * 0.0334f;
         currentTime -= Time.deltaTime;
 
         if (currentTime <= 0 && !timeOut)

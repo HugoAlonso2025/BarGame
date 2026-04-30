@@ -1,5 +1,7 @@
 using NUnit.Framework;
 using System.Collections;
+using System.Net;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -12,6 +14,7 @@ public class CustomerBehaviour : MonoBehaviour
 
     GameObject deliverAssigned;
     [SerializeField] GameObject _canvas;
+    [SerializeField] GameObject _patienceUI;
 
     [SerializeField] LayerMask askPos;
     [SerializeField] LayerMask exitMask;
@@ -36,6 +39,7 @@ public class CustomerBehaviour : MonoBehaviour
     [SerializeField] RequestController[] requests;
     RespawnGlass spawnGlass;
     DoorAnimation door;
+    PatienceSystem patience;
 
     Animator animator;
 
@@ -89,7 +93,7 @@ public class CustomerBehaviour : MonoBehaviour
             }
         }
 
-        if(request.glassPlaced)
+        if(request.glassPlaced || request.fail)
         {
             request.glassPlaced = false;
             DoAnimation();
@@ -117,12 +121,21 @@ public class CustomerBehaviour : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (glassOnHand)
+        if (glassOnHand && request._glassObject != null)
         {
             request._glassObject.transform.position = _glassPos.position;
         }
 
         OpenDoor();
+
+        if (patience != null)
+        {
+            if (patience.timeOut)
+            {
+                request.fail = true;
+                Destroy(_patienceUI);
+            }
+        }
     }
 
     void ActivateUI()
@@ -211,6 +224,8 @@ public class CustomerBehaviour : MonoBehaviour
             {
                 StartCoroutine(Talk());
                 ActivateUI();
+                _patienceUI.SetActive(true);
+                patience = GetComponentInChildren<PatienceSystem>();
             }
         }
     }
@@ -249,7 +264,6 @@ public class CustomerBehaviour : MonoBehaviour
         request.isTaken = false;
         if (currentIndex >= request.positions.Length) return;
 
-
         if (!movingToTarget && request.positions[currentIndex] != null)
         {
             movingToTarget = true;
@@ -269,6 +283,7 @@ public class CustomerBehaviour : MonoBehaviour
             }
         }
     }
+
 
     private void OnDrawGizmos()
     {
@@ -290,6 +305,8 @@ public class CustomerBehaviour : MonoBehaviour
         yield return new WaitForSeconds(1);
         animator.SetBool("isWaiting", true);
         ActivateUI();
+        _patienceUI.SetActive(true);
+        patience = GetComponentInChildren<PatienceSystem>();
         StartCoroutine(Talk());
         
     }
@@ -298,46 +315,85 @@ public class CustomerBehaviour : MonoBehaviour
     {
         if (!request.isTable)
         {
-            animator.SetBool("pickGlass", true);
-            yield return new WaitForSeconds(0.7f);
-            glassOnHand = true;
-            animator.SetBool("pickGlass", false);
-            if (request.fail)
+            if (request.fail && patience.timeOut)
             {
-                expression.SetAngryActive();
+                Destroy(_patienceUI);
+                expression.SetUpsetActive();
+                yield return new WaitForSeconds(1f);
+                animator.SetBool("isWaiting", false);
             }
-            else if (request.sucess)
+
+            else
             {
-                expression.SetHappyActive();
+                Destroy(_patienceUI);
+                animator.SetBool("pickGlass", true);
+                yield return new WaitForSeconds(0.7f);
+                glassOnHand = true;
+                animator.SetBool("pickGlass", false);
+                yield return new WaitForSeconds(3f);
+                if (request.fail && !patience.timeOut)
+                {
+                    expression.SetAngryActive();
+                }
+                else if (request.sucess)
+                {
+                    expression.SetHappyActive();
+                }
+                yield return new WaitForSeconds(0.7f);
+                glassOnHand = false;
+                if (request._glassObject != null)
+                {
+                    spawnGlass = request._glassObject.GetComponent<RespawnGlass>();
+                    spawnGlass.InstantiateGlass();
+                    Destroy(request._glassObject);
+                }
+
+                animator.SetBool("isWaiting", false);
             }
-            yield return new WaitForSeconds(3f);
-            glassOnHand = false;
-            spawnGlass = request._glassObject.GetComponent<RespawnGlass>();
-            spawnGlass.InstantiateGlass();
-            Destroy(request._glassObject);
-            animator.SetBool("isWaiting", false);
         }
         else
         {
-            animator.SetBool("pickGlass", true);
-            glassOnHand = true;
-            yield return new WaitForSeconds(3f);
-            animator.SetBool("pickGlass", false);
-            glassOnHand = false;
-            if (request.fail)
+            if (request.fail && patience.timeOut)
             {
-                expression.SetAngryActive();
+                Destroy(_patienceUI);
+                expression.SetUpsetActive();
+                yield return new WaitForSeconds(1f);
+                animator.SetBool("isWaiting", false);
+                yield return new WaitForSeconds(0.7f);
+                animator.SetBool("isSitting", false);
             }
-            else if (request.sucess)
+            else
             {
-                expression.SetHappyActive();
+                Destroy(_patienceUI);
+                animator.SetBool("pickGlass", true);
+                glassOnHand = true;
+
+                yield return new WaitForSeconds(3f);
+
+                animator.SetBool("pickGlass", false);
+                
+                if (request.fail && !patience.timeOut)
+                {
+                    expression.SetAngryActive();
+                }
+                else if (request.sucess)
+                {
+                    expression.SetHappyActive();
+                }
+
+                glassOnHand = false;
+                if (request._glassObject != null)
+                {
+                    spawnGlass = request._glassObject.GetComponent<RespawnGlass>();
+                    spawnGlass.InstantiateGlass();
+                    Destroy(request._glassObject);
+                }
+
+                yield return new WaitForSeconds(1f);
+
+                animator.SetBool("isWaiting", false);
+                animator.SetBool("isSitting", false);
             }
-            spawnGlass = request._glassObject.GetComponent<RespawnGlass>();
-            spawnGlass.InstantiateGlass();
-            Destroy(request._glassObject);
-            yield return new WaitForSeconds(1f);
-            animator.SetBool("isWaiting", false);
-            animator.SetBool("isSitting", false);
         }
         onExit = true;
     }
