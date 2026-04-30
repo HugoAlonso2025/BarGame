@@ -22,7 +22,23 @@ public class RespawnGlass : MonoBehaviour
         else
         {
             glassSpawner.InstantiateGlass(obj._objPos, obj._objRot);
+        }  
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "trash")
+        {
+            if (glass.isCup)
+            {
+                glassSpawner.InstantiateCup(obj._objPos, obj._objRot);
+                Destroy(gameObject);
+            }
+            else
+            {
+                glassSpawner.InstantiateGlass(obj._objPos, obj._objRot);
+                Destroy(gameObject);
+            }
         }
-            
     }
 }
