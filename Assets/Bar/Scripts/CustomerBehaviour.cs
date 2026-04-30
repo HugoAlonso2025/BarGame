@@ -103,7 +103,6 @@ public class CustomerBehaviour : MonoBehaviour
                 justExit = false;
                 currentIndex--;
                 request.hasOrdered = false;
-                request.hasDelivered = false;
             }
             
             MoveTowardsExit();

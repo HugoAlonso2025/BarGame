@@ -13,7 +13,6 @@ public class RequestController : MonoBehaviour
     public bool isTable;
     public bool sucess;
     public bool fail;
-    public bool hasDelivered;
 
     [SerializeField] float radius;
 
@@ -150,9 +149,8 @@ public class RequestController : MonoBehaviour
 
                 rb = col.attachedRigidbody;
 
-                if (drink != null && hasOrdered && !rb.isKinematic && !hasDelivered)
+                if (drink != null && hasOrdered && !rb.isKinematic)
                 {
-                    hasDelivered = true;
                     col.transform.position = glassPos.position;
                     col.transform.rotation = Quaternion.identity;
                     glassPlaced = true;
