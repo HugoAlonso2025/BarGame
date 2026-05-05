@@ -31,6 +31,7 @@ public class CustomerBehaviour : MonoBehaviour
     bool movingToTarget;
     bool justExit = true;
     bool glassOnHand;
+    bool timeOut;
 
     RequestController request;
     SpawnCustomer counter;
@@ -40,6 +41,7 @@ public class CustomerBehaviour : MonoBehaviour
     RespawnGlass spawnGlass;
     DoorAnimation door;
     PatienceSystem patience;
+    PointsManager points;   
 
     Animator animator;
 
@@ -53,6 +55,7 @@ public class CustomerBehaviour : MonoBehaviour
         AssignDeliver();
         expression.SetBaseActive();
         door = FindAnyObjectByType<DoorAnimation>();
+        points = FindAnyObjectByType<PointsManager>();
     }
 
     void AssignDeliver()
@@ -93,7 +96,7 @@ public class CustomerBehaviour : MonoBehaviour
             }
         }
 
-        if(request.glassPlaced || request.fail)
+        if(request.glassPlaced || timeOut)
         {
             request.glassPlaced = false;
             DoAnimation();
@@ -132,9 +135,22 @@ public class CustomerBehaviour : MonoBehaviour
         {
             if (patience.timeOut)
             {
+                timeOut = true;
                 request.fail = true;
                 Destroy(_patienceUI);
             }
+        }
+    }
+
+    void GainPoints()
+    {
+        if (patience.moreThanHalfTime)
+        {
+            points.AddMorePoints();
+        }
+        else
+        {
+            points.AddPoints();
         }
     }
 
@@ -315,7 +331,7 @@ public class CustomerBehaviour : MonoBehaviour
     {
         if (!request.isTable)
         {
-            if (request.fail && patience.timeOut)
+            if (request.fail && timeOut)
             {
                 Destroy(_patienceUI);
                 expression.SetUpsetActive();
@@ -331,13 +347,14 @@ public class CustomerBehaviour : MonoBehaviour
                 glassOnHand = true;
                 animator.SetBool("pickGlass", false);
                 yield return new WaitForSeconds(3f);
-                if (request.fail && !patience.timeOut)
+                if (request.fail && !timeOut)
                 {
                     expression.SetAngryActive();
                 }
                 else if (request.sucess)
                 {
                     expression.SetHappyActive();
+                    GainPoints();
                 }
                 yield return new WaitForSeconds(0.7f);
                 glassOnHand = false;
@@ -353,7 +370,7 @@ public class CustomerBehaviour : MonoBehaviour
         }
         else
         {
-            if (request.fail && patience.timeOut)
+            if (request.fail && timeOut)
             {
                 Destroy(_patienceUI);
                 expression.SetUpsetActive();
@@ -372,13 +389,14 @@ public class CustomerBehaviour : MonoBehaviour
 
                 animator.SetBool("pickGlass", false);
                 
-                if (request.fail && !patience.timeOut)
+                if (request.fail && !timeOut)
                 {
                     expression.SetAngryActive();
                 }
                 else if (request.sucess)
                 {
                     expression.SetHappyActive();
+                    GainPoints();
                 }
 
                 glassOnHand = false;

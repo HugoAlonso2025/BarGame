@@ -21,19 +21,11 @@ public class IceBehaviour : MonoBehaviour
         col = GetComponent<BoxCollider>();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        //if (collision.gameObject.tag == "floor" && !onGlass)
-        //{
-        //    transform.position = _icePosition.position;
-        //    rb.isKinematic = true;
-        //    col.isTrigger = true;
-        //    gameObject.SetActive(false);
-        //}
-
-        if(collision.gameObject.tag == "glass" && !onGlass)
+        if (other.gameObject.tag == "glass" && !onGlass)
         {
-            glass = collision.gameObject.GetComponentInChildren<CubesOnGlass>();
+            glass = other.gameObject.GetComponentInChildren<CubesOnGlass>();
             transform.position = _icePosition.position;
             rb.isKinematic = true;
             col.isTrigger = true;
@@ -50,7 +42,7 @@ public class IceBehaviour : MonoBehaviour
             StartCoroutine(CoolDown());
             StartCoroutine(Despawn());
             rb.isKinematic = false;
-            col.isTrigger = false;
+            //col.isTrigger = false;
         }
         else
         {

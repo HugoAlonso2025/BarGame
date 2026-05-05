@@ -16,4 +16,9 @@ public class PointsManager : MonoBehaviour
     {
         return score += 100;
     }
+
+    public int AddMorePoints()
+    {
+        return score += 150;
+    }
 }

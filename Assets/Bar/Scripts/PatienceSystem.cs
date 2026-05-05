@@ -6,6 +6,7 @@ public class PatienceSystem : MonoBehaviour
 
     [SerializeField] float maxTime = 100;
     public float currentTime;
+    public bool moreThanHalfTime = true;
 
     Image timeBar;
 
@@ -26,6 +27,11 @@ public class PatienceSystem : MonoBehaviour
         {
             timeOut = true;
             Debug.Log("Time out");
+        }
+
+        if (currentTime < 15)
+        {
+            moreThanHalfTime = false;
         }
     }
 }

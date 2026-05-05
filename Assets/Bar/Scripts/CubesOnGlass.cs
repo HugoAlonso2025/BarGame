@@ -31,4 +31,9 @@ public class CubesOnGlass : MonoBehaviour
             }
         }
     }
+
+    void Update()
+    {
+        CubesCheck();
+    }
 }

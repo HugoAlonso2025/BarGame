@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
@@ -137,28 +138,25 @@ public class RequestController : MonoBehaviour
         {
             if (glasses.Length == 1)
             {
-                _glassObject = col.gameObject;
-                drink = col.GetComponentInChildren<SetDrinkType>();
-                cubes = col.GetComponentInChildren<CubesOnGlass>();
-                lime = col.GetComponentInChildren<LimeOnGlass>();
-
-                if(cubes != null)
+                if (col.gameObject.GetComponentInChildren<SetDrinkType>() != null && hasOrdered && !hasDelivered && !col.attachedRigidbody.isKinematic)
                 {
+                    Debug.Log("Entra");
+                    _glassObject = col.gameObject;
+                    drink = col.GetComponentInChildren<SetDrinkType>();
+                    cubes = col.GetComponentInChildren<CubesOnGlass>();
+                    lime = col.GetComponentInChildren<LimeOnGlass>();
                     cubes.CubesCheck();
                     lime.LimeCheck();
-                }
 
-                rb = col.attachedRigidbody;
+                    rb = col.attachedRigidbody;
 
-                if (drink != null && hasOrdered && !rb.isKinematic && !hasDelivered)
-                {
                     hasDelivered = true;
                     col.transform.position = glassPos.position;
                     col.transform.rotation = Quaternion.identity;
                     glassPlaced = true;
                     col.attachedRigidbody.isKinematic = true;
 
-                    
+
                     drinkMade = drink.option;
                     CheckOrder();
                 }
