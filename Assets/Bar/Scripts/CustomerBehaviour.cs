@@ -41,7 +41,8 @@ public class CustomerBehaviour : MonoBehaviour
     RespawnGlass spawnGlass;
     DoorAnimation door;
     PatienceSystem patience;
-    PointsManager points;   
+    PointsManager points;
+    WinCondition win;
 
     Animator animator;
 
@@ -56,6 +57,7 @@ public class CustomerBehaviour : MonoBehaviour
         expression.SetBaseActive();
         door = FindAnyObjectByType<DoorAnimation>();
         points = FindAnyObjectByType<PointsManager>();
+        win = FindAnyObjectByType<WinCondition>();
     }
 
     void AssignDeliver()
@@ -334,6 +336,7 @@ public class CustomerBehaviour : MonoBehaviour
             if (request.fail && timeOut)
             {
                 Destroy(_patienceUI);
+                win.BadDeliver();
                 expression.SetUpsetActive();
                 yield return new WaitForSeconds(1f);
                 animator.SetBool("isWaiting", false);
@@ -350,11 +353,13 @@ public class CustomerBehaviour : MonoBehaviour
                 if (request.fail && !timeOut)
                 {
                     expression.SetAngryActive();
+                    win.BadDeliver();
                 }
                 else if (request.sucess)
                 {
                     expression.SetHappyActive();
                     GainPoints();
+                    win.GoodDeliver();
                 }
                 yield return new WaitForSeconds(0.7f);
                 glassOnHand = false;
@@ -373,6 +378,7 @@ public class CustomerBehaviour : MonoBehaviour
             if (request.fail && timeOut)
             {
                 Destroy(_patienceUI);
+                win.BadDeliver();
                 expression.SetUpsetActive();
                 yield return new WaitForSeconds(1f);
                 animator.SetBool("isWaiting", false);
@@ -391,10 +397,12 @@ public class CustomerBehaviour : MonoBehaviour
                 
                 if (request.fail && !timeOut)
                 {
+                    win.BadDeliver();
                     expression.SetAngryActive();
                 }
                 else if (request.sucess)
                 {
+                    win.GoodDeliver();
                     expression.SetHappyActive();
                     GainPoints();
                 }

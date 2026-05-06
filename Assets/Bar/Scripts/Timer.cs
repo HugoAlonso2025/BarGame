@@ -7,7 +7,14 @@ public class Timer : MonoBehaviour
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] float remainingTime;
 
-     void Update()
+    WinCondition win;
+
+    private void Start()
+    {
+        win = FindAnyObjectByType<WinCondition>();
+    }
+
+    void Update()
     {
         if(remainingTime>0)
         {
@@ -27,6 +34,6 @@ public class Timer : MonoBehaviour
 
     void EndGame()
     {
-        SceneManager.LoadScene("Win");
+        win.CheckWinCondition();
     }
 }
