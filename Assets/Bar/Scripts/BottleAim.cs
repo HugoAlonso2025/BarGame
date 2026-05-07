@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class BottleAim : MonoBehaviour
 {
@@ -8,11 +10,21 @@ public class BottleAim : MonoBehaviour
     [SerializeField] LayerMask glassLayer;
     Rigidbody rb;
 
+    AudioSource source;
+    [SerializeField] AudioClip waterEarlySound;
+    [SerializeField] AudioClip waterSound;
+
+    SoundManager sound;
+
+    bool onWaterGO;
+    bool isGoing;
+
     GameObject liquidGO;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        source = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -27,15 +39,50 @@ public class BottleAim : MonoBehaviour
             else
             {
                 particles.Play();
+                if (!onWaterGO)
+                {
+                    StartCoroutine(WaterSound());
+                }
             }
         }
         else
         {
-            if(liquidGO != null)
+            if (liquidGO != null)
             {
                 particles.Stop();
+                isGoing = false;
+                onWaterGO = false;
+                source.Stop();
             }
-           //Pausar/Reanudar
         }
+    }
+
+    void DoSound(AudioClip sound)
+    {
+        float random;
+        random = Random.Range(0.8f, 1.2f);
+        source.pitch = random;
+        source.PlayOneShot(sound);
+    }
+
+    IEnumerator WaterSound()
+    {
+        if (!isGoing)
+        {
+            onWaterGO = true;
+            DoSound(waterEarlySound);
+            yield return new WaitForSeconds(4);
+            isGoing = true;
+            onWaterGO = false;
+        }
+        else
+        {
+
+            onWaterGO = true;
+            DoSound(waterSound);
+            yield return new WaitForSeconds(7);
+            onWaterGO = false;
+        }
+
     }
 }

@@ -29,13 +29,18 @@ public class RequestController : MonoBehaviour
     public Transform[] positions;
 
     public GameObject _glassObject;
-    Rigidbody rb;
+
+    [SerializeField] AudioClip posarSound;
 
     SetDrinkType drink;
     CubesOnGlass cubes;
     LimeOnGlass lime;
+    SoundManager sound;
 
-
+    private void Start()
+    {
+        sound = GetComponent<SoundManager>();
+    }
 
     public void AskForDrink()
     {
@@ -121,7 +126,6 @@ public class RequestController : MonoBehaviour
         {
             Debug.Log("Sucess");
             sucess = true;
-
         }
         else
         {
@@ -148,8 +152,6 @@ public class RequestController : MonoBehaviour
                     cubes.CubesCheck();
                     lime.LimeCheck();
 
-                    rb = col.attachedRigidbody;
-
                     hasDelivered = true;
                     col.transform.position = glassPos.position;
                     col.transform.rotation = Quaternion.identity;
@@ -158,6 +160,7 @@ public class RequestController : MonoBehaviour
 
 
                     drinkMade = drink.option;
+                    sound.PlaySound(posarSound);
                     CheckOrder();
                 }
             }

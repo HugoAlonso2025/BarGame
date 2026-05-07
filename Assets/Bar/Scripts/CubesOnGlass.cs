@@ -4,6 +4,16 @@ public class CubesOnGlass : MonoBehaviour
 {
     [SerializeField] GameObject[] cubes;
     public bool cubesOn;
+    bool soundOn;
+
+    [SerializeField] AudioClip iceSound;
+
+    SoundManager sound;
+
+    private void Start()
+    {
+        sound = GetComponent<SoundManager>();
+    }
 
     public void ActivateCube()
     {
@@ -35,5 +45,11 @@ public class CubesOnGlass : MonoBehaviour
     void Update()
     {
         CubesCheck();
+
+        if (cubesOn && !soundOn)
+        {
+            soundOn = true;
+            sound.PlaySound(iceSound);
+        }
     }
 }

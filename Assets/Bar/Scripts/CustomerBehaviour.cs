@@ -32,6 +32,15 @@ public class CustomerBehaviour : MonoBehaviour
     bool justExit = true;
     bool glassOnHand;
     bool timeOut;
+    bool isStepDone = true;
+    bool isWrongDone = false;
+
+    [SerializeField] AudioClip goodSound;
+    [SerializeField] AudioClip badSound;
+    [SerializeField] AudioClip stepSound;
+    [SerializeField] AudioClip talkSound;
+
+    
 
     RequestController request;
     SpawnCustomer counter;
@@ -43,6 +52,7 @@ public class CustomerBehaviour : MonoBehaviour
     PatienceSystem patience;
     PointsManager points;
     WinCondition win;
+    SoundManager sound;
 
     Animator animator;
 
@@ -58,6 +68,7 @@ public class CustomerBehaviour : MonoBehaviour
         door = FindAnyObjectByType<DoorAnimation>();
         points = FindAnyObjectByType<PointsManager>();
         win = FindAnyObjectByType<WinCondition>();
+        sound = GetComponent<SoundManager>();
     }
 
     void AssignDeliver()
@@ -116,6 +127,11 @@ public class CustomerBehaviour : MonoBehaviour
             }
             
             MoveTowardsExit();
+        }
+
+        if (onExit && isStepDone|| !posReached && isStepDone)
+        {
+            StartCoroutine(StepSound());
         }
 
         if(Physics.CheckSphere(pos.position, mRadius, exitMask) && onExit)
@@ -313,8 +329,17 @@ public class CustomerBehaviour : MonoBehaviour
     IEnumerator Talk()
     {
         expression.SetTalkActive();
+        sound.PlaySound(talkSound);
         yield return new WaitForSeconds(3);
         expression.SetBaseActive();
+    }
+
+    IEnumerator StepSound()
+    {
+        isStepDone = false;
+        sound.PlaySound(stepSound);
+        yield return new WaitForSeconds(0.6f);
+        isStepDone = true;
     }
 
     IEnumerator Sit()
@@ -338,6 +363,13 @@ public class CustomerBehaviour : MonoBehaviour
                 Destroy(_patienceUI);
                 win.BadDeliver();
                 expression.SetUpsetActive();
+
+                if (!isWrongDone)
+                {
+                    isWrongDone = true;
+                    sound.PlaySound(badSound);
+                }
+
                 yield return new WaitForSeconds(1f);
                 animator.SetBool("isWaiting", false);
             }
@@ -354,12 +386,14 @@ public class CustomerBehaviour : MonoBehaviour
                 {
                     expression.SetAngryActive();
                     win.BadDeliver();
+                    sound.PlaySound(badSound);
                 }
                 else if (request.sucess)
                 {
                     expression.SetHappyActive();
                     GainPoints();
                     win.GoodDeliver();
+                    sound.PlaySound(goodSound);
                 }
                 yield return new WaitForSeconds(0.7f);
                 glassOnHand = false;
@@ -379,6 +413,11 @@ public class CustomerBehaviour : MonoBehaviour
             {
                 Destroy(_patienceUI);
                 win.BadDeliver();
+                if (!isWrongDone)
+                {
+                    isWrongDone = true;
+                    sound.PlaySound(badSound);
+                }
                 expression.SetUpsetActive();
                 yield return new WaitForSeconds(1f);
                 animator.SetBool("isWaiting", false);
@@ -399,12 +438,14 @@ public class CustomerBehaviour : MonoBehaviour
                 {
                     win.BadDeliver();
                     expression.SetAngryActive();
+                    sound.PlaySound(badSound);
                 }
                 else if (request.sucess)
                 {
                     win.GoodDeliver();
                     expression.SetHappyActive();
                     GainPoints();
+                    sound.PlaySound(goodSound);
                 }
 
                 glassOnHand = false;

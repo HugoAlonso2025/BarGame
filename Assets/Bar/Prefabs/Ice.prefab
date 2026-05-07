@@ -155,3 +155,4 @@ MonoBehaviour:
   _icePosition: {fileID: 0}
   shovelRotation: {fileID: 0}
   onGlass: 0
+  iceSound: {fileID: 8300000, guid: 801441c0f0419c94cb8a466c15b2538f, type: 3}
