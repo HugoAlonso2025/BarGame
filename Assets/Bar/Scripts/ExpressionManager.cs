@@ -125,7 +125,6 @@ public class ExpressionManager : MonoBehaviour
 
     void BlinkingMethod()
     {
-        Debug.Log("Parpadeo");
         if (isBaseCheck)
         {
             StartCoroutine(BlinkNormal());
@@ -188,7 +187,6 @@ public class ExpressionManager : MonoBehaviour
 
     IEnumerator BlinkUpset()
     {
-        Debug.Log("Eyes");
         mats[0] = clothMat;
         mats[1] = shirtMat;
         mats[2] = bodyMat;
@@ -199,7 +197,6 @@ public class ExpressionManager : MonoBehaviour
 
         yield return new WaitForSeconds(0.2f);
 
-        Debug.Log("no");
         mats[0] = clothMat;
         mats[1] = shirtMat;
         mats[2] = bodyMat;

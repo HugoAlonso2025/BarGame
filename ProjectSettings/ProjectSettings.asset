@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Immersive Oasis
-  productName: BarTest
+  productName: Wild West Saloon
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -144,8 +144,11 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
-  bundleVersion: 1.82
-  preloadedAssets: []
+  bundleVersion: 0.6
+  preloadedAssets:
+  - {fileID: 11400000, guid: cfeb7e6ba61253045be1b5772df416af, type: 2}
+  - {fileID: 757494079620849565, guid: e92958385a4fc784a9517982ebc63708, type: 2}
+  - {fileID: -1159102730306496204, guid: 62e6457b711341b40bdc4aa315f279ef, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -167,7 +170,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   androidMinAspectRatio: 1
   applicationIdentifier:
-    Android: com.ImmersiveOasis.BarTest
+    Android: com.ImmersiveOasis.WildWestSaloon
     Standalone: com.DefaultCompany.Core-Project
   buildNumber:
     Standalone: 0
