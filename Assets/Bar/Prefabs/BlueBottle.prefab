@@ -475,7 +475,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RecoverObject
   _objPos: {x: 0, y: 0, z: 0}
   _objRot: {x: 0, y: 0, z: 0, w: 0}
-  glassSound: {fileID: 0}
 --- !u!114 &8147953251371557442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -490,7 +489,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RecoverObject
   _objPos: {x: 0, y: 0, z: 0}
   _objRot: {x: 0, y: 0, z: 0, w: 0}
-  glassSound: {fileID: 8300000, guid: e973ae2cba881844ab5683cfcf73803c, type: 3}
 --- !u!82 &7116957906082857200
 AudioSource:
   m_ObjectHideFlags: 0
