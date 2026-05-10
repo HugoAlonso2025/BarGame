@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Bar/TEXTURAS/T_Latas_Color.png.meta
 guid: 706ff1e29a77b0f4d946f554d964f8eb
+========
+guid: e0098410a52b6b74780c14bdccdb4e2d
+>>>>>>>> ines:Assets/Bar/TEXTURAS/T_Pared_Color 1.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

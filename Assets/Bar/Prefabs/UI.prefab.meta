@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Bar/Prefabs/UI.prefab.meta
 guid: 0bf17bb901dd01a40856a1d72323f015
 PrefabImporter:
+========
+guid: a028e8dc2dc92264d876fca6b8e92113
+NativeFormatImporter:
+>>>>>>>> ines:Assets/Bar/Materials/M_Alfombra.mat.meta
   externalObjects: {}
+  mainObjectFileID: 2100000
   userData: 
   assetBundleName: 
   assetBundleVariant: 

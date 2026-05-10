@@ -22,6 +22,8 @@ namespace BNG {
         [Tooltip("Unity Input Action used to rotate the player")]
         public InputActionReference RotateAction;
 
+        //public InputActionReference switchButton;
+
         [Header("Smooth / Snap Turning")]
         [Tooltip("Snap rotation will rotate a fixed amount of degrees on turn. Smooth will linearly rotate the player.")]
         public RotationMechanic RotationType = RotationMechanic.Snap;
@@ -74,8 +76,19 @@ namespace BNG {
                 DoSmoothRotation(xAxis);
             }
 
-            // Store input for future checks
-            previousXInput = xAxis;
+            //Cambio de giro
+
+            //if (switchButton && RotationType == RotationMechanic.Smooth)
+            //{
+            //    RotationType = RotationMechanic.Snap;
+            //}
+            //else if (switchButton && RotationType == RotationMechanic.Snap)
+            //{
+            //    RotationType = RotationMechanic.Smooth;
+            //}
+
+                // Store input for future checks
+                previousXInput = xAxis;
         }
 
         /// <summary>
